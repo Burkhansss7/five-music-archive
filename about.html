@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Project by Burkhan and Islam -->
+    <title>FIVE. | About</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="nav-wrap">
+        <a href="index.html" class="logo">FIVE<span>.</span></a>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="newwave.html">New Wave</a></li>
+                <li><a href="icons.html">Icons</a></li>
+                <li><a class="active" href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<main class="page-shell inner-page">
+
+    <div class="page-heading">
+        <p class="eyebrow">ABOUT THE PROJECT</p>
+        <h1>Made by two music listeners.</h1>
+
+        <p>
+            FIVE. is a student website created as part of our
+            Web Technologies course.
+        </p>
+    </div>
+
+
+    <section class="about-intro">
+
+        <img class="round-image"
+             src="images/carti.jpg"
+             alt="Playboi Carti">
+
+        <div>
+            <p class="eyebrow">THE IDEA</p>
+
+            <h2>A personal archive, not a ranking.</h2>
+
+            <p>
+                The purpose of the website is to briefly introduce
+                several of our favorite artists and show how different
+                styles of modern hip-hop can exist within one playlist.
+            </p>
+        </div>
+
+    </section>
+
+
+    <section class="team-section">
+
+        <p class="eyebrow">ABOUT THE TEAM MEMBERS</p>
+        <h2>Who built the website?</h2>
+
+        <div class="team-grid">
+
+            <article class="team-card">
+                <p class="member-number">01</p>
+
+                <h3>Burkhan</h3>
+
+                <p>
+                    Worked on the home page and New Wave page.
+                    Interested in music, technology and modern
+                    digital design.
+                </p>
+            </article>
+
+
+            <article class="team-card">
+                <p class="member-number">02</p>
+
+                <h3>Islam</h3>
+
+                <p>
+                    Worked on the Icons and About pages.
+                    Helped organize the content, structure and
+                    visual style of the website.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+
+    <section class="contact-section">
+
+        <div>
+            <p class="eyebrow">YOUR TURN</p>
+            <h2>Who should be added?</h2>
+
+            <p>
+                Choose your favorite artist from our selection
+                and leave a message.
+            </p>
+        </div>
+
+
+        <form id="contact-form" action="#" method="post">
+
+            <div class="form-row">
+
+                <div class="form-field">
+                    <label for="name">Name</label>
+
+                    <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Your name"
+                            required>
+                </div>
+
+
+                <div class="form-field">
+                    <label for="email">Email</label>
+
+                    <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            required>
+                </div>
+
+            </div>
+
+
+            <div class="form-field">
+                <label for="artist">Favorite artist</label>
+
+                <select id="artist" name="artist">
+
+                    <option value="">Choose an artist</option>
+                    <option value="yeat">Yeat</option>
+                    <option value="carti">Playboi Carti</option>
+                    <option value="future">Future</option>
+                    <option value="drake">Drake</option>
+                    <option value="ken">Ken Carson</option>
+
+                </select>
+            </div>
+
+
+            <div class="form-field">
+                <label for="message">Message</label>
+
+                <textarea
+                        id="message"
+                        name="message"
+                        rows="6"
+                        placeholder="Tell us who we should add next..."
+                        required></textarea>
+            </div>
+
+
+            <button type="submit">Send message</button>
+
+        </form>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <div class="page-shell footer-inner">
+        <p>FIVE. Music Archive</p>
+        <p>Created by Burkhan & Islam</p>
+    </div>
+</footer>
+
+</body>
+</html>

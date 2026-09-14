@@ -1,0 +1,867 @@
+:root {
+    --bg: #0b0b0b;
+    --surface: #141414;
+    --surface-light: #1c1c1c;
+    --text: #f2f0e9;
+    --muted: #969696;
+    --accent: #b9ff48;
+    --border: #2b2b2b;
+    --page-width: 1180px;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background: var(--bg);
+    color: var(--text);
+
+    font-family:
+            Inter,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
+
+    line-height: 1.6;
+}
+
+
+img {
+    display: block;
+    width: 100%;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+h1,
+h2,
+h3 {
+    line-height: 1;
+    font-weight: 600;
+}
+
+
+p {
+    color: var(--muted);
+}
+
+
+.page-shell {
+    width: min(92%, var(--page-width));
+    margin: 0 auto;
+}
+
+
+/* NAVIGATION */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(11, 11, 11, 0.94);
+    border-bottom: 1px solid var(--border);
+}
+
+
+.nav-wrap {
+    width: min(92%, var(--page-width));
+    height: 78px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+}
+
+
+.logo span {
+    color: var(--accent);
+}
+
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    list-style: none;
+}
+
+
+.nav-links a {
+    color: #aaa;
+
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+
+    transition: color 0.2s ease;
+}
+
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--text);
+}
+
+
+/* HOME HERO */
+
+#hero {
+    min-height: 78vh;
+
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: 5rem;
+
+    padding: 5rem 0;
+}
+
+
+.eyebrow {
+    margin-bottom: 1.2rem;
+
+    color: var(--accent);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+
+.hero-copy h1 {
+    max-width: 800px;
+
+    margin-bottom: 2rem;
+
+    font-size: clamp(3.5rem, 7vw, 7.5rem);
+    letter-spacing: -0.07em;
+}
+
+
+.hero-text {
+    max-width: 520px;
+
+    margin-bottom: 2.5rem;
+
+    font-size: 1.1rem;
+}
+
+
+.main-button {
+    display: inline-block;
+
+    padding: 0.9rem 1.3rem;
+
+    border: 1px solid var(--text);
+
+    font-size: 0.85rem;
+
+    transition:
+            background 0.2s ease,
+            color 0.2s ease;
+}
+
+
+.main-button:hover {
+    background: var(--text);
+    color: var(--bg);
+}
+
+
+.hero-visual img {
+    height: 540px;
+
+    object-fit: cover;
+    object-position: center;
+
+    filter: grayscale(20%);
+}
+
+
+.hero-visual figcaption {
+    margin-top: 0.8rem;
+
+    color: var(--muted);
+
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+}
+
+
+/* SECTIONS */
+
+.section {
+    padding: 7rem 0;
+}
+
+
+.section-title {
+    margin-bottom: 3rem;
+}
+
+
+.section-title h2 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    letter-spacing: -0.04em;
+}
+
+
+/* ARTIST CARDS */
+
+.roster-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+}
+
+
+.artist-card {
+    position: relative;
+
+    min-height: 440px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    background: var(--surface);
+}
+
+
+.card-half {
+    grid-column: span 6;
+}
+
+
+.card-third {
+    grid-column: span 4;
+}
+
+
+.artist-card img {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+
+    object-fit: cover;
+
+    filter:
+            grayscale(25%)
+            brightness(0.75);
+
+    transition:
+            transform 0.45s ease,
+            filter 0.45s ease;
+}
+
+
+.artist-card:hover img {
+    transform: scale(1.025);
+
+    filter:
+            grayscale(0%)
+            brightness(0.9);
+}
+
+
+.card-info {
+    position: absolute;
+
+    left: 1.5rem;
+    right: 1.5rem;
+    bottom: 1.5rem;
+}
+
+
+.card-info span {
+    color: var(--accent);
+
+    font-size: 0.7rem;
+}
+
+
+.card-info h3 {
+    margin: 0.4rem 0;
+
+    font-size: 2rem;
+}
+
+
+.card-info p {
+    color: #ddd;
+
+    font-size: 0.8rem;
+}
+
+
+/* HOME INFORMATION */
+
+.split-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+
+    padding: 8rem 0;
+
+    border-top: 1px solid var(--border);
+}
+
+
+.split-section h2 {
+    max-width: 500px;
+
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    letter-spacing: -0.05em;
+}
+
+
+.simple-list {
+    margin-top: 2rem;
+    margin-left: 1.2rem;
+}
+
+
+.simple-list li {
+    margin-bottom: 0.8rem;
+
+    color: var(--text);
+}
+
+
+.curator {
+    padding: 6rem 0;
+
+    border-top: 1px solid var(--border);
+}
+
+
+.curator h2 {
+    margin-bottom: 1.5rem;
+
+    font-size: 3rem;
+}
+
+
+.curator p:last-child {
+    max-width: 650px;
+}
+
+
+/* INNER PAGES */
+
+.inner-page {
+    padding-bottom: 8rem;
+}
+
+
+.page-heading {
+    max-width: 900px;
+
+    padding: 8rem 0 7rem;
+}
+
+
+.page-heading h1 {
+    margin-bottom: 2rem;
+
+    font-size: clamp(3.5rem, 7vw, 7rem);
+    letter-spacing: -0.065em;
+}
+
+
+.page-heading > p:last-child {
+    max-width: 600px;
+
+    font-size: 1.05rem;
+}
+
+
+/* ARTIST FEATURE */
+
+.artist-feature {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 5rem;
+
+    padding: 6rem 0;
+
+    border-top: 1px solid var(--border);
+}
+
+
+.artist-feature.reverse .artist-image {
+    order: 2;
+}
+
+
+.artist-image img {
+    height: 610px;
+
+    object-fit: cover;
+
+    filter: grayscale(10%);
+}
+
+
+.artist-description {
+    align-self: center;
+}
+
+
+.artist-number {
+    margin-bottom: 1rem;
+
+    color: var(--accent);
+
+    font-size: 0.75rem;
+}
+
+
+.artist-description h2 {
+    margin-bottom: 0.8rem;
+
+    font-size: clamp(3rem, 7vw, 6rem);
+    letter-spacing: -0.06em;
+}
+
+
+.artist-subtitle {
+    margin-bottom: 2rem;
+
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+
+.artist-description > p:not(.artist-number):not(.artist-subtitle) {
+    max-width: 600px;
+
+    margin-bottom: 2rem;
+
+    font-size: 1rem;
+}
+
+
+.artist-description h3 {
+    margin-bottom: 1rem;
+
+    font-size: 0.9rem;
+}
+
+
+.fact-list {
+    margin-left: 1.1rem;
+}
+
+
+.artist-description ul li {
+    margin-bottom: 0.6rem;
+
+    color: var(--muted);
+}
+
+
+/* ORDERED LIST */
+
+.listening-section {
+    padding: 6rem 0;
+
+    border-top: 1px solid var(--border);
+}
+
+
+.listening-section h2 {
+    margin-bottom: 3rem;
+
+    font-size: 3rem;
+}
+
+
+.listening-list {
+    list-style-position: inside;
+}
+
+
+.listening-list li {
+    display: grid;
+    grid-template-columns: 60px 1fr 1fr;
+
+    padding: 1.4rem 0;
+
+    border-bottom: 1px solid var(--border);
+
+    color: var(--text);
+
+    font-size: 1.1rem;
+}
+
+
+.listening-list li span {
+    color: var(--muted);
+}
+
+
+/* TABLE */
+
+.comparison-section {
+    padding-top: 6rem;
+
+    border-top: 1px solid var(--border);
+}
+
+
+.comparison-section h2 {
+    margin-bottom: 3rem;
+
+    font-size: 3rem;
+}
+
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+
+table th,
+table td {
+    padding: 1.3rem 1rem;
+
+    border-bottom: 1px solid var(--border);
+
+    text-align: left;
+}
+
+
+table th {
+    color: var(--accent);
+
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+
+table td {
+    color: var(--muted);
+}
+
+
+/* ABOUT */
+
+.about-intro {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 4rem;
+    align-items: center;
+
+    padding: 5rem 0;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+
+.round-image {
+    width: 180px;
+    height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+
+.about-intro h2 {
+    margin-bottom: 1.2rem;
+
+    font-size: 3rem;
+}
+
+
+.about-intro div {
+    max-width: 650px;
+}
+
+
+/* TEAM */
+
+.team-section {
+    padding: 7rem 0;
+}
+
+
+.team-section > h2 {
+    margin-bottom: 3rem;
+
+    font-size: 3rem;
+}
+
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+
+.team-card {
+    min-height: 280px;
+
+    padding: 2rem;
+
+    border: 1px solid var(--border);
+
+    background: var(--surface);
+}
+
+
+.member-number {
+    margin-bottom: 5rem;
+
+    color: var(--accent);
+}
+
+
+.team-card h3 {
+    margin-bottom: 1rem;
+
+    font-size: 2rem;
+}
+
+
+/* FORM */
+
+.contact-section {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 6rem;
+
+    padding: 7rem 0;
+
+    border-top: 1px solid var(--border);
+}
+
+
+.contact-section h2 {
+    margin-bottom: 1.5rem;
+
+    font-size: 3rem;
+}
+
+
+#contact-form {
+    padding: 2rem;
+
+    border: 1px solid var(--border);
+
+    background: var(--surface);
+}
+
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+
+.form-field {
+    margin-bottom: 1.4rem;
+}
+
+
+.form-field label {
+    display: block;
+
+    margin-bottom: 0.5rem;
+
+    color: var(--text);
+
+    font-size: 0.78rem;
+}
+
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+
+    padding: 0.95rem 1rem;
+
+    border: 1px solid #333;
+    outline: none;
+
+    background: #0e0e0e;
+    color: var(--text);
+
+    font: inherit;
+}
+
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    border-color: var(--accent);
+}
+
+
+textarea {
+    resize: vertical;
+}
+
+
+button {
+    padding: 1rem 1.5rem;
+
+    border: 0;
+
+    background: var(--accent);
+    color: #090909;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: opacity 0.2s ease;
+}
+
+
+button:hover {
+    opacity: 0.8;
+}
+
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid var(--border);
+}
+
+
+.footer-inner {
+    min-height: 120px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.footer-inner p {
+    font-size: 0.75rem;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .nav-links {
+        gap: 0.8rem;
+    }
+
+
+    .nav-links a {
+        font-size: 0.72rem;
+    }
+
+
+    #hero {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+
+    .hero-visual img {
+        height: 480px;
+    }
+
+
+    .card-half,
+    .card-third {
+        grid-column: span 12;
+    }
+
+
+    .split-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+
+    .artist-feature {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+
+    .artist-feature.reverse .artist-image {
+        order: 0;
+    }
+
+
+    .artist-image img {
+        height: 520px;
+    }
+
+
+    .about-intro {
+        grid-template-columns: 1fr;
+    }
+
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .contact-section {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+
+    .footer-inner {
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+}
