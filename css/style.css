@@ -39,6 +39,10 @@ body {
             sans-serif;
 
     line-height: 1.6;
+
+    transition:
+            background 0.3s ease,
+            color 0.3s ease;
 }
 
 
@@ -73,9 +77,7 @@ p {
 }
 
 
-/* -------------------------------- */
-/* FLEXBOX NAVIGATION */
-/* -------------------------------- */
+/* NAVIGATION */
 
 .site-header {
     position: sticky;
@@ -85,15 +87,17 @@ p {
 
     background: rgba(11, 11, 11, 0.96);
 
-    border-bottom:
-            1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+
+    transition:
+            background 0.3s ease;
 }
 
 
 .nav-wrap {
     width: min(92%, var(--page-width));
 
-    height: 78px;
+    min-height: 78px;
 
     margin: 0 auto;
 
@@ -102,6 +106,8 @@ p {
     align-items: center;
 
     justify-content: space-between;
+
+    gap: 2rem;
 }
 
 
@@ -111,6 +117,8 @@ p {
     font-weight: 800;
 
     letter-spacing: -0.05em;
+
+    white-space: nowrap;
 }
 
 
@@ -148,9 +156,54 @@ p {
 }
 
 
-/* -------------------------------- */
+/* THEME BUTTON */
+
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid var(--border);
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: var(--text);
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    opacity: 1;
+
+    transition:
+            background 0.2s ease,
+            color 0.2s ease,
+            border-color 0.2s ease,
+            transform 0.2s ease;
+}
+
+
+.theme-toggle:hover {
+    background: var(--surface-light);
+
+    opacity: 1;
+
+    transform: rotate(12deg);
+}
+
+
 /* HERO */
-/* -------------------------------- */
 
 #hero {
     min-height: 78vh;
@@ -254,9 +307,7 @@ p {
 }
 
 
-/* -------------------------------- */
 /* FLEXBOX FEATURE CARDS */
-/* -------------------------------- */
 
 .featured-section {
     padding: 7rem 0;
@@ -370,9 +421,7 @@ p {
 }
 
 
-/* -------------------------------- */
 /* SECTIONS */
-/* -------------------------------- */
 
 .section {
     padding: 7rem 0;
@@ -399,9 +448,7 @@ p {
 }
 
 
-/* -------------------------------- */
 /* ARTIST GRID */
-/* -------------------------------- */
 
 .roster-grid {
     display: grid;
@@ -487,6 +534,8 @@ p {
 .card-info h3 {
     margin: 0.4rem 0;
 
+    color: white;
+
     font-size: 2rem;
 }
 
@@ -498,9 +547,7 @@ p {
 }
 
 
-/* -------------------------------- */
 /* HOME INFORMATION */
-/* -------------------------------- */
 
 .split-section {
     display: grid;
@@ -566,9 +613,7 @@ p {
 }
 
 
-/* -------------------------------- */
 /* INNER PAGE */
-/* -------------------------------- */
 
 .inner-page {
     padding-bottom: 8rem;
@@ -604,9 +649,7 @@ p {
 }
 
 
-/* -------------------------------- */
 /* FLEX INFO BAR */
-/* -------------------------------- */
 
 .genre-flex,
 .icon-summary-flex {
@@ -654,9 +697,7 @@ p {
 }
 
 
-/* -------------------------------- */
 /* ARTIST FEATURE */
-/* -------------------------------- */
 
 .artist-feature {
     display: grid;
@@ -763,9 +804,7 @@ p {
 }
 
 
-/* -------------------------------- */
 /* IMAGE GRID GALLERY */
-/* -------------------------------- */
 
 .gallery-section {
     padding: 7rem 0;
@@ -852,9 +891,7 @@ figcaption {
 }
 
 
-/* -------------------------------- */
 /* ORDERED LIST */
-/* -------------------------------- */
 
 .listening-section {
     padding: 6rem 0;
@@ -899,9 +936,7 @@ figcaption {
 }
 
 
-/* -------------------------------- */
-/* GRID AREAS PAGE */
-/* -------------------------------- */
+/* GRID AREAS */
 
 .grid-page {
     min-height: 100vh;
@@ -1022,9 +1057,7 @@ figcaption {
 }
 
 
-/* -------------------------------- */
 /* TABLE */
-/* -------------------------------- */
 
 .comparison-section {
     padding-top: 6rem;
@@ -1084,9 +1117,7 @@ table td {
 }
 
 
-/* -------------------------------- */
 /* ABOUT */
-/* -------------------------------- */
 
 .about-intro {
     display: flex;
@@ -1130,9 +1161,7 @@ table td {
 }
 
 
-/* -------------------------------- */
 /* TEAM FLEX */
-/* -------------------------------- */
 
 .team-section {
     padding: 7rem 0;
@@ -1199,9 +1228,7 @@ table td {
 }
 
 
-/* -------------------------------- */
 /* FORM */
-/* -------------------------------- */
 
 .contact-section {
     display: grid;
@@ -1329,9 +1356,7 @@ button:hover {
 }
 
 
-/* -------------------------------- */
 /* FOOTER */
-/* -------------------------------- */
 
 footer {
     border-top:
@@ -1357,9 +1382,66 @@ footer {
 }
 
 
-/* -------------------------------- */
+/* LIGHT THEME */
+
+body.light-theme {
+    --bg: #f4f1e8;
+    --surface: #ffffff;
+    --surface-light: #ebe7dc;
+
+    --text: #151515;
+    --muted: #696969;
+
+    --accent: #668c00;
+    --border: #d4d0c5;
+}
+
+
+body.light-theme .site-header {
+    background:
+            rgba(244, 241, 232, 0.96);
+}
+
+
+body.light-theme .nav-links a {
+    color: #696969;
+}
+
+
+body.light-theme .nav-links a:hover,
+body.light-theme .nav-links a.active {
+    color: #151515;
+}
+
+
+body.light-theme .artist-sidebar {
+    background: #ece8dd;
+}
+
+
+body.light-theme .form-field input,
+body.light-theme .form-field select,
+body.light-theme .form-field textarea {
+    background: #ffffff;
+
+    color: #151515;
+
+    border-color: #cccccc;
+}
+
+
+body.light-theme .card-info h3,
+body.light-theme .card-info p {
+    color: #ffffff;
+}
+
+
+body.light-theme .gallery-item figcaption {
+    color: #ffffff;
+}
+
+
 /* RESPONSIVE */
-/* -------------------------------- */
 
 @media (max-width: 900px) {
 
@@ -1394,15 +1476,10 @@ footer {
 @media (max-width: 700px) {
 
     .nav-wrap {
-        height: auto;
-
         padding:
                 1rem 0;
 
-        flex-direction: column;
-
-        align-items:
-                flex-start;
+        flex-wrap: wrap;
 
         gap: 1rem;
     }
@@ -1412,6 +1489,13 @@ footer {
         flex-wrap: wrap;
 
         gap: 1rem;
+    }
+
+
+    nav {
+        order: 3;
+
+        width: 100%;
     }
 
 
