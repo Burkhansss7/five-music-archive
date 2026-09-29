@@ -1,509 +1,632 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Project by Burkhan and Islam -->
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0">
+
     <title>FIVE. | New Wave</title>
 
-    <link rel="stylesheet" href="css/style.css">
+
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+
+
+    <link
+            rel="stylesheet"
+            href="css/style.css">
+
 </head>
+
 
 <body>
 
-<header class="site-header">
 
-    <div class="nav-wrap">
+<nav
+        class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary sticky-top">
 
-        <a href="index.html" class="logo">
+    <div class="container">
+
+        <a
+                class="navbar-brand logo-brand"
+                href="index.html">
+
             FIVE<span>.</span>
+
         </a>
 
-        <nav>
 
-            <ul class="nav-links">
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
 
-                <li>
-                    <a href="index.html">
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div
+                class="collapse navbar-collapse"
+                id="mainNavbar">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+
+                <li class="nav-item">
+                    <a
+                            class="nav-link"
+                            href="index.html">
+
                         Home
+
                     </a>
                 </li>
 
-                <li>
-                    <a class="active" href="newwave.html">
+
+                <li class="nav-item">
+                    <a
+                            class="nav-link active"
+                            aria-current="page"
+                            href="newwave.html">
+
                         New Wave
+
                     </a>
                 </li>
 
-                <li>
-                    <a href="icons.html">
+
+                <li class="nav-item">
+                    <a
+                            class="nav-link"
+                            href="icons.html">
+
                         Icons
+
                     </a>
                 </li>
 
-                <li>
-                    <a href="about.html">
+
+                <li class="nav-item">
+                    <a
+                            class="nav-link"
+                            href="about.html">
+
                         About
+
                     </a>
+                </li>
+
+
+                <li class="nav-item ms-lg-2">
+
+                    <button
+                            id="theme-toggle"
+                            class="theme-toggle"
+                            type="button"
+                            aria-label="Switch theme">
+
+                        ☀
+
+                    </button>
+
                 </li>
 
             </ul>
 
-        </nav>
-
-        <button
-                id="theme-toggle"
-                class="theme-toggle"
-                type="button"
-                aria-label="Switch theme">
-            ☀
-        </button>
+        </div>
 
     </div>
 
-</header>
+</nav>
 
 
-<main class="page-shell inner-page">
 
-    <div class="page-heading">
-
-        <p class="eyebrow">
-            01 / NEW WAVE
-        </p>
-
-        <h1>
-            Artists shaping
-            a newer sound.
-        </h1>
-
-        <p>
-            Three artists connected to the newer
-            generation of experimental trap and rage music.
-        </p>
-
-    </div>
+<main>
 
 
-    <section class="genre-flex">
+    <!-- RESPONSIVE TYPOGRAPHY -->
 
-        <div>
-            <span>3</span>
+    <section class="container py-5">
 
-            <p>
-                Artists
+        <div class="py-lg-5">
+
+            <p class="eyebrow mb-3">
+                01 / NEW WAVE
             </p>
-        </div>
 
+            <h1 class="responsive-title fw-bold mb-4">
+                Artists shaping<br>
+                a newer sound.
+            </h1>
 
-        <div>
-            <span>3</span>
+            <p class="responsive-copy lead col-lg-7">
 
-            <p>
-                Different styles
+                Yeat, Playboi Carti and Ken Carson
+                represent different sides of modern
+                experimental trap and rage music.
+
             </p>
-        </div>
 
-
-        <div>
-            <span>1</span>
-
-            <p>
-                New generation
-            </p>
         </div>
 
     </section>
 
 
-    <article id="yeat" class="artist-feature">
 
-        <div class="artist-image">
+    <!-- BOOTSTRAP GRID -->
 
-            <img
-                    src="images/yeat.jpg"
-                    alt="Yeat">
+    <section class="container py-5">
 
-        </div>
+        <div
+                id="yeat"
+                class="row align-items-center g-5 mb-5">
 
-
-        <div class="artist-description">
-
-            <p class="artist-number">
-                01
-            </p>
-
-            <h2>
-                Yeat
-            </h2>
-
-            <p class="artist-subtitle">
-                Irvine, California
-            </p>
-
-            <p>
-                Yeat, born Noah Olivier Smith,
-                is an American rapper, songwriter and producer.
-                He became widely known in 2021 with projects including
-                <em>4L</em> and <em>Up 2 Më</em>.
-            </p>
-
-            <h3>
-                Quick facts
-            </h3>
-
-            <ul class="fact-list">
-
-                <li>
-                    Real name: Noah Olivier Smith
-                </li>
-
-                <li>
-                    Genre: rage, trap,
-                    experimental hip-hop
-                </li>
-
-                <li>
-                    Breakthrough period: 2021
-                </li>
-
-            </ul>
-
-        </div>
-
-    </article>
-
-
-    <article id="carti" class="artist-feature reverse">
-
-        <div class="artist-image">
-
-            <img
-                    src="images/carti.jpg"
-                    alt="Playboi Carti">
-
-        </div>
-
-
-        <div class="artist-description">
-
-            <p class="artist-number">
-                02
-            </p>
-
-            <h2>
-                Playboi Carti
-            </h2>
-
-            <p class="artist-subtitle">
-                Atlanta, Georgia
-            </p>
-
-            <p>
-                Playboi Carti, born Jordan Terrell Carter,
-                is an Atlanta rapper known for his unconventional
-                vocal style, minimalist lyrics and strong visual identity.
-            </p>
-
-            <h3>
-                Quick facts
-            </h3>
-
-            <ul class="fact-list">
-
-                <li>
-                    Real name: Jordan Terrell Carter
-                </li>
-
-                <li>
-                    Founder of the Opium label
-                </li>
-
-                <li>
-                    Known for experimental vocal styles
-                </li>
-
-            </ul>
-
-        </div>
-
-    </article>
-
-
-    <article id="ken" class="artist-feature">
-
-        <div class="artist-image">
-
-            <img
-                    src="images/ken.jpg"
-                    alt="Ken Carson">
-
-        </div>
-
-
-        <div class="artist-description">
-
-            <p class="artist-number">
-                03
-            </p>
-
-            <h2>
-                Ken Carson
-            </h2>
-
-            <p class="artist-subtitle">
-                Atlanta, Georgia
-            </p>
-
-            <p>
-                Ken Carson is an Atlanta rapper and producer
-                associated with Playboi Carti's Opium label.
-                He developed an energetic style built around
-                distorted synths and heavy production.
-            </p>
-
-            <h3>
-                Quick facts
-            </h3>
-
-            <ul class="fact-list">
-
-                <li>
-                    Born in Atlanta
-                </li>
-
-                <li>
-                    Signed to Opium
-                </li>
-
-                <li>
-                    Projects include Project X
-                    and A Great Chaos
-                </li>
-
-            </ul>
-
-        </div>
-
-    </article>
-
-
-    <section class="gallery-section">
-
-        <div class="section-title">
-
-            <p class="eyebrow">
-                GRID GALLERY
-            </p>
-
-            <h2>
-                Visual archive
-            </h2>
-
-            <p>
-                Ten images from five artists featured
-                across the FIVE. archive.
-            </p>
-
-        </div>
-
-
-        <div class="image-gallery">
-
-            <figure class="gallery-item">
+            <div class="col-12 col-lg-6">
 
                 <img
                         src="images/yeat.jpg"
-                        alt="Yeat portrait">
+                        class="img-fluid artist-feature-image"
+                        alt="Yeat">
 
-                <figcaption>
+            </div>
+
+
+            <div class="col-12 col-lg-6">
+
+                <p class="eyebrow mb-3">
+                    01
+                </p>
+
+                <h2 class="display-3 fw-bold mb-3">
                     Yeat
-                </figcaption>
+                </h2>
 
-            </figure>
+                <p class="text-secondary">
+                    Experimental artist known for distorted
+                    production, unusual vocals and futuristic
+                    trap influences.
+                </p>
+
+                <a
+                        href="#artistCarousel"
+                        class="btn btn-success mt-3">
+
+                    View Gallery
+
+                </a>
+
+            </div>
+
+        </div>
 
 
-            <figure class="gallery-item">
+
+        <div
+                id="carti"
+                class="row align-items-center g-5 py-5">
+
+            <div class="col-12 col-lg-6 order-lg-2">
 
                 <img
                         src="images/carti.jpg"
-                        alt="Playboi Carti portrait">
+                        class="img-fluid artist-feature-image"
+                        alt="Playboi Carti">
 
-                <figcaption>
+            </div>
+
+
+            <div class="col-12 col-lg-6 order-lg-1">
+
+                <p class="eyebrow mb-3">
+                    02
+                </p>
+
+                <h2 class="display-3 fw-bold mb-3">
                     Playboi Carti
-                </figcaption>
+                </h2>
 
-            </figure>
+                <p class="text-secondary">
+                    Atlanta rapper known for experimental
+                    vocals, minimalist lyrics and strong
+                    visual direction.
+                </p>
 
+            </div>
 
-            <figure class="gallery-item">
-
-                <img
-                        src="images/future.jpg"
-                        alt="Future portrait">
-
-                <figcaption>
-                    Future
-                </figcaption>
-
-            </figure>
+        </div>
 
 
-            <figure class="gallery-item">
 
-                <img
-                        src="images/drake.jpg"
-                        alt="Drake portrait">
+        <div
+                id="ken"
+                class="row align-items-center g-5 py-5">
 
-                <figcaption>
-                    Drake
-                </figcaption>
-
-            </figure>
-
-
-            <figure class="gallery-item">
+            <div class="col-12 col-lg-6">
 
                 <img
                         src="images/ken.jpg"
-                        alt="Ken Carson portrait">
+                        class="img-fluid artist-feature-image"
+                        alt="Ken Carson">
 
-                <figcaption>
+            </div>
+
+
+            <div class="col-12 col-lg-6">
+
+                <p class="eyebrow mb-3">
+                    03
+                </p>
+
+                <h2 class="display-3 fw-bold mb-3">
                     Ken Carson
-                </figcaption>
+                </h2>
 
-            </figure>
+                <p class="text-secondary">
+                    Atlanta artist associated with Opium,
+                    combining heavy synthesizers with
+                    aggressive and energetic production.
+                </p>
 
-
-            <figure class="gallery-item">
-
-                <img
-                        src="images/yeat2.jpg"
-                        alt="Alternative photo of Yeat">
-
-                <figcaption>
-                    Yeat / Alternative
-                </figcaption>
-
-            </figure>
-
-
-            <figure class="gallery-item">
-
-                <img
-                        src="images/carti2.jpg"
-                        alt="Alternative photo of Playboi Carti">
-
-                <figcaption>
-                    Playboi Carti / Alternative
-                </figcaption>
-
-            </figure>
-
-
-            <figure class="gallery-item">
-
-                <img
-                        src="images/future2.jpg"
-                        alt="Alternative photo of Future">
-
-                <figcaption>
-                    Future / Alternative
-                </figcaption>
-
-            </figure>
-
-
-            <figure class="gallery-item">
-
-                <img
-                        src="images/drake2.jpg"
-                        alt="Alternative photo of Drake">
-
-                <figcaption>
-                    Drake / Alternative
-                </figcaption>
-
-            </figure>
-
-
-            <figure class="gallery-item">
-
-                <img
-                        src="images/ken2.jpg"
-                        alt="Alternative photo of Ken Carson">
-
-                <figcaption>
-                    Ken Carson / Alternative
-                </figcaption>
-
-            </figure>
+            </div>
 
         </div>
 
     </section>
 
 
-    <section class="listening-section">
 
-        <p class="eyebrow">
-            START HERE
-        </p>
+    <!-- =========================
+         BOOTSTRAP CAROUSEL
+         10 IMAGES
+    ========================== -->
 
-        <h2>
-            Three albums from this page
-        </h2>
+    <section
+            id="artistCarouselSection"
+            class="container py-5">
 
-        <ol class="listening-list">
+        <div class="mb-5">
 
-            <li>
-                <span>
-                    Yeat
+            <p class="eyebrow mb-3">
+                BOOTSTRAP CAROUSEL
+            </p>
+
+            <h2 class="display-5 fw-bold">
+                Visual Archive
+            </h2>
+
+            <p class="text-secondary mt-3">
+                Ten images from five artists.
+            </p>
+
+        </div>
+
+
+
+        <div
+                id="artistCarousel"
+                class="carousel slide"
+                data-bs-ride="carousel">
+
+
+            <!-- INDICATORS -->
+
+            <div class="carousel-indicators">
+
+                <button
+                        type="button"
+                        data-bs-target="#artistCarousel"
+                        data-bs-slide-to="0"
+                        class="active"
+                        aria-current="true"
+                        aria-label="Slide 1">
+                </button>
+
+                <button
+                        type="button"
+                        data-bs-target="#artistCarousel"
+                        data-bs-slide-to="1"
+                        aria-label="Slide 2">
+                </button>
+
+                <button
+                        type="button"
+                        data-bs-target="#artistCarousel"
+                        data-bs-slide-to="2"
+                        aria-label="Slide 3">
+                </button>
+
+                <button
+                        type="button"
+                        data-bs-target="#artistCarousel"
+                        data-bs-slide-to="3"
+                        aria-label="Slide 4">
+                </button>
+
+                <button
+                        type="button"
+                        data-bs-target="#artistCarousel"
+                        data-bs-slide-to="4"
+                        aria-label="Slide 5">
+                </button>
+
+                <button
+                        type="button"
+                        data-bs-target="#artistCarousel"
+                        data-bs-slide-to="5"
+                        aria-label="Slide 6">
+                </button>
+
+                <button
+                        type="button"
+                        data-bs-target="#artistCarousel"
+                        data-bs-slide-to="6"
+                        aria-label="Slide 7">
+                </button>
+
+                <button
+                        type="button"
+                        data-bs-target="#artistCarousel"
+                        data-bs-slide-to="7"
+                        aria-label="Slide 8">
+                </button>
+
+                <button
+                        type="button"
+                        data-bs-target="#artistCarousel"
+                        data-bs-slide-to="8"
+                        aria-label="Slide 9">
+                </button>
+
+                <button
+                        type="button"
+                        data-bs-target="#artistCarousel"
+                        data-bs-slide-to="9"
+                        aria-label="Slide 10">
+                </button>
+
+            </div>
+
+
+
+            <!-- SLIDES -->
+
+            <div class="carousel-inner">
+
+
+                <div class="carousel-item active">
+
+                    <img
+                            src="images/yeat.jpg"
+                            class="d-block w-100 carousel-image"
+                            alt="Yeat">
+
+                    <div class="carousel-caption">
+                        <h5>Yeat</h5>
+                    </div>
+
+                </div>
+
+
+
+                <div class="carousel-item">
+
+                    <img
+                            src="images/yeat2.jpg"
+                            class="d-block w-100 carousel-image"
+                            alt="Alternative portrait of Yeat">
+
+                    <div class="carousel-caption">
+                        <h5>Yeat</h5>
+                    </div>
+
+                </div>
+
+
+
+                <div class="carousel-item">
+
+                    <img
+                            src="images/carti.jpg"
+                            class="d-block w-100 carousel-image"
+                            alt="Playboi Carti">
+
+                    <div class="carousel-caption">
+                        <h5>Playboi Carti</h5>
+                    </div>
+
+                </div>
+
+
+
+                <div class="carousel-item">
+
+                    <img
+                            src="images/carti2.jpg"
+                            class="d-block w-100 carousel-image"
+                            alt="Alternative portrait of Playboi Carti">
+
+                    <div class="carousel-caption">
+                        <h5>Playboi Carti</h5>
+                    </div>
+
+                </div>
+
+
+
+                <div class="carousel-item">
+
+                    <img
+                            src="images/future.jpg"
+                            class="d-block w-100 carousel-image"
+                            alt="Future">
+
+                    <div class="carousel-caption">
+                        <h5>Future</h5>
+                    </div>
+
+                </div>
+
+
+
+                <div class="carousel-item">
+
+                    <img
+                            src="images/future2.jpg"
+                            class="d-block w-100 carousel-image"
+                            alt="Alternative portrait of Future">
+
+                    <div class="carousel-caption">
+                        <h5>Future</h5>
+                    </div>
+
+                </div>
+
+
+
+                <div class="carousel-item">
+
+                    <img
+                            src="images/drake.jpg"
+                            class="d-block w-100 carousel-image"
+                            alt="Drake">
+
+                    <div class="carousel-caption">
+                        <h5>Drake</h5>
+                    </div>
+
+                </div>
+
+
+
+                <div class="carousel-item">
+
+                    <img
+                            src="images/drake2.jpg"
+                            class="d-block w-100 carousel-image"
+                            alt="Alternative portrait of Drake">
+
+                    <div class="carousel-caption">
+                        <h5>Drake</h5>
+                    </div>
+
+                </div>
+
+
+
+                <div class="carousel-item">
+
+                    <img
+                            src="images/ken.jpg"
+                            class="d-block w-100 carousel-image"
+                            alt="Ken Carson">
+
+                    <div class="carousel-caption">
+                        <h5>Ken Carson</h5>
+                    </div>
+
+                </div>
+
+
+
+                <div class="carousel-item">
+
+                    <img
+                            src="images/ken2.jpg"
+                            class="d-block w-100 carousel-image"
+                            alt="Alternative portrait of Ken Carson">
+
+                    <div class="carousel-caption">
+                        <h5>Ken Carson</h5>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- PREVIOUS -->
+
+            <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#artistCarousel"
+                    data-bs-slide="prev">
+
+                <span
+                        class="carousel-control-prev-icon"
+                        aria-hidden="true">
                 </span>
 
-                Up 2 Më
-            </li>
-
-            <li>
-                <span>
-                    Playboi Carti
+                <span class="visually-hidden">
+                    Previous
                 </span>
 
-                Whole Lotta Red
-            </li>
+            </button>
 
-            <li>
-                <span>
-                    Ken Carson
+
+
+            <!-- NEXT -->
+
+            <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#artistCarousel"
+                    data-bs-slide="next">
+
+                <span
+                        class="carousel-control-next-icon"
+                        aria-hidden="true">
                 </span>
 
-                A Great Chaos
-            </li>
+                <span class="visually-hidden">
+                    Next
+                </span>
 
-        </ol>
+            </button>
+
+
+        </div>
 
     </section>
+
 
 </main>
 
 
-<footer>
 
-    <div class="page-shell footer-inner">
+<footer class="site-footer mt-5">
 
-        <p>
+    <div
+            class="container py-4 d-flex flex-column flex-md-row justify-content-between gap-2">
+
+        <span>
             FIVE. Music Archive
-        </p>
+        </span>
 
-        <p>
+        <span>
             Created by Burkhan & Islam
-        </p>
+        </span>
 
     </div>
 
 </footer>
 
+
+
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
 
 <script src="js/theme.js"></script>
 

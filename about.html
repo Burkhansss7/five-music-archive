@@ -1,120 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Project by Burkhan and Islam -->
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0">
+
     <title>FIVE. | About</title>
 
-    <link rel="stylesheet" href="css/style.css">
+
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+
+
+    <link
+            rel="stylesheet"
+            href="css/style.css">
+
 </head>
+
 
 <body>
 
-<header class="site-header">
 
-    <div class="nav-wrap">
+<nav
+        class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary sticky-top">
 
-        <a href="index.html" class="logo">
+    <div class="container">
+
+        <a
+                class="navbar-brand logo-brand"
+                href="index.html">
+
             FIVE<span>.</span>
+
         </a>
 
 
-        <nav>
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
 
-            <ul class="nav-links">
+            <span class="navbar-toggler-icon"></span>
 
-                <li>
-                    <a href="index.html">
+        </button>
+
+
+        <div
+                class="collapse navbar-collapse"
+                id="mainNavbar">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+
+                <li class="nav-item">
+
+                    <a
+                            class="nav-link"
+                            href="index.html">
+
                         Home
+
                     </a>
+
                 </li>
 
 
-                <li>
-                    <a href="newwave.html">
+                <li class="nav-item">
+
+                    <a
+                            class="nav-link"
+                            href="newwave.html">
+
                         New Wave
+
                     </a>
+
                 </li>
 
 
-                <li>
-                    <a href="icons.html">
+                <li class="nav-item">
+
+                    <a
+                            class="nav-link"
+                            href="icons.html">
+
                         Icons
+
                     </a>
+
                 </li>
 
 
-                <li>
-                    <a class="active" href="about.html">
+                <li class="nav-item">
+
+                    <a
+                            class="nav-link active"
+                            aria-current="page"
+                            href="about.html">
+
                         About
+
                     </a>
+
+                </li>
+
+
+                <li class="nav-item ms-lg-2">
+
+                    <button
+                            id="theme-toggle"
+                            class="theme-toggle"
+                            type="button"
+                            aria-label="Switch theme">
+
+                        ☀
+
+                    </button>
+
                 </li>
 
             </ul>
 
-        </nav>
-
-        <button
-                id="theme-toggle"
-                class="theme-toggle"
-                type="button"
-                aria-label="Switch theme">
-            ☀
-        </button>
+        </div>
 
     </div>
 
-</header>
+</nav>
 
 
-<main class="page-shell inner-page">
 
-    <div class="page-heading">
-
-        <p class="eyebrow">
-            ABOUT THE PROJECT
-        </p>
-
-        <h1>
-            Made by two
-            music listeners.
-        </h1>
-
-        <p>
-            FIVE. is a student website created
-            as part of our Web Technologies course.
-        </p>
-
-    </div>
+<main>
 
 
-    <section class="about-intro">
+    <section class="container py-5">
 
-        <img
-                class="round-image"
-                src="images/carti.jpg"
-                alt="Playboi Carti">
+        <div class="py-lg-5">
 
-
-        <div>
-
-            <p class="eyebrow">
-                THE IDEA
+            <p class="eyebrow mb-3">
+                ABOUT THE PROJECT
             </p>
 
-            <h2>
-                A personal archive,
-                not a ranking.
-            </h2>
+            <h1 class="responsive-title fw-bold mb-4">
 
-            <p>
-                The purpose of the website is
-                to briefly introduce several
-                of our favorite artists and show
-                how different styles of modern hip-hop
-                can exist within one playlist.
+                Made by two<br>
+                music listeners.
+
+            </h1>
+
+
+            <p class="responsive-copy lead col-lg-7">
+
+                FIVE. is a student website created
+                for the Web Technologies course.
+
             </p>
 
         </div>
@@ -122,208 +169,424 @@
     </section>
 
 
-    <section class="team-section">
 
-        <p class="eyebrow">
-            ABOUT THE TEAM MEMBERS
+    <!-- TWO-COLUMN BOOTSTRAP GRID -->
+
+    <section class="container py-5">
+
+        <div class="row align-items-center g-5">
+
+
+            <div class="col-12 col-lg-6 text-center text-lg-start">
+
+                <img
+                        src="images/logo.png"
+                        class="about-logo"
+                        alt="FIVE Music Archive logo">
+
+            </div>
+
+
+            <div class="col-12 col-lg-6">
+
+                <p class="eyebrow mb-3">
+                    THE IDEA
+                </p>
+
+                <h2 class="display-4 fw-bold mb-4">
+
+                    A personal archive,
+                    not a ranking.
+
+                </h2>
+
+
+                <p class="text-secondary">
+
+                    The purpose of FIVE. is to introduce
+                    several of our favorite artists and
+                    demonstrate how different styles of
+                    modern hip-hop can exist within one
+                    collection.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- TEAM -->
+
+    <section class="container py-5">
+
+        <p class="eyebrow mb-3">
+            TEAM
         </p>
 
-        <h2>
-            Who built the website?
+        <h2 class="display-5 fw-bold mb-5">
+            Project members
         </h2>
 
 
-        <div class="team-flex">
-
-            <article class="team-card">
-
-                <p class="member-number">
-                    01
-                </p>
-
-                <h3>
-                    Burkhan
-                </h3>
-
-                <p>
-                    Worked on the Home page
-                    and New Wave page.
-                    Interested in music,
-                    technology and modern digital design.
-                </p>
-
-            </article>
+        <div class="row g-4">
 
 
-            <article class="team-card">
+            <div class="col-12 col-md-6">
 
-                <p class="member-number">
-                    02
-                </p>
+                <article class="info-panel h-100 p-4">
 
-                <h3>
-                    Islam
-                </h3>
+                    <span class="archive-number">
+                        01
+                    </span>
 
-                <p>
-                    Worked on the Icons
-                    and About pages.
-                    Helped organize the content,
-                    layout and visual style
-                    of the website.
-                </p>
+                    <h3 class="mt-4">
+                        Burkhan
+                    </h3>
 
-            </article>
+                    <p class="mt-3 mb-0">
+                        Worked on the Home and
+                        New Wave pages.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+            <div class="col-12 col-md-6">
+
+                <article class="info-panel h-100 p-4">
+
+                    <span class="archive-number">
+                        02
+                    </span>
+
+                    <h3 class="mt-4">
+                        Islam
+                    </h3>
+
+                    <p class="mt-3 mb-0">
+                        Worked on the Icons and
+                        About pages.
+                    </p>
+
+                </article>
+
+            </div>
+
 
         </div>
 
     </section>
 
 
-    <section class="contact-section">
 
-        <div>
+    <!-- =========================
+         BOOTSTRAP RESPONSIVE FORM
+    ========================== -->
 
-            <p class="eyebrow">
-                YOUR TURN
-            </p>
+    <section class="container py-5">
 
-            <h2>
-                Who should be added?
-            </h2>
+        <div class="row g-5">
 
-            <p>
-                Choose your favorite artist
-                from our selection
-                and leave a message.
-            </p>
+
+            <div class="col-12 col-lg-5">
+
+                <p class="eyebrow mb-3">
+                    CONTACT
+                </p>
+
+                <h2 class="display-5 fw-bold mb-4">
+
+                    Who should
+                    we add next?
+
+                </h2>
+
+
+                <p class="text-secondary">
+
+                    Choose your favorite artist
+                    and leave us a message.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="col-12 col-lg-7">
+
+
+                <form
+                        class="site-form p-3 p-sm-4 p-lg-5"
+                        action="#"
+                        method="post">
+
+
+                    <!-- NAME + EMAIL -->
+
+                    <div class="row g-3">
+
+
+                        <div class="col-12 col-md-6">
+
+                            <label
+                                    for="name"
+                                    class="form-label">
+
+                                Name
+
+                            </label>
+
+                            <div class="input-group">
+
+                                <span class="input-group-text">
+                                    @
+                                </span>
+
+                                <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        class="form-control"
+                                        placeholder="Your name"
+                                        required>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="col-12 col-md-6">
+
+                            <label
+                                    for="email"
+                                    class="form-label">
+
+                                Email
+
+                            </label>
+
+
+                            <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    class="form-control"
+                                    placeholder="you@example.com"
+                                    required>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- SELECT -->
+
+                    <div class="mt-4">
+
+                        <label
+                                for="artist"
+                                class="form-label">
+
+                            Favorite artist
+
+                        </label>
+
+
+                        <select
+                                id="artist"
+                                name="artist"
+                                class="form-select">
+
+                            <option
+                                    value=""
+                                    selected>
+
+                                Choose an artist
+
+                            </option>
+
+                            <option value="yeat">
+                                Yeat
+                            </option>
+
+                            <option value="carti">
+                                Playboi Carti
+                            </option>
+
+                            <option value="future">
+                                Future
+                            </option>
+
+                            <option value="drake">
+                                Drake
+                            </option>
+
+                            <option value="ken">
+                                Ken Carson
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- RADIO BUTTONS -->
+
+                    <fieldset class="mt-4">
+
+                        <legend class="form-label">
+
+                            Favorite category
+
+                        </legend>
+
+
+                        <div class="form-check">
+
+                            <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="category"
+                                    id="newWaveRadio"
+                                    value="new-wave">
+
+                            <label
+                                    class="form-check-label"
+                                    for="newWaveRadio">
+
+                                New Wave
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="form-check">
+
+                            <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="category"
+                                    id="iconsRadio"
+                                    value="icons">
+
+                            <label
+                                    class="form-check-label"
+                                    for="iconsRadio">
+
+                                Icons
+
+                            </label>
+
+                        </div>
+
+                    </fieldset>
+
+
+
+                    <!-- MESSAGE -->
+
+                    <div class="mt-4">
+
+                        <label
+                                for="message"
+                                class="form-label">
+
+                            Message
+
+                        </label>
+
+
+                        <textarea
+                                id="message"
+                                name="message"
+                                class="form-control"
+                                rows="5"
+                                placeholder="Tell us who we should add..."
+                                required></textarea>
+
+                    </div>
+
+
+
+                    <!-- CHECKBOX -->
+
+                    <div class="form-check mt-4">
+
+                        <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="updates">
+
+                        <label
+                                class="form-check-label"
+                                for="updates">
+
+                            Send me archive updates
+
+                        </label>
+
+                    </div>
+
+
+
+                    <button
+                            type="submit"
+                            class="btn btn-success btn-lg mt-4">
+
+                        Send Message
+
+                    </button>
+
+
+                </form>
+
+            </div>
+
 
         </div>
 
-
-        <form
-                id="contact-form"
-                action="#"
-                method="post">
-
-            <div class="form-row">
-
-                <div class="form-field">
-
-                    <label for="name">
-                        Name
-                    </label>
-
-                    <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Your name"
-                            required>
-
-                </div>
-
-
-                <div class="form-field">
-
-                    <label for="email">
-                        Email
-                    </label>
-
-                    <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="you@example.com"
-                            required>
-
-                </div>
-
-            </div>
-
-
-            <div class="form-field">
-
-                <label for="artist">
-                    Favorite artist
-                </label>
-
-                <select
-                        id="artist"
-                        name="artist">
-
-                    <option value="">
-                        Choose an artist
-                    </option>
-
-                    <option value="yeat">
-                        Yeat
-                    </option>
-
-                    <option value="carti">
-                        Playboi Carti
-                    </option>
-
-                    <option value="future">
-                        Future
-                    </option>
-
-                    <option value="drake">
-                        Drake
-                    </option>
-
-                    <option value="ken">
-                        Ken Carson
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <div class="form-field">
-
-                <label for="message">
-                    Message
-                </label>
-
-                <textarea
-                        id="message"
-                        name="message"
-                        rows="6"
-                        placeholder="Tell us who we should add next..."
-                        required></textarea>
-
-            </div>
-
-
-            <button type="submit">
-                Send message
-            </button>
-
-        </form>
-
     </section>
+
 
 </main>
 
 
-<footer>
 
-    <div class="page-shell footer-inner">
+<footer class="site-footer mt-5">
 
-        <p>
+    <div
+            class="container py-4 d-flex flex-column flex-md-row justify-content-between gap-2">
+
+        <span>
             FIVE. Music Archive
-        </p>
+        </span>
 
-        <p>
+        <span>
             Created by Burkhan & Islam
-        </p>
+        </span>
 
     </div>
 
 </footer>
 
+
+
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
 
 <script src="js/theme.js"></script>
 
