@@ -8,14 +8,23 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0">
 
+    <meta
+            name="description"
+            content="FIVE. Music Archive — a responsive student project about five favorite hip-hop artists.">
+
     <title>FIVE. | Music Archive</title>
 
-    <!-- Bootstrap 5 -->
+    <link
+            rel="icon"
+            type="image/png"
+            href="images/logo.png">
+
+    <!-- Bootstrap -->
     <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
             rel="stylesheet">
 
-    <!-- Our custom CSS -->
+    <!-- Custom CSS -->
     <link
             rel="stylesheet"
             href="css/style.css">
@@ -25,123 +34,147 @@
 <body>
 
 
-<!-- =========================
+<!-- ========================================
      BOOTSTRAP NAVBAR
-========================= -->
+======================================== -->
 
-<nav
-        class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary sticky-top">
+<header>
 
-    <div class="container">
+    <nav
+            class="navbar navbar-expand-lg navbar-dark site-navbar sticky-top">
 
-        <a
-                class="navbar-brand logo-brand"
-                href="index.html">
+        <div class="container">
 
-            FIVE<span>.</span>
+            <a
+                    class="navbar-brand site-logo"
+                    href="index.html"
+                    aria-label="FIVE home">
 
-        </a>
+                FIVE<span>.</span>
 
-
-        <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#mainNavbar"
-                aria-controls="mainNavbar"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-
-            <span class="navbar-toggler-icon"></span>
-
-        </button>
+            </a>
 
 
-        <div
-                class="collapse navbar-collapse"
-                id="mainNavbar">
+            <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mainNavbar"
+                    aria-controls="mainNavbar"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
 
-            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+                <span class="navbar-toggler-icon"></span>
 
-                <li class="nav-item">
-                    <a
-                            class="nav-link active"
-                            aria-current="page"
-                            href="index.html">
-
-                        Home
-
-                    </a>
-                </li>
+            </button>
 
 
-                <li class="nav-item">
-                    <a
-                            class="nav-link"
-                            href="newwave.html">
+            <div
+                    class="collapse navbar-collapse"
+                    id="mainNavbar">
 
-                        New Wave
+                <ul
+                        class="navbar-nav ms-auto
+                               align-items-lg-center
+                               gap-lg-3">
 
-                    </a>
-                </li>
+                    <li class="nav-item">
 
+                        <a
+                                class="nav-link active"
+                                aria-current="page"
+                                href="index.html">
 
-                <li class="nav-item">
-                    <a
-                            class="nav-link"
-                            href="icons.html">
+                            Home
 
-                        Icons
+                        </a>
 
-                    </a>
-                </li>
-
-
-                <li class="nav-item">
-                    <a
-                            class="nav-link"
-                            href="about.html">
-
-                        About
-
-                    </a>
-                </li>
+                    </li>
 
 
-                <li class="nav-item ms-lg-2">
+                    <li class="nav-item">
 
-                    <button
-                            id="theme-toggle"
-                            class="theme-toggle"
-                            type="button"
-                            aria-label="Switch theme">
+                        <a
+                                class="nav-link"
+                                href="newwave.html">
 
-                        ☀
+                            New Wave
 
-                    </button>
+                        </a>
 
-                </li>
+                    </li>
 
-            </ul>
+
+                    <li class="nav-item">
+
+                        <a
+                                class="nav-link"
+                                href="icons.html">
+
+                            Icons
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                                class="nav-link"
+                                href="about.html">
+
+                            About
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item ms-lg-2">
+
+                        <button
+                                id="theme-toggle"
+                                class="theme-toggle"
+                                type="button"
+                                aria-label="Switch to light mode"
+                                aria-pressed="false">
+
+                            ☀
+
+                        </button>
+
+                    </li>
+
+                </ul>
+
+            </div>
 
         </div>
 
-    </div>
+    </nav>
 
-</nav>
+</header>
+
 
 
 <main>
 
 
-    <!-- =========================
-         BOOTSTRAP GRID
-         TWO COLUMNS
-    ========================== -->
+    <!-- ========================================
+         HERO
+         BOOTSTRAP TWO-COLUMN GRID
+    ========================================= -->
 
-    <section class="container py-5">
+    <section
+            id="hero"
+            class="container py-5">
 
-        <div class="row align-items-center g-5 py-lg-5">
+        <div
+                class="row
+                       align-items-center
+                       g-5
+                       py-lg-5">
 
             <div class="col-12 col-lg-6">
 
@@ -149,7 +182,11 @@
                     PERSONAL MUSIC ARCHIVE / 2026
                 </p>
 
-                <h1 class="responsive-title fw-bold mb-4">
+
+                <h1
+                        class="responsive-title
+                               fw-bold
+                               mb-4">
 
                     Five artists.<br>
                     Five different worlds.
@@ -157,19 +194,25 @@
                 </h1>
 
 
-                <p class="responsive-copy lead mb-4">
+                <p
+                        class="responsive-copy
+                               lead
+                               mb-4">
 
-                    A personal collection dedicated to five artists
-                    whose music, sound and visual identity stand out
-                    to us the most.
+                    A personal collection dedicated
+                    to five artists whose sound,
+                    style and influence make them
+                    stand out to us.
 
                 </p>
 
 
+                <!-- Bootstrap button group -->
+
                 <div
-                        class="btn-group"
+                        class="btn-group flex-wrap"
                         role="group"
-                        aria-label="Archive navigation">
+                        aria-label="Explore archive">
 
                     <a
                             href="newwave.html"
@@ -178,6 +221,7 @@
                         New Wave
 
                     </a>
+
 
                     <a
                             href="icons.html"
@@ -201,8 +245,13 @@
                             class="img-fluid hero-image"
                             alt="Portrait of Yeat">
 
-                    <figcaption class="small text-secondary mt-2">
+                    <figcaption
+                            class="small
+                                   text-secondary
+                                   mt-2">
+
                         01 — YEAT
+
                     </figcaption>
 
                 </figure>
@@ -215,26 +264,80 @@
 
 
 
-    <!-- ====================================================
-         TASK 2
+    <!-- ========================================
+         FLEXBOX NAVIGATION
+         Assignment 2 Flexbox requirement
+    ========================================= -->
+
+    <section
+            class="container
+                   py-4
+                   border-top
+                   border-bottom
+                   border-secondary">
+
+        <nav
+                class="archive-navigation"
+                aria-label="Archive categories">
+
+            <a href="newwave.html#yeat">
+                Yeat
+            </a>
+
+            <a href="newwave.html#carti">
+                Playboi Carti
+            </a>
+
+            <a href="newwave.html#ken">
+                Ken Carson
+            </a>
+
+            <a href="icons.html#future">
+                Future
+            </a>
+
+            <a href="icons.html#drake">
+                Drake
+            </a>
+
+        </nav>
+
+    </section>
+
+
+
+    <!-- ========================================
          CSS MEDIA QUERY CARD GROUP
-         IMPORTANT: layout does NOT use Bootstrap Grid
-    ===================================================== -->
+         Desktop = 3
+         Tablet = 2
+         Mobile = 1
+         NO Bootstrap Grid for the layout
+    ========================================= -->
 
-    <section class="mq-section">
+    <section
+            class="mq-section"
+            aria-labelledby="featured-title">
 
-        <div class="mq-heading">
+        <div class="mb-5">
 
-            <p class="eyebrow">
-                MEDIA QUERY CARD GROUP
+            <p class="eyebrow mb-3">
+                FEATURED ARTISTS
             </p>
 
-            <h2>
-                Featured artists
+            <h2
+                    id="featured-title"
+                    class="section-heading">
+
+                Three different sounds
+
             </h2>
 
-            <p>
-                Resize the browser to see the layout change.
+
+            <p class="mt-3 mb-0">
+
+                A selection of artists from
+                different parts of the archive.
+
             </p>
 
         </div>
@@ -251,207 +354,20 @@
 
                 <div class="mq-card-body">
 
-                    <span>01</span>
-
-                    <h3>Yeat</h3>
-
-                    <p>
-                        Experimental trap and rage artist
-                        known for distorted production
-                        and unusual vocal delivery.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="mq-card">
-
-                <img
-                        src="images/carti.jpg"
-                        alt="Playboi Carti">
-
-                <div class="mq-card-body">
-
-                    <span>02</span>
-
-                    <h3>Playboi Carti</h3>
-
-                    <p>
-                        Atlanta artist known for an
-                        experimental approach to vocals,
-                        production and visual identity.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="mq-card">
-
-                <img
-                        src="images/drake.jpg"
-                        alt="Drake">
-
-                <div class="mq-card-body">
-
-                    <span>03</span>
-
-                    <h3>Drake</h3>
-
-                    <p>
-                        Canadian rapper and singer
-                        combining hip-hop, R&B
-                        and pop influences.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         BOOTSTRAP 3-COLUMN GRID
-    ========================== -->
-
-    <section class="container py-5 my-lg-5">
-
-        <div class="mb-5">
-
-            <p class="eyebrow mb-3">
-                BOOTSTRAP GRID
-            </p>
-
-            <h2 class="display-5 fw-bold mb-3">
-                Explore the archive
-            </h2>
-
-            <p class="text-secondary">
-                This section uses Bootstrap's 12-column grid.
-            </p>
-
-        </div>
-
-
-        <div class="row g-4">
-
-
-            <div class="col-12 col-md-6 col-lg-4">
-
-                <div class="info-panel h-100 p-4">
-
                     <span class="archive-number">
                         01
                     </span>
 
-                    <h3 class="mt-4">
-                        New Wave
-                    </h3>
-
-                    <p class="mt-3 mb-0">
-                        Yeat, Playboi Carti and Ken Carson.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-12 col-md-6 col-lg-4">
-
-                <div class="info-panel h-100 p-4">
-
-                    <span class="archive-number">
-                        02
-                    </span>
-
-                    <h3 class="mt-4">
-                        Icons
-                    </h3>
-
-                    <p class="mt-3 mb-0">
-                        Future and Drake.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-12 col-md-6 col-lg-4">
-
-                <div class="info-panel h-100 p-4">
-
-                    <span class="archive-number">
-                        05
-                    </span>
-
-                    <h3 class="mt-4">
-                        Artists
-                    </h3>
-
-                    <p class="mt-3 mb-0">
-                        Five artists across different
-                        styles of modern hip-hop.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         BOOTSTRAP CARDS
-    ========================== -->
-
-    <section class="container py-5">
-
-        <div class="mb-5">
-
-            <p class="eyebrow mb-3">
-                BOOTSTRAP CARDS
-            </p>
-
-            <h2 class="display-5 fw-bold">
-                Selected artists
-            </h2>
-
-        </div>
-
-
-        <div class="card-group bootstrap-card-group">
-
-
-            <article class="card site-card">
-
-                <img
-                        src="images/yeat.jpg"
-                        class="card-img-top"
-                        alt="Yeat">
-
-                <div class="card-body p-4">
-
-                    <h3 class="card-title">
+                    <h3>
                         Yeat
                     </h3>
 
-                    <p class="card-text">
-                        Experimental trap and rage.
+                    <p>
+                        Experimental production,
+                        unusual vocals and a futuristic
+                        approach to modern trap.
                     </p>
+
 
                     <a
                             href="newwave.html#yeat"
@@ -466,22 +382,29 @@
             </article>
 
 
-            <article class="card site-card">
+
+            <article class="mq-card">
 
                 <img
                         src="images/carti.jpg"
-                        class="card-img-top"
                         alt="Playboi Carti">
 
-                <div class="card-body p-4">
+                <div class="mq-card-body">
 
-                    <h3 class="card-title">
+                    <span class="archive-number">
+                        02
+                    </span>
+
+                    <h3>
                         Playboi Carti
                     </h3>
 
-                    <p class="card-text">
-                        Trap, rage and experimental hip-hop.
+                    <p>
+                        An experimental artist
+                        recognized for distinctive
+                        vocals and visual direction.
                     </p>
+
 
                     <a
                             href="newwave.html#carti"
@@ -496,22 +419,29 @@
             </article>
 
 
-            <article class="card site-card">
+
+            <article class="mq-card">
 
                 <img
                         src="images/drake.jpg"
-                        class="card-img-top"
                         alt="Drake">
 
-                <div class="card-body p-4">
+                <div class="mq-card-body">
 
-                    <h3 class="card-title">
+                    <span class="archive-number">
+                        03
+                    </span>
+
+                    <h3>
                         Drake
                     </h3>
 
-                    <p class="card-text">
-                        Hip-hop, R&B and pop.
+                    <p>
+                        A mainstream artist combining
+                        elements of hip-hop,
+                        R&B and pop.
                     </p>
+
 
                     <a
                             href="icons.html#drake"
@@ -531,13 +461,337 @@
     </section>
 
 
+
+    <!-- ========================================
+         BOOTSTRAP 12-COLUMN GRID
+         THREE COLUMNS
+    ========================================= -->
+
+    <section
+            class="container
+                   py-5
+                   px-sm-2
+                   mt-lg-4">
+
+        <div class="mb-5">
+
+            <p class="eyebrow mb-3">
+                EXPLORE THE ARCHIVE
+            </p>
+
+            <h2 class="section-heading">
+                Three parts of FIVE.
+            </h2>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <article
+                        class="info-panel
+                               h-100
+                               p-4">
+
+                    <span class="archive-number">
+                        01
+                    </span>
+
+                    <h3 class="mt-4">
+                        New Wave
+                    </h3>
+
+                    <p class="mt-3 mb-4">
+                        Yeat, Playboi Carti
+                        and Ken Carson.
+                    </p>
+
+                    <a
+                            href="newwave.html"
+                            class="btn btn-success btn-sm">
+
+                        Open page
+
+                    </a>
+
+                </article>
+
+            </div>
+
+
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <article
+                        class="info-panel
+                               h-100
+                               p-4">
+
+                    <span class="archive-number">
+                        02
+                    </span>
+
+                    <h3 class="mt-4">
+                        Icons
+                    </h3>
+
+                    <p class="mt-3 mb-4">
+                        Future and Drake.
+                    </p>
+
+                    <a
+                            href="icons.html"
+                            class="btn btn-success btn-sm">
+
+                        Open page
+
+                    </a>
+
+                </article>
+
+            </div>
+
+
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <article
+                        class="info-panel
+                               h-100
+                               p-4">
+
+                    <span class="archive-number">
+                        03
+                    </span>
+
+                    <h3 class="mt-4">
+                        About
+                    </h3>
+
+                    <p class="mt-3 mb-4">
+                        Learn more about
+                        the project and our team.
+                    </p>
+
+                    <a
+                            href="about.html"
+                            class="btn btn-success btn-sm">
+
+                        About us
+
+                    </a>
+
+                </article>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         BOOTSTRAP CARDS
+    ========================================= -->
+
+    <section class="container py-5">
+
+        <div class="mb-5">
+
+            <p class="eyebrow mb-3">
+                SELECTED ARTISTS
+            </p>
+
+            <h2 class="section-heading">
+                Start listening
+            </h2>
+
+        </div>
+
+
+        <div class="card-group site-card-group">
+
+
+            <article class="card site-card">
+
+                <img
+                        src="images/future.jpg"
+                        class="card-img-top"
+                        alt="Future">
+
+                <div class="card-body p-4">
+
+                    <h3 class="card-title">
+                        Future
+                    </h3>
+
+                    <p class="card-text">
+                        Trap and melodic hip-hop
+                        from Atlanta.
+                    </p>
+
+                    <a
+                            href="icons.html#future"
+                            class="btn btn-outline-success">
+
+                        Explore
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="card site-card">
+
+                <img
+                        src="images/ken.jpg"
+                        class="card-img-top"
+                        alt="Ken Carson">
+
+                <div class="card-body p-4">
+
+                    <h3 class="card-title">
+                        Ken Carson
+                    </h3>
+
+                    <p class="card-text">
+                        High-energy production
+                        and modern rage sound.
+                    </p>
+
+                    <a
+                            href="newwave.html#ken"
+                            class="btn btn-outline-success">
+
+                        Explore
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="card site-card">
+
+                <img
+                        src="images/drake.jpg"
+                        class="card-img-top"
+                        alt="Drake">
+
+                <div class="card-body p-4">
+
+                    <h3 class="card-title">
+                        Drake
+                    </h3>
+
+                    <p class="card-text">
+                        Hip-hop, R&B
+                        and mainstream sound.
+                    </p>
+
+                    <a
+                            href="icons.html#drake"
+                            class="btn btn-outline-success">
+
+                        Explore
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         TWO-COLUMN BOOTSTRAP SECTION
+    ========================================= -->
+
+    <section
+            class="container
+                   py-5
+                   my-lg-5">
+
+        <div class="row g-5">
+
+            <div class="col-12 col-lg-6">
+
+                <p class="eyebrow mb-3">
+                    WHY THESE FIVE?
+                </p>
+
+                <h2 class="section-heading">
+                    Different eras.<br>
+                    One archive.
+                </h2>
+
+            </div>
+
+
+            <div class="col-12 col-lg-6">
+
+                <p class="lead">
+
+                    Each artist represents
+                    a different approach to modern
+                    hip-hop, production and visual style.
+
+                </p>
+
+
+                <ul class="archive-list mt-4">
+
+                    <li>
+                        Distinctive sound
+                        and production
+                    </li>
+
+                    <li>
+                        Strong visual identity
+                    </li>
+
+                    <li>
+                        Influence on modern rap culture
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
 </main>
 
 
-<footer class="site-footer mt-5">
+
+<footer class="site-footer">
 
     <div
-            class="container py-4 d-flex flex-column flex-md-row justify-content-between gap-2">
+            class="container
+                   py-4
+                   d-flex
+                   flex-column
+                   flex-md-row
+                   justify-content-between
+                   gap-2">
 
         <span>
             FIVE. Music Archive
@@ -552,7 +806,8 @@
 </footer>
 
 
-<!-- Bootstrap JS -->
+
+<!-- Bootstrap JavaScript -->
 <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
 </script>
@@ -561,4 +816,5 @@
 <script src="js/theme.js"></script>
 
 </body>
+
 </html>

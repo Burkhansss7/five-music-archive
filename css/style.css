@@ -1,9 +1,13 @@
-/* =========================================
+/* =========================================================
    FIVE. MUSIC ARCHIVE
-   ASSIGNMENT 3
-   MEDIA QUERIES + BOOTSTRAP
-========================================= */
+   FINAL MIDTERM VERSION
+   HTML + CSS + FLEXBOX + GRID + MEDIA QUERIES + BOOTSTRAP
+========================================================= */
 
+
+/* =========================================================
+   VARIABLES
+========================================================= */
 
 :root {
     --bg: #0b0b0b;
@@ -15,13 +19,15 @@
 
     --accent: #b9ff48;
     --border: #2b2b2b;
+
+    --page-width: 1180px;
 }
 
 
-
-/* =========================================
-   GLOBAL
-========================================= */
+/* =========================================================
+   RESET / GLOBAL
+   Element selectors
+========================================================= */
 
 * {
     box-sizing: border-box;
@@ -34,6 +40,8 @@ html {
 
 
 body {
+    margin: 0;
+
     background-color: var(--bg);
 
     color: var(--text);
@@ -45,9 +53,25 @@ body {
             "Segoe UI",
             sans-serif;
 
+    line-height: 1.6;
+
     transition:
             background-color 0.3s ease,
             color 0.3s ease;
+}
+
+
+img {
+    display: block;
+
+    max-width: 100%;
+}
+
+
+a {
+    color: inherit;
+
+    text-decoration: none;
 }
 
 
@@ -58,6 +82,8 @@ h4,
 h5,
 h6 {
     color: var(--text);
+
+    line-height: 1.05;
 }
 
 
@@ -66,56 +92,66 @@ p {
 }
 
 
-a {
-    text-decoration: none;
+/* =========================================================
+   BOOTSTRAP NAVBAR
+========================================================= */
+
+.site-navbar {
+    z-index: 1000;
+
+    min-height: 78px;
+
+    background:
+            rgba(11, 11, 11, 0.97);
+
+    border-bottom:
+            1px solid var(--border);
+
+    backdrop-filter:
+            blur(12px);
 }
 
 
-
-/* =========================================
-   NAVBAR
-========================================= */
-
-.navbar {
-    background-color: #000000 !important;
-}
-
-
-.logo-brand {
+.site-logo {
     color: #ffffff !important;
 
     font-size: 1.5rem;
 
     font-weight: 800;
 
-    letter-spacing: -0.06em;
+    letter-spacing:
+            -0.06em;
 }
 
 
-.logo-brand span {
+.site-logo span {
     color: var(--accent);
 }
 
 
-.navbar .nav-link {
-    color: #a8a8a8;
+/* Descendant selector */
+
+.site-navbar .nav-link {
+    color: #a5a5a5;
 
     font-size: 0.88rem;
 
-    font-weight: 500;
+    font-weight: 600;
+
+    transition:
+            color 0.2s ease;
 }
 
 
-.navbar .nav-link:hover,
-.navbar .nav-link.active {
+.site-navbar .nav-link:hover,
+.site-navbar .nav-link.active {
     color: #ffffff;
 }
 
 
-
-/* =========================================
-   THEME TOGGLE
-========================================= */
+/* =========================================================
+   THEME BUTTON
+========================================================= */
 
 .theme-toggle {
     width: 40px;
@@ -134,137 +170,242 @@ a {
 
     border-radius: 50%;
 
-    background: transparent;
+    background:
+            transparent;
 
-    color: #ffffff;
+    color:
+            #ffffff;
 
-    cursor: pointer;
+    font-size:
+            1rem;
+
+    cursor:
+            pointer;
 
     transition:
-            transform 0.2s ease,
-            background 0.2s ease;
+            background 0.2s ease,
+            transform 0.2s ease;
 }
 
 
 .theme-toggle:hover {
-    background: #1d1d1d;
+    background:
+            #1c1c1c;
 
-    transform: rotate(12deg);
+    transform:
+            rotate(12deg);
 }
 
 
-
-/* =========================================
-   ACCENT TEXT
-========================================= */
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
 
 .eyebrow {
     color: var(--accent);
 
-    font-size: 0.74rem;
+    font-size: 0.73rem;
 
-    font-weight: 700;
+    font-weight: 800;
 
-    letter-spacing: 0.18em;
+    letter-spacing:
+            0.18em;
 
-    text-transform: uppercase;
+    text-transform:
+            uppercase;
 }
 
-
-.archive-number {
-    color: var(--accent);
-
-    font-size: 1.6rem;
-
-    font-weight: 700;
-}
-
-
-
-/* =========================================
-   TASK 1
-   RESPONSIVE TYPOGRAPHY
-========================================= */
-
-/*
-    DESKTOP
-*/
 
 .responsive-title {
-    font-size: 6rem;
+    max-width:
+            950px;
 
-    line-height: 0.95;
+    font-size:
+            6rem;
 
-    letter-spacing: -0.07em;
+    line-height:
+            0.95;
+
+    letter-spacing:
+            -0.07em;
 }
 
 
 .responsive-copy {
-    font-size: 1.15rem;
+    max-width:
+            680px;
+
+    font-size:
+            1.15rem;
 }
 
 
+.section-heading {
+    color:
+            var(--text);
 
-/* =========================================
+    font-size:
+            clamp(
+                    2.5rem,
+                    5vw,
+                    4rem
+            );
+
+    font-weight:
+            700;
+
+    letter-spacing:
+            -0.055em;
+}
+
+
+.archive-number {
+    color:
+            var(--accent);
+
+    font-size:
+            0.8rem;
+
+    font-weight:
+            800;
+
+    letter-spacing:
+            0.1em;
+}
+
+
+.artist-location {
+    color:
+            var(--accent);
+
+    font-size:
+            0.8rem;
+
+    font-weight:
+            700;
+
+    letter-spacing:
+            0.12em;
+
+    text-transform:
+            uppercase;
+}
+
+
+/* =========================================================
    HERO
-========================================= */
+   ID selector
+========================================================= */
+
+#hero {
+    min-height:
+            75vh;
+
+    display:
+            flex;
+
+    align-items:
+            center;
+}
+
 
 .hero-image {
-    width: 100%;
+    width:
+            100%;
 
-    height: 620px;
+    height:
+            620px;
 
-    object-fit: cover;
+    object-fit:
+            cover;
 
     border:
             1px solid var(--border);
+
+    filter:
+            grayscale(12%);
 }
 
 
+/* =========================================================
+   CUSTOM FLEXBOX NAVIGATION
+   Assignment 2
+========================================================= */
 
-/* =========================================
-   TASK 2
-   CSS-ONLY MEDIA QUERY CARD GROUP
-   NO BOOTSTRAP GRID IS USED HERE
-========================================= */
+.archive-navigation {
+    display:
+            flex;
+
+    align-items:
+            center;
+
+    justify-content:
+            space-between;
+
+    gap:
+            1rem;
+
+    flex-wrap:
+            wrap;
+}
+
+
+.archive-navigation a {
+    color:
+            var(--muted);
+
+    font-size:
+            0.82rem;
+
+    font-weight:
+            700;
+
+    transition:
+            color 0.2s ease;
+}
+
+
+.archive-navigation a:hover {
+    color:
+            var(--accent);
+}
+
+
+/* =========================================================
+   CSS MEDIA QUERY CARD GROUP
+   Assignment 3 Task 2
+   Layout uses CSS/Flexbox, NOT Bootstrap Grid
+========================================================= */
 
 .mq-section {
-    width: min(92%, 1180px);
+    width:
+            min(
+                    92%,
+                    var(--page-width)
+            );
 
-    margin: 0 auto;
+    margin:
+            0 auto;
 
     padding:
             6rem 0;
 }
 
 
-.mq-heading {
-    margin-bottom: 3rem;
-}
-
-
-.mq-heading h2 {
-    color: var(--text);
-
-    font-size: 3.5rem;
-
-    letter-spacing: -0.05em;
-}
-
-
 .mq-card-group {
-    display: flex;
+    display:
+            flex;
 
-    flex-wrap: wrap;
+    align-items:
+            stretch;
 
-    gap: 1.5rem;
+    flex-wrap:
+            wrap;
+
+    gap:
+            1.5rem;
 }
 
-
-/*
-    DESKTOP:
-    3 cards in one row
-*/
 
 .mq-card {
     flex:
@@ -273,7 +414,14 @@ a {
                     33.333% - 1rem
             );
 
-    overflow: hidden;
+    display:
+            flex;
+
+    flex-direction:
+            column;
+
+    overflow:
+            hidden;
 
     background:
             var(--surface);
@@ -283,60 +431,81 @@ a {
 
     transition:
             transform 0.25s ease,
-            border-color 0.25s ease;
+            border-color 0.25s ease,
+            box-shadow 0.25s ease;
 }
 
 
 .mq-card:hover {
     transform:
-            translateY(-8px);
+            translateY(-7px);
 
     border-color:
             var(--accent);
+
+    box-shadow:
+            0 18px 45px
+            rgba(0, 0, 0, 0.25);
 }
 
 
 .mq-card img {
-    width: 100%;
+    width:
+            100%;
 
-    height: 320px;
+    height:
+            320px;
 
-    object-fit: cover;
+    object-fit:
+            cover;
 }
 
 
 .mq-card-body {
-    padding: 1.5rem;
-}
+    flex:
+            1;
 
+    display:
+            flex;
 
-.mq-card-body span {
-    color: var(--accent);
+    flex-direction:
+            column;
 
-    font-size: 0.75rem;
+    padding:
+            1.5rem;
 }
 
 
 .mq-card-body h3 {
-    margin-top: 1rem;
+    margin-top:
+            1rem;
 
-    color: var(--text);
+    margin-bottom:
+            1rem;
 
-    font-size: 2rem;
+    font-size:
+            2rem;
 }
 
 
 .mq-card-body p {
-    margin-top: 1rem;
-
-    margin-bottom: 0;
+    margin-bottom:
+            1.5rem;
 }
 
 
+.mq-card-body .btn {
+    align-self:
+            flex-start;
 
-/* =========================================
+    margin-top:
+            auto;
+}
+
+
+/* =========================================================
    BOOTSTRAP GRID PANELS
-========================================= */
+========================================================= */
 
 .info-panel {
     background:
@@ -360,109 +529,322 @@ a {
 }
 
 
+.info-panel h3 {
+    font-size:
+            2rem;
+}
 
-/* =========================================
-   BOOTSTRAP BUTTONS
-========================================= */
+
+/* =========================================================
+   BOOTSTRAP BUTTON CUSTOMIZATION
+========================================================= */
+
+.btn {
+    border-radius:
+            0;
+
+    font-weight:
+            700;
+}
+
 
 .btn-success {
     --bs-btn-bg: #b9ff48;
-
     --bs-btn-border-color: #b9ff48;
-
     --bs-btn-color: #0b0b0b;
 
-    --bs-btn-hover-bg: #a5e63f;
-
-    --bs-btn-hover-border-color: #a5e63f;
-
+    --bs-btn-hover-bg: #a6e93f;
+    --bs-btn-hover-border-color: #a6e93f;
     --bs-btn-hover-color: #0b0b0b;
 
-    --bs-btn-active-bg: #90cc35;
-
-    --bs-btn-active-border-color: #90cc35;
-
-    font-weight: 600;
+    --bs-btn-active-bg: #95d437;
+    --bs-btn-active-border-color: #95d437;
+    --bs-btn-active-color: #0b0b0b;
 }
 
 
 .btn-outline-success {
     --bs-btn-color: #b9ff48;
-
     --bs-btn-border-color: #b9ff48;
 
     --bs-btn-hover-bg: #b9ff48;
-
     --bs-btn-hover-border-color: #b9ff48;
-
     --bs-btn-hover-color: #0b0b0b;
+
+    --bs-btn-active-bg: #b9ff48;
+    --bs-btn-active-border-color: #b9ff48;
+    --bs-btn-active-color: #0b0b0b;
 }
 
 
-
-/* =========================================
+/* =========================================================
    BOOTSTRAP CARDS
-========================================= */
+========================================================= */
 
-.bootstrap-card-group {
-    gap: 1rem;
+.site-card-group {
+    gap:
+            1rem;
 }
 
 
 .site-card {
-    overflow: hidden;
+    overflow:
+            hidden;
 
     background:
             var(--surface);
 
-    color: var(--text);
+    color:
+            var(--text);
 
     border:
             1px solid var(--border) !important;
+
+    border-radius:
+            0 !important;
 }
 
 
 .site-card .card-img-top {
-    height: 320px;
+    height:
+            330px;
 
-    object-fit: cover;
+    object-fit:
+            cover;
+
+    border-radius:
+            0;
 }
 
 
 .site-card .card-title {
-    color: var(--text);
+    color:
+            var(--text);
+
+    font-size:
+            1.8rem;
 }
 
 
 .site-card .card-text {
-    color: var(--muted);
+    color:
+            var(--muted);
 }
 
 
+/* =========================================================
+   LISTS
+========================================================= */
 
-/* =========================================
-   ARTIST FEATURES
-========================================= */
+.archive-list {
+    padding-left:
+            1.2rem;
+
+    color:
+            var(--text);
+}
+
+
+.archive-list li {
+    margin-bottom:
+            0.75rem;
+}
+
+
+.listening-list {
+    margin:
+            0;
+
+    padding:
+            0;
+
+    list-style:
+            none;
+
+    counter-reset:
+            archive-list;
+}
+
+
+.listening-list li {
+    display:
+            grid;
+
+    grid-template-columns:
+            70px 1fr 1fr;
+
+    gap:
+            1rem;
+
+    padding:
+            1.3rem 0;
+
+    border-bottom:
+            1px solid var(--border);
+
+    color:
+            var(--text);
+
+    counter-increment:
+            archive-list;
+}
+
+
+.listening-list li::before {
+    content:
+            "0" counter(archive-list);
+
+    color:
+            var(--accent);
+
+    font-size:
+            0.75rem;
+
+    font-weight:
+            800;
+}
+
+
+.listening-list span {
+    color:
+            var(--muted);
+}
+
+
+/* =========================================================
+   ARTIST SECTIONS
+========================================================= */
 
 .artist-feature-image {
-    width: 100%;
+    width:
+            100%;
 
-    height: 600px;
+    height:
+            610px;
 
-    object-fit: cover;
+    object-fit:
+            cover;
+
+    border:
+            1px solid var(--border);
+
+    filter:
+            grayscale(7%);
+}
+
+
+/* =========================================================
+   CSS GRID IMAGE GALLERY
+   Assignment 2
+========================================================= */
+
+.image-gallery {
+    display:
+            grid;
+
+    grid-template-columns:
+            repeat(
+                    5,
+                    1fr
+            );
+
+    grid-auto-rows:
+            280px;
+
+    gap:
+            1rem;
+}
+
+
+.gallery-item {
+    position:
+            relative;
+
+    margin:
+            0;
+
+    overflow:
+            hidden;
+
+    background:
+            var(--surface);
 
     border:
             1px solid var(--border);
 }
 
 
+.gallery-item img {
+    width:
+            100%;
 
-/* =========================================
+    height:
+            100%;
+
+    object-fit:
+            cover;
+
+    transition:
+            transform 0.4s ease,
+            filter 0.4s ease;
+}
+
+
+.gallery-item figcaption {
+    position:
+            absolute;
+
+    left:
+            0;
+
+    right:
+            0;
+
+    bottom:
+            0;
+
+    padding:
+            3rem 1rem 1rem;
+
+    background:
+            linear-gradient(
+                    transparent,
+                    rgba(0, 0, 0, 0.92)
+            );
+
+    color:
+            #ffffff;
+
+    transform:
+            translateY(100%);
+
+    transition:
+            transform 0.3s ease;
+}
+
+
+.gallery-item:hover img {
+    transform:
+            scale(1.06);
+
+    filter:
+            brightness(0.65);
+}
+
+
+.gallery-item:hover figcaption {
+    transform:
+            translateY(0);
+}
+
+
+/* =========================================================
    BOOTSTRAP CAROUSEL
-========================================= */
+========================================================= */
 
 #artistCarousel {
-    overflow: hidden;
+    overflow:
+            hidden;
 
     border:
             1px solid var(--border);
@@ -470,72 +852,328 @@ a {
 
 
 .carousel-image {
-    height: 680px;
+    height:
+            680px;
 
-    object-fit: cover;
+    object-fit:
+            cover;
 
     filter:
-            brightness(0.78);
+            brightness(0.72);
 }
 
 
 .carousel-caption {
     text-shadow:
-            0 2px 8px
-            rgba(0, 0, 0, 0.9);
+            0 3px 10px
+            rgba(0, 0, 0, 0.8);
 }
 
 
-.carousel-caption h5 {
-    color: #ffffff;
+.carousel-caption h3 {
+    color:
+            #ffffff;
 
-    font-size: 2rem;
+    font-size:
+            2rem;
+
+    font-weight:
+            700;
 }
 
 
+/* =========================================================
+   ICONS PAGE
+   CSS GRID AREAS
+   Assignment 2
+========================================================= */
 
-/* =========================================
+.icons-layout {
+    min-height:
+            100vh;
+
+    display:
+            grid;
+
+    grid-template-columns:
+            240px 1fr;
+
+    grid-template-rows:
+            auto 1fr auto;
+
+    grid-template-areas:
+            "header header"
+            "sidebar main"
+            "footer footer";
+}
+
+
+.grid-header {
+    grid-area:
+            header;
+
+    position:
+            sticky;
+
+    top:
+            0;
+
+    z-index:
+            1000;
+}
+
+
+.artist-sidebar {
+    grid-area:
+            sidebar;
+
+    padding:
+            3rem 2rem;
+
+    background:
+            #0e0e0e;
+
+    border-right:
+            1px solid var(--border);
+}
+
+
+.icons-main {
+    grid-area:
+            main;
+
+    width:
+            min(
+                    94%,
+                    1050px
+            );
+
+    margin:
+            0 auto;
+}
+
+
+.grid-footer {
+    grid-area:
+            footer;
+}
+
+
+.sidebar-links {
+    display:
+            flex;
+
+    flex-direction:
+            column;
+}
+
+
+.sidebar-links a {
+    display:
+            flex;
+
+    align-items:
+            center;
+
+    gap:
+            1rem;
+
+    padding:
+            1rem 0;
+
+    color:
+            var(--text);
+
+    border-bottom:
+            1px solid var(--border);
+
+    transition:
+            color 0.2s ease;
+}
+
+
+.sidebar-links a:hover {
+    color:
+            var(--accent);
+}
+
+
+.sidebar-links span {
+    color:
+            var(--accent);
+
+    font-size:
+            0.7rem;
+
+    font-weight:
+            800;
+}
+
+
+.sidebar-info {
+    margin-top:
+            4rem;
+}
+
+
+.sidebar-info ul {
+    margin:
+            0;
+
+    padding:
+            0;
+
+    list-style:
+            none;
+}
+
+
+.sidebar-info li {
+    margin-bottom:
+            0.6rem;
+
+    color:
+            var(--muted);
+}
+
+
+/* =========================================================
    TABLE
-========================================= */
+========================================================= */
 
 .site-table {
     --bs-table-bg: var(--surface);
-
     --bs-table-color: var(--text);
-
     --bs-table-border-color: var(--border);
-
     --bs-table-hover-bg: var(--surface-light);
-
     --bs-table-hover-color: var(--text);
 }
 
 
+.site-table th {
+    color:
+            var(--accent);
 
-/* =========================================
+    font-size:
+            0.8rem;
+
+    letter-spacing:
+            0.08em;
+
+    text-transform:
+            uppercase;
+}
+
+
+/* =========================================================
    ABOUT LOGO
-========================================= */
+========================================================= */
 
 .about-logo {
-    width: min(100%, 320px);
+    width:
+            min(
+                    100%,
+                    320px
+            );
 
-    aspect-ratio: 1 / 1;
+    aspect-ratio:
+            1 / 1;
 
-    object-fit: contain;
+    object-fit:
+            contain;
 
-    background: #000000;
+    background:
+            #000000;
 
     border:
             1px solid var(--border);
 
-    border-radius: 24px;
+    border-radius:
+            22px;
+
+    transition:
+            transform 0.25s ease,
+            border-color 0.25s ease;
 }
 
 
+.about-logo:hover {
+    transform:
+            scale(1.025);
 
-/* =========================================
+    border-color:
+            var(--accent);
+}
+
+
+/* =========================================================
+   TEAM FLEXBOX
+========================================================= */
+
+.team-flex {
+    display:
+            flex;
+
+    align-items:
+            stretch;
+
+    gap:
+            1rem;
+}
+
+
+.team-card {
+    flex:
+            1;
+
+    min-height:
+            300px;
+
+    display:
+            flex;
+
+    flex-direction:
+            column;
+
+    justify-content:
+            space-between;
+
+    padding:
+            2rem;
+
+    background:
+            var(--surface);
+
+    border:
+            1px solid var(--border);
+
+    transition:
+            transform 0.25s ease,
+            border-color 0.25s ease;
+}
+
+
+.team-card:hover {
+    transform:
+            translateY(-5px);
+
+    border-color:
+            var(--accent);
+}
+
+
+.team-card h3 {
+    margin-top:
+            3rem;
+
+    font-size:
+            2rem;
+}
+
+
+/* =========================================================
    BOOTSTRAP FORM
-========================================= */
+========================================================= */
 
 .site-form {
     background:
@@ -548,13 +1186,17 @@ a {
 
 .form-label,
 .form-check-label {
-    color: var(--text);
+    color:
+            var(--text);
 }
 
 
 .form-control,
 .form-select,
 .input-group-text {
+    border-radius:
+            0;
+
     background:
             var(--bg);
 
@@ -568,7 +1210,7 @@ a {
 
 .form-control::placeholder {
     color:
-            #6f6f6f;
+            #707070;
 }
 
 
@@ -604,17 +1246,16 @@ a {
 }
 
 
-
-/* =========================================
+/* =========================================================
    FOOTER
-========================================= */
+========================================================= */
 
 .site-footer {
-    color:
-            var(--muted);
-
     background:
             var(--bg);
+
+    color:
+            var(--muted);
 
     border-top:
             1px solid var(--border);
@@ -624,50 +1265,76 @@ a {
 }
 
 
-
-/* =========================================
+/* =========================================================
    LIGHT THEME
-========================================= */
+========================================================= */
 
 body.light-theme {
-    --bg: #f4f1e8;
+    --bg:
+            #f4f1e8;
 
-    --surface: #ffffff;
+    --surface:
+            #ffffff;
 
-    --surface-light: #ebe7dc;
+    --surface-light:
+            #ebe7dc;
 
-    --text: #151515;
+    --text:
+            #151515;
 
-    --muted: #686868;
+    --muted:
+            #686868;
 
-    --accent: #668c00;
+    --accent:
+            #668c00;
 
-    --border: #d4d0c5;
+    --border:
+            #d4d0c5;
 }
 
 
-body.light-theme .navbar {
+body.light-theme .site-navbar {
     background:
-            #f4f1e8 !important;
+            rgba(
+                    244,
+                    241,
+                    232,
+                    0.97
+            );
 }
 
 
-body.light-theme .logo-brand {
+body.light-theme .site-logo {
     color:
             #151515 !important;
 }
 
 
-body.light-theme .navbar .nav-link {
+body.light-theme .site-navbar .nav-link {
     color:
-            #6a6a6a;
+            #666666;
 }
 
 
-body.light-theme .navbar .nav-link:hover,
-body.light-theme .navbar .nav-link.active {
+body.light-theme .site-navbar .nav-link:hover,
+body.light-theme .site-navbar .nav-link.active {
     color:
             #151515;
+}
+
+
+body.light-theme .theme-toggle {
+    color:
+            #151515;
+
+    border-color:
+            #b9b9b9;
+}
+
+
+body.light-theme .theme-toggle:hover {
+    background:
+            #e5e0d5;
 }
 
 
@@ -680,21 +1347,6 @@ body.light-theme .navbar-toggler {
 body.light-theme .navbar-toggler-icon {
     filter:
             invert(1);
-}
-
-
-body.light-theme .theme-toggle {
-    color:
-            #151515;
-
-    border-color:
-            #b5b5b5;
-}
-
-
-body.light-theme .theme-toggle:hover {
-    background:
-            #e4e0d5;
 }
 
 
@@ -716,24 +1368,38 @@ body.light-theme .btn-outline-light:hover {
 }
 
 
+body.light-theme .artist-sidebar {
+    background:
+            #ece8dd;
+}
+
+
 body.light-theme .about-logo {
     background:
             #000000;
 }
 
 
+body.light-theme .form-control,
+body.light-theme .form-select,
+body.light-theme .input-group-text {
+    background:
+            #ffffff;
 
-/* ==================================================
-   TASK 1 + TASK 2
+    color:
+            #151515;
+
+    border-color:
+            #c9c9c9;
+}
+
+
+/* =========================================================
    TABLET MEDIA QUERY
-================================================== */
+   Assignment 3 Responsive Typography + Card Group
+========================================================= */
 
 @media (max-width: 992px) {
-
-    /*
-        TASK 1:
-        Medium typography on tablet
-    */
 
     .responsive-title {
         font-size:
@@ -747,10 +1413,19 @@ body.light-theme .about-logo {
     }
 
 
-    /*
-        TASK 2:
-        2 cards per row on tablet
-    */
+    #hero {
+        min-height:
+                auto;
+    }
+
+
+    .hero-image {
+        height:
+                520px;
+    }
+
+
+    /* 2 cards per row */
 
     .mq-card {
         flex:
@@ -761,38 +1436,126 @@ body.light-theme .about-logo {
     }
 
 
-    .hero-image {
-        height:
-                520px;
-    }
-
-
     .artist-feature-image {
         height:
                 520px;
     }
 
 
+    .image-gallery {
+        grid-template-columns:
+                repeat(
+                        2,
+                        1fr
+                );
+
+        grid-auto-rows:
+                360px;
+    }
+
+
     .carousel-image {
         height:
-                550px;
+                560px;
+    }
+
+
+    .icons-layout {
+        grid-template-columns:
+                190px 1fr;
     }
 
 }
 
 
+/* =========================================================
+   SMALL TABLET / LARGE MOBILE
+========================================================= */
 
-/* ==================================================
-   TASK 1 + TASK 2
+@media (max-width: 768px) {
+
+    .archive-navigation {
+        justify-content:
+                flex-start;
+    }
+
+
+    .team-flex {
+        flex-direction:
+                column;
+    }
+
+
+    .icons-layout {
+        grid-template-columns:
+                1fr;
+
+        grid-template-areas:
+                "header"
+                "sidebar"
+                "main"
+                "footer";
+    }
+
+
+    .artist-sidebar {
+        border-right:
+                0;
+
+        border-bottom:
+                1px solid var(--border);
+    }
+
+
+    .sidebar-links {
+        flex-direction:
+                row;
+
+        flex-wrap:
+                wrap;
+
+        gap:
+                1rem;
+    }
+
+
+    .sidebar-links a {
+        flex:
+                1;
+
+        min-width:
+                130px;
+    }
+
+
+    .icons-main {
+        width:
+                min(
+                        92%,
+                        1050px
+                );
+    }
+
+
+    .listening-list li {
+        grid-template-columns:
+                50px 1fr;
+    }
+
+
+    .listening-list li span {
+        grid-column:
+                2;
+    }
+
+}
+
+
+/* =========================================================
    MOBILE MEDIA QUERY
-================================================== */
+========================================================= */
 
 @media (max-width: 576px) {
-
-    /*
-        TASK 1:
-        Small typography on mobile
-    */
 
     .responsive-title {
         font-size:
@@ -805,14 +1568,24 @@ body.light-theme .about-logo {
 
     .responsive-copy {
         font-size:
-                0.9rem;
+                0.92rem;
     }
 
 
-    /*
-        TASK 2:
-        Cards stacked vertically
-    */
+    .section-heading {
+        font-size:
+                2.5rem;
+    }
+
+
+    .hero-image {
+        height:
+                430px;
+    }
+
+
+    /* Assignment 3:
+       Cards stack vertically */
 
     .mq-card {
         flex:
@@ -827,27 +1600,30 @@ body.light-theme .about-logo {
     }
 
 
-    .mq-heading h2 {
-        font-size:
-                2.5rem;
-    }
-
-
     .mq-card img {
         height:
                 380px;
     }
 
 
-    .hero-image {
+    .artist-feature-image {
         height:
-                420px;
+                450px;
     }
 
 
-    .artist-feature-image {
-        height:
-                440px;
+    .image-gallery {
+        grid-template-columns:
+                1fr;
+
+        grid-auto-rows:
+                480px;
+    }
+
+
+    .gallery-item figcaption {
+        transform:
+                translateY(0);
     }
 
 
@@ -857,9 +1633,24 @@ body.light-theme .about-logo {
     }
 
 
-    .carousel-caption h5 {
+    .carousel-caption h3 {
         font-size:
-                1.3rem;
+                1.4rem;
+    }
+
+
+    .about-logo {
+        width:
+                min(
+                        100%,
+                        250px
+                );
+    }
+
+
+    .listening-list li {
+        grid-template-columns:
+                45px 1fr;
     }
 
 }

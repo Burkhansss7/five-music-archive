@@ -7,13 +7,8 @@ const savedTheme =
 
 
 if (savedTheme === "light") {
-
-    document.body.classList.add(
-        "light-theme"
-    );
-
+    document.body.classList.add("light-theme");
 }
-
 
 
 function updateThemeButton() {
@@ -23,13 +18,13 @@ function updateThemeButton() {
     }
 
 
-    const isLight =
+    const lightMode =
         document.body.classList.contains(
             "light-theme"
         );
 
 
-    if (isLight) {
+    if (lightMode) {
 
         themeButton.textContent = "☾";
 
@@ -62,9 +57,7 @@ function updateThemeButton() {
 }
 
 
-
 updateThemeButton();
-
 
 
 if (themeButton) {
@@ -78,13 +71,13 @@ if (themeButton) {
             );
 
 
-            const isLight =
+            const lightMode =
                 document.body.classList.contains(
                     "light-theme"
                 );
 
 
-            if (isLight) {
+            if (lightMode) {
 
                 localStorage.setItem(
                     "theme",
