@@ -1,13 +1,16 @@
 const themeButton =
     document.getElementById("theme-toggle");
 
-
 const savedTheme =
     localStorage.getItem("theme");
 
 
 if (savedTheme === "light") {
-    document.body.classList.add("light-theme");
+
+    document.body.classList.add(
+        "light-theme"
+    );
+
 }
 
 
@@ -16,7 +19,6 @@ function updateThemeButton() {
     if (!themeButton) {
         return;
     }
-
 
     const lightMode =
         document.body.classList.contains(
@@ -77,21 +79,12 @@ if (themeButton) {
                 );
 
 
-            if (lightMode) {
-
-                localStorage.setItem(
-                    "theme",
-                    "light"
-                );
-
-            } else {
-
-                localStorage.setItem(
-                    "theme",
-                    "dark"
-                );
-
-            }
+            localStorage.setItem(
+                "theme",
+                lightMode
+                    ? "light"
+                    : "dark"
+            );
 
 
             updateThemeButton();

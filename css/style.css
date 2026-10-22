@@ -1,14 +1,3 @@
-/* =========================================================
-   FIVE. MUSIC ARCHIVE
-   FINAL MIDTERM VERSION
-   HTML + CSS + FLEXBOX + GRID + MEDIA QUERIES + BOOTSTRAP
-========================================================= */
-
-
-/* =========================================================
-   VARIABLES
-========================================================= */
-
 :root {
     --bg: #0b0b0b;
     --surface: #141414;
@@ -24,10 +13,9 @@
 }
 
 
-/* =========================================================
-   RESET / GLOBAL
-   Element selectors
-========================================================= */
+/* =========================================
+   GLOBAL
+========================================= */
 
 * {
     box-sizing: border-box;
@@ -42,9 +30,11 @@ html {
 body {
     margin: 0;
 
-    background-color: var(--bg);
+    background:
+            var(--bg);
 
-    color: var(--text);
+    color:
+            var(--text);
 
     font-family:
             Inter,
@@ -53,10 +43,11 @@ body {
             "Segoe UI",
             sans-serif;
 
-    line-height: 1.6;
+    line-height:
+            1.6;
 
     transition:
-            background-color 0.3s ease,
+            background 0.3s ease,
             color 0.3s ease;
 }
 
@@ -81,20 +72,20 @@ h3,
 h4,
 h5,
 h6 {
-    color: var(--text);
-
-    line-height: 1.05;
+    color:
+            var(--text);
 }
 
 
 p {
-    color: var(--muted);
+    color:
+            var(--muted);
 }
 
 
-/* =========================================================
-   BOOTSTRAP NAVBAR
-========================================================= */
+/* =========================================
+   NAVBAR
+========================================= */
 
 .site-navbar {
     z-index: 1000;
@@ -102,22 +93,28 @@ p {
     min-height: 78px;
 
     background:
-            rgba(11, 11, 11, 0.97);
+            rgba(
+                    11,
+                    11,
+                    11,
+                    0.97
+            );
 
     border-bottom:
-            1px solid var(--border);
-
-    backdrop-filter:
-            blur(12px);
+            1px solid
+            var(--border);
 }
 
 
 .site-logo {
-    color: #ffffff !important;
+    color:
+            #ffffff !important;
 
-    font-size: 1.5rem;
+    font-size:
+            1.5rem;
 
-    font-weight: 800;
+    font-weight:
+            800;
 
     letter-spacing:
             -0.06em;
@@ -125,50 +122,53 @@ p {
 
 
 .site-logo span {
-    color: var(--accent);
+    color:
+            var(--accent);
 }
 
 
-/* Descendant selector */
-
 .site-navbar .nav-link {
-    color: #a5a5a5;
+    color:
+            #a5a5a5;
 
-    font-size: 0.88rem;
-
-    font-weight: 600;
-
-    transition:
-            color 0.2s ease;
+    font-weight:
+            600;
 }
 
 
 .site-navbar .nav-link:hover,
 .site-navbar .nav-link.active {
-    color: #ffffff;
+    color:
+            #ffffff;
 }
 
 
-/* =========================================================
-   THEME BUTTON
-========================================================= */
+/* =========================================
+   THEME
+========================================= */
 
 .theme-toggle {
-    width: 40px;
-    height: 40px;
+    width:
+            40px;
 
-    display: flex;
+    height:
+            40px;
 
-    align-items: center;
+    display:
+            flex;
 
-    justify-content: center;
+    align-items:
+            center;
 
-    padding: 0;
+    justify-content:
+            center;
 
     border:
-            1px solid #444444;
+            1px solid
+            #444444;
 
-    border-radius: 50%;
+    border-radius:
+            50%;
 
     background:
             transparent;
@@ -176,37 +176,24 @@ p {
     color:
             #ffffff;
 
-    font-size:
-            1rem;
-
     cursor:
             pointer;
-
-    transition:
-            background 0.2s ease,
-            transform 0.2s ease;
 }
 
 
-.theme-toggle:hover {
-    background:
-            #1c1c1c;
-
-    transform:
-            rotate(12deg);
-}
-
-
-/* =========================================================
-   TYPOGRAPHY
-========================================================= */
+/* =========================================
+   TEXT
+========================================= */
 
 .eyebrow {
-    color: var(--accent);
+    color:
+            var(--accent);
 
-    font-size: 0.73rem;
+    font-size:
+            0.73rem;
 
-    font-weight: 800;
+    font-weight:
+            800;
 
     letter-spacing:
             0.18em;
@@ -217,9 +204,6 @@ p {
 
 
 .responsive-title {
-    max-width:
-            950px;
-
     font-size:
             6rem;
 
@@ -231,19 +215,7 @@ p {
 }
 
 
-.responsive-copy {
-    max-width:
-            680px;
-
-    font-size:
-            1.15rem;
-}
-
-
 .section-heading {
-    color:
-            var(--text);
-
     font-size:
             clamp(
                     2.5rem,
@@ -263,14 +235,8 @@ p {
     color:
             var(--accent);
 
-    font-size:
-            0.8rem;
-
     font-weight:
             800;
-
-    letter-spacing:
-            0.1em;
 }
 
 
@@ -284,18 +250,14 @@ p {
     font-weight:
             700;
 
-    letter-spacing:
-            0.12em;
-
     text-transform:
             uppercase;
 }
 
 
-/* =========================================================
+/* =========================================
    HERO
-   ID selector
-========================================================= */
+========================================= */
 
 #hero {
     min-height:
@@ -320,33 +282,30 @@ p {
             cover;
 
     border:
-            1px solid var(--border);
-
-    filter:
-            grayscale(12%);
+            1px solid
+            var(--border);
 }
 
 
-/* =========================================================
-   CUSTOM FLEXBOX NAVIGATION
-   Assignment 2
-========================================================= */
+/* =========================================
+   FLEXBOX ARCHIVE NAV
+========================================= */
 
 .archive-navigation {
     display:
             flex;
 
-    align-items:
-            center;
-
     justify-content:
             space-between;
 
-    gap:
-            1rem;
+    align-items:
+            center;
 
     flex-wrap:
             wrap;
+
+    gap:
+            1rem;
 }
 
 
@@ -354,14 +313,8 @@ p {
     color:
             var(--muted);
 
-    font-size:
-            0.82rem;
-
     font-weight:
             700;
-
-    transition:
-            color 0.2s ease;
 }
 
 
@@ -371,11 +324,9 @@ p {
 }
 
 
-/* =========================================================
-   CSS MEDIA QUERY CARD GROUP
-   Assignment 3 Task 2
-   Layout uses CSS/Flexbox, NOT Bootstrap Grid
-========================================================= */
+/* =========================================
+   MEDIA QUERY CARDS
+========================================= */
 
 .mq-section {
     width:
@@ -395,9 +346,6 @@ p {
 .mq-card-group {
     display:
             flex;
-
-    align-items:
-            stretch;
 
     flex-wrap:
             wrap;
@@ -427,25 +375,8 @@ p {
             var(--surface);
 
     border:
-            1px solid var(--border);
-
-    transition:
-            transform 0.25s ease,
-            border-color 0.25s ease,
-            box-shadow 0.25s ease;
-}
-
-
-.mq-card:hover {
-    transform:
-            translateY(-7px);
-
-    border-color:
-            var(--accent);
-
-    box-shadow:
-            0 18px 45px
-            rgba(0, 0, 0, 0.25);
+            1px solid
+            var(--border);
 }
 
 
@@ -477,20 +408,11 @@ p {
 
 
 .mq-card-body h3 {
-    margin-top:
-            1rem;
-
-    margin-bottom:
-            1rem;
+    margin:
+            1rem 0;
 
     font-size:
             2rem;
-}
-
-
-.mq-card-body p {
-    margin-bottom:
-            1.5rem;
 }
 
 
@@ -503,41 +425,23 @@ p {
 }
 
 
-/* =========================================================
-   BOOTSTRAP GRID PANELS
-========================================================= */
+/* =========================================
+   PANELS
+========================================= */
 
 .info-panel {
     background:
             var(--surface);
 
     border:
-            1px solid var(--border);
-
-    transition:
-            transform 0.25s ease,
-            border-color 0.25s ease;
+            1px solid
+            var(--border);
 }
 
 
-.info-panel:hover {
-    transform:
-            translateY(-5px);
-
-    border-color:
-            var(--accent);
-}
-
-
-.info-panel h3 {
-    font-size:
-            2rem;
-}
-
-
-/* =========================================================
-   BOOTSTRAP BUTTON CUSTOMIZATION
-========================================================= */
+/* =========================================
+   BUTTONS
+========================================= */
 
 .btn {
     border-radius:
@@ -556,10 +460,6 @@ p {
     --bs-btn-hover-bg: #a6e93f;
     --bs-btn-hover-border-color: #a6e93f;
     --bs-btn-hover-color: #0b0b0b;
-
-    --bs-btn-active-bg: #95d437;
-    --bs-btn-active-border-color: #95d437;
-    --bs-btn-active-color: #0b0b0b;
 }
 
 
@@ -570,150 +470,12 @@ p {
     --bs-btn-hover-bg: #b9ff48;
     --bs-btn-hover-border-color: #b9ff48;
     --bs-btn-hover-color: #0b0b0b;
-
-    --bs-btn-active-bg: #b9ff48;
-    --bs-btn-active-border-color: #b9ff48;
-    --bs-btn-active-color: #0b0b0b;
 }
 
 
-/* =========================================================
-   BOOTSTRAP CARDS
-========================================================= */
-
-.site-card-group {
-    gap:
-            1rem;
-}
-
-
-.site-card {
-    overflow:
-            hidden;
-
-    background:
-            var(--surface);
-
-    color:
-            var(--text);
-
-    border:
-            1px solid var(--border) !important;
-
-    border-radius:
-            0 !important;
-}
-
-
-.site-card .card-img-top {
-    height:
-            330px;
-
-    object-fit:
-            cover;
-
-    border-radius:
-            0;
-}
-
-
-.site-card .card-title {
-    color:
-            var(--text);
-
-    font-size:
-            1.8rem;
-}
-
-
-.site-card .card-text {
-    color:
-            var(--muted);
-}
-
-
-/* =========================================================
-   LISTS
-========================================================= */
-
-.archive-list {
-    padding-left:
-            1.2rem;
-
-    color:
-            var(--text);
-}
-
-
-.archive-list li {
-    margin-bottom:
-            0.75rem;
-}
-
-
-.listening-list {
-    margin:
-            0;
-
-    padding:
-            0;
-
-    list-style:
-            none;
-
-    counter-reset:
-            archive-list;
-}
-
-
-.listening-list li {
-    display:
-            grid;
-
-    grid-template-columns:
-            70px 1fr 1fr;
-
-    gap:
-            1rem;
-
-    padding:
-            1.3rem 0;
-
-    border-bottom:
-            1px solid var(--border);
-
-    color:
-            var(--text);
-
-    counter-increment:
-            archive-list;
-}
-
-
-.listening-list li::before {
-    content:
-            "0" counter(archive-list);
-
-    color:
-            var(--accent);
-
-    font-size:
-            0.75rem;
-
-    font-weight:
-            800;
-}
-
-
-.listening-list span {
-    color:
-            var(--muted);
-}
-
-
-/* =========================================================
-   ARTIST SECTIONS
-========================================================= */
+/* =========================================
+   ARTIST FEATURES
+========================================= */
 
 .artist-feature-image {
     width:
@@ -726,17 +488,14 @@ p {
             cover;
 
     border:
-            1px solid var(--border);
-
-    filter:
-            grayscale(7%);
+            1px solid
+            var(--border);
 }
 
 
-/* =========================================================
-   CSS GRID IMAGE GALLERY
-   Assignment 2
-========================================================= */
+/* =========================================
+   CSS GRID GALLERY
+========================================= */
 
 .image-gallery {
     display:
@@ -766,11 +525,9 @@ p {
     overflow:
             hidden;
 
-    background:
-            var(--surface);
-
     border:
-            1px solid var(--border);
+            1px solid
+            var(--border);
 }
 
 
@@ -785,8 +542,8 @@ p {
             cover;
 
     transition:
-            transform 0.4s ease,
-            filter 0.4s ease;
+            transform 0.3s ease,
+            filter 0.3s ease;
 }
 
 
@@ -804,12 +561,17 @@ p {
             0;
 
     padding:
-            3rem 1rem 1rem;
+            2rem 1rem 1rem;
 
     background:
             linear-gradient(
                     transparent,
-                    rgba(0, 0, 0, 0.92)
+                    rgba(
+                            0,
+                            0,
+                            0,
+                            0.9
+                    )
             );
 
     color:
@@ -825,10 +587,10 @@ p {
 
 .gallery-item:hover img {
     transform:
-            scale(1.06);
+            scale(1.05);
 
     filter:
-            brightness(0.65);
+            brightness(0.7);
 }
 
 
@@ -838,18 +600,9 @@ p {
 }
 
 
-/* =========================================================
-   BOOTSTRAP CAROUSEL
-========================================================= */
-
-#artistCarousel {
-    overflow:
-            hidden;
-
-    border:
-            1px solid var(--border);
-}
-
+/* =========================================
+   CAROUSEL
+========================================= */
 
 .carousel-image {
     height:
@@ -859,34 +612,13 @@ p {
             cover;
 
     filter:
-            brightness(0.72);
+            brightness(0.75);
 }
 
 
-.carousel-caption {
-    text-shadow:
-            0 3px 10px
-            rgba(0, 0, 0, 0.8);
-}
-
-
-.carousel-caption h3 {
-    color:
-            #ffffff;
-
-    font-size:
-            2rem;
-
-    font-weight:
-            700;
-}
-
-
-/* =========================================================
-   ICONS PAGE
-   CSS GRID AREAS
-   Assignment 2
-========================================================= */
+/* =========================================
+   GRID AREAS
+========================================= */
 
 .icons-layout {
     min-height:
@@ -911,15 +643,6 @@ p {
 .grid-header {
     grid-area:
             header;
-
-    position:
-            sticky;
-
-    top:
-            0;
-
-    z-index:
-            1000;
 }
 
 
@@ -934,7 +657,8 @@ p {
             #0e0e0e;
 
     border-right:
-            1px solid var(--border);
+            1px solid
+            var(--border);
 }
 
 
@@ -972,41 +696,21 @@ p {
     display:
             flex;
 
-    align-items:
-            center;
-
     gap:
             1rem;
 
     padding:
             1rem 0;
 
-    color:
-            var(--text);
-
     border-bottom:
-            1px solid var(--border);
-
-    transition:
-            color 0.2s ease;
-}
-
-
-.sidebar-links a:hover {
-    color:
-            var(--accent);
+            1px solid
+            var(--border);
 }
 
 
 .sidebar-links span {
     color:
             var(--accent);
-
-    font-size:
-            0.7rem;
-
-    font-weight:
-            800;
 }
 
 
@@ -1017,9 +721,6 @@ p {
 
 
 .sidebar-info ul {
-    margin:
-            0;
-
     padding:
             0;
 
@@ -1028,46 +729,25 @@ p {
 }
 
 
-.sidebar-info li {
-    margin-bottom:
-            0.6rem;
-
-    color:
-            var(--muted);
-}
-
-
-/* =========================================================
+/* =========================================
    TABLE
-========================================================= */
+========================================= */
 
 .site-table {
-    --bs-table-bg: var(--surface);
-    --bs-table-color: var(--text);
-    --bs-table-border-color: var(--border);
-    --bs-table-hover-bg: var(--surface-light);
-    --bs-table-hover-color: var(--text);
+    --bs-table-bg:
+            var(--surface);
+
+    --bs-table-color:
+            var(--text);
+
+    --bs-table-border-color:
+            var(--border);
 }
 
 
-.site-table th {
-    color:
-            var(--accent);
-
-    font-size:
-            0.8rem;
-
-    letter-spacing:
-            0.08em;
-
-    text-transform:
-            uppercase;
-}
-
-
-/* =========================================================
-   ABOUT LOGO
-========================================================= */
+/* =========================================
+   ABOUT
+========================================= */
 
 .about-logo {
     width:
@@ -1086,36 +766,21 @@ p {
             #000000;
 
     border:
-            1px solid var(--border);
+            1px solid
+            var(--border);
 
     border-radius:
             22px;
-
-    transition:
-            transform 0.25s ease,
-            border-color 0.25s ease;
 }
 
 
-.about-logo:hover {
-    transform:
-            scale(1.025);
-
-    border-color:
-            var(--accent);
-}
-
-
-/* =========================================================
+/* =========================================
    TEAM FLEXBOX
-========================================================= */
+========================================= */
 
 .team-flex {
     display:
             flex;
-
-    align-items:
-            stretch;
 
     gap:
             1rem;
@@ -1145,47 +810,26 @@ p {
             var(--surface);
 
     border:
-            1px solid var(--border);
-
-    transition:
-            transform 0.25s ease,
-            border-color 0.25s ease;
+            1px solid
+            var(--border);
 }
 
 
-.team-card:hover {
-    transform:
-            translateY(-5px);
-
-    border-color:
-            var(--accent);
-}
-
-
-.team-card h3 {
-    margin-top:
-            3rem;
-
-    font-size:
-            2rem;
-}
-
-
-/* =========================================================
-   BOOTSTRAP FORM
-========================================================= */
+/* =========================================
+   FORMS
+========================================= */
 
 .site-form {
     background:
             var(--surface);
 
     border:
-            1px solid var(--border);
+            1px solid
+            var(--border);
 }
 
 
-.form-label,
-.form-check-label {
+.form-label {
     color:
             var(--text);
 }
@@ -1208,14 +852,7 @@ p {
 }
 
 
-.form-control::placeholder {
-    color:
-            #707070;
-}
-
-
-.form-control:focus,
-.form-select:focus {
+.form-control:focus {
     background:
             var(--bg);
 
@@ -1237,18 +874,318 @@ p {
 }
 
 
-.form-check-input:checked {
-    background-color:
+/* =========================================
+   ASSIGNMENT 4
+   VALIDATION
+========================================= */
+
+.form-error {
+    min-height:
+            20px;
+
+    margin-top:
+            0.4rem;
+
+    color:
+            #ff5a5a;
+
+    font-size:
+            0.8rem;
+}
+
+
+.form-success {
+    color:
             var(--accent);
 
-    border-color:
+    font-weight:
+            700;
+}
+
+
+/* =========================================
+   FAQ ACCORDION
+========================================= */
+
+.faq-list {
+    border-top:
+            1px solid
+            var(--border);
+}
+
+
+.faq-item {
+    border-bottom:
+            1px solid
+            var(--border);
+}
+
+
+.faq-question {
+    width:
+            100%;
+
+    display:
+            flex;
+
+    justify-content:
+            space-between;
+
+    align-items:
+            center;
+
+    gap:
+            2rem;
+
+    padding:
+            1.5rem 0;
+
+    border:
+            0;
+
+    background:
+            transparent;
+
+    color:
+            var(--text);
+
+    text-align:
+            left;
+
+    font-size:
+            1.15rem;
+
+    font-weight:
+            700;
+
+    cursor:
+            pointer;
+}
+
+
+.faq-question span {
+    color:
+            var(--accent);
+
+    font-size:
+            1.5rem;
+
+    transition:
+            transform 0.3s ease;
+}
+
+
+.faq-question.active span {
+    transform:
+            rotate(45deg);
+}
+
+
+.faq-answer {
+    max-height:
+            0;
+
+    overflow:
+            hidden;
+
+    opacity:
+            0;
+
+    transition:
+            max-height 0.4s ease,
+            opacity 0.3s ease,
+            padding 0.3s ease;
+}
+
+
+.faq-answer.open {
+    max-height:
+            300px;
+
+    opacity:
+            1;
+
+    padding-bottom:
+            1.5rem;
+}
+
+
+/* =========================================
+   POPUP
+========================================= */
+
+.popup-overlay {
+    position:
+            fixed;
+
+    inset:
+            0;
+
+    z-index:
+            2000;
+
+    display:
+            flex;
+
+    justify-content:
+            center;
+
+    align-items:
+            center;
+
+    padding:
+            1rem;
+
+    background:
+            rgba(
+                    0,
+                    0,
+                    0,
+                    0.8
+            );
+
+    opacity:
+            0;
+
+    visibility:
+            hidden;
+
+    transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+}
+
+
+.popup-overlay.show {
+    opacity:
+            1;
+
+    visibility:
+            visible;
+}
+
+
+.popup-window {
+    position:
+            relative;
+
+    width:
+            min(
+                    100%,
+                    520px
+            );
+
+    padding:
+            2.5rem;
+
+    background:
+            var(--surface);
+
+    border:
+            1px solid
+            var(--border);
+
+    transform:
+            translateY(20px)
+            scale(0.97);
+
+    transition:
+            transform 0.3s ease;
+}
+
+
+.popup-overlay.show
+.popup-window {
+    transform:
+            translateY(0)
+            scale(1);
+}
+
+
+.popup-close {
+    position:
+            absolute;
+
+    top:
+            1rem;
+
+    right:
+            1rem;
+
+    width:
+            40px;
+
+    height:
+            40px;
+
+    padding:
+            0;
+
+    border:
+            1px solid
+            var(--border);
+
+    background:
+            transparent;
+
+    color:
+            var(--text);
+
+    font-size:
+            1.5rem;
+}
+
+
+.popup-open {
+    overflow:
+            hidden;
+}
+
+
+.subscription-message {
+    min-height:
+            24px;
+
+    color:
             var(--accent);
 }
 
 
-/* =========================================================
+/* =========================================
+   MOOD BUTTON
+========================================= */
+
+.mood-control {
+    display:
+            flex;
+
+    justify-content:
+            space-between;
+
+    align-items:
+            center;
+
+    gap:
+            2rem;
+}
+
+
+/* =========================================
+   DATE / TIME
+========================================= */
+
+.current-date-time {
+    color:
+            var(--accent);
+
+    font-variant-numeric:
+            tabular-nums;
+}
+
+
+/* =========================================
    FOOTER
-========================================================= */
+========================================= */
 
 .site-footer {
     background:
@@ -1258,16 +1195,17 @@ p {
             var(--muted);
 
     border-top:
-            1px solid var(--border);
+            1px solid
+            var(--border);
 
     font-size:
             0.8rem;
 }
 
 
-/* =========================================================
-   LIGHT THEME
-========================================================= */
+/* =========================================
+   LIGHT MODE
+========================================= */
 
 body.light-theme {
     --bg:
@@ -1293,113 +1231,54 @@ body.light-theme {
 }
 
 
-body.light-theme .site-navbar {
+body.light-theme
+.site-navbar {
     background:
-            rgba(
-                    244,
-                    241,
-                    232,
-                    0.97
-            );
+            #f4f1e8;
 }
 
 
-body.light-theme .site-logo {
+body.light-theme
+.site-logo {
     color:
             #151515 !important;
 }
 
 
-body.light-theme .site-navbar .nav-link {
+body.light-theme
+.site-navbar .nav-link {
     color:
             #666666;
 }
 
 
-body.light-theme .site-navbar .nav-link:hover,
-body.light-theme .site-navbar .nav-link.active {
+body.light-theme
+.site-navbar .nav-link.active {
     color:
             #151515;
 }
 
 
-body.light-theme .theme-toggle {
+body.light-theme
+.theme-toggle {
     color:
             #151515;
-
-    border-color:
-            #b9b9b9;
 }
 
 
-body.light-theme .theme-toggle:hover {
-    background:
-            #e5e0d5;
-}
-
-
-body.light-theme .navbar-toggler {
-    border-color:
-            #888888;
-}
-
-
-body.light-theme .navbar-toggler-icon {
-    filter:
-            invert(1);
-}
-
-
-body.light-theme .btn-outline-light {
-    color:
-            #151515;
-
-    border-color:
-            #151515;
-}
-
-
-body.light-theme .btn-outline-light:hover {
-    background:
-            #151515;
-
-    color:
-            #ffffff;
-}
-
-
-body.light-theme .artist-sidebar {
+body.light-theme
+.artist-sidebar {
     background:
             #ece8dd;
 }
 
 
-body.light-theme .about-logo {
-    background:
-            #000000;
-}
+/* =========================================
+   TABLET
+========================================= */
 
-
-body.light-theme .form-control,
-body.light-theme .form-select,
-body.light-theme .input-group-text {
-    background:
-            #ffffff;
-
-    color:
-            #151515;
-
-    border-color:
-            #c9c9c9;
-}
-
-
-/* =========================================================
-   TABLET MEDIA QUERY
-   Assignment 3 Responsive Typography + Card Group
-========================================================= */
-
-@media (max-width: 992px) {
+@media
+(max-width: 992px) {
 
     .responsive-title {
         font-size:
@@ -1407,38 +1286,12 @@ body.light-theme .input-group-text {
     }
 
 
-    .responsive-copy {
-        font-size:
-                1rem;
-    }
-
-
-    #hero {
-        min-height:
-                auto;
-    }
-
-
-    .hero-image {
-        height:
-                520px;
-    }
-
-
-    /* 2 cards per row */
-
     .mq-card {
         flex:
                 0 0
                 calc(
                         50% - 0.75rem
                 );
-    }
-
-
-    .artist-feature-image {
-        height:
-                520px;
     }
 
 
@@ -1450,13 +1303,19 @@ body.light-theme .input-group-text {
                 );
 
         grid-auto-rows:
-                360px;
+                350px;
+    }
+
+
+    .artist-feature-image {
+        height:
+                520px;
     }
 
 
     .carousel-image {
         height:
-                560px;
+                550px;
     }
 
 
@@ -1468,21 +1327,25 @@ body.light-theme .input-group-text {
 }
 
 
-/* =========================================================
-   SMALL TABLET / LARGE MOBILE
-========================================================= */
+/* =========================================
+   MOBILE / TABLET
+========================================= */
 
-@media (max-width: 768px) {
-
-    .archive-navigation {
-        justify-content:
-                flex-start;
-    }
-
+@media
+(max-width: 768px) {
 
     .team-flex {
         flex-direction:
                 column;
+    }
+
+
+    .mood-control {
+        flex-direction:
+                column;
+
+        align-items:
+                flex-start;
     }
 
 
@@ -1503,7 +1366,8 @@ body.light-theme .input-group-text {
                 0;
 
         border-bottom:
-                1px solid var(--border);
+                1px solid
+                var(--border);
     }
 
 
@@ -1518,57 +1382,19 @@ body.light-theme .input-group-text {
                 1rem;
     }
 
-
-    .sidebar-links a {
-        flex:
-                1;
-
-        min-width:
-                130px;
-    }
-
-
-    .icons-main {
-        width:
-                min(
-                        92%,
-                        1050px
-                );
-    }
-
-
-    .listening-list li {
-        grid-template-columns:
-                50px 1fr;
-    }
-
-
-    .listening-list li span {
-        grid-column:
-                2;
-    }
-
 }
 
 
-/* =========================================================
-   MOBILE MEDIA QUERY
-========================================================= */
+/* =========================================
+   MOBILE
+========================================= */
 
-@media (max-width: 576px) {
+@media
+(max-width: 576px) {
 
     .responsive-title {
         font-size:
                 2.7rem;
-
-        line-height:
-                1;
-    }
-
-
-    .responsive-copy {
-        font-size:
-                0.92rem;
     }
 
 
@@ -1584,19 +1410,10 @@ body.light-theme .input-group-text {
     }
 
 
-    /* Assignment 3:
-       Cards stack vertically */
-
     .mq-card {
         flex:
                 0 0
                 100%;
-    }
-
-
-    .mq-section {
-        padding:
-                4rem 0;
     }
 
 
@@ -1608,7 +1425,7 @@ body.light-theme .input-group-text {
 
     .artist-feature-image {
         height:
-                450px;
+                440px;
     }
 
 
@@ -1617,11 +1434,12 @@ body.light-theme .input-group-text {
                 1fr;
 
         grid-auto-rows:
-                480px;
+                460px;
     }
 
 
-    .gallery-item figcaption {
+    .gallery-item
+    figcaption {
         transform:
                 translateY(0);
     }
@@ -1633,24 +1451,9 @@ body.light-theme .input-group-text {
     }
 
 
-    .carousel-caption h3 {
-        font-size:
-                1.4rem;
-    }
-
-
-    .about-logo {
-        width:
-                min(
-                        100%,
-                        250px
-                );
-    }
-
-
-    .listening-list li {
-        grid-template-columns:
-                45px 1fr;
+    .popup-window {
+        padding:
+                2rem 1.5rem;
     }
 
 }

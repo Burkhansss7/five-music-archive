@@ -10,7 +10,7 @@
 
     <meta
             name="description"
-            content="FIVE. Music Archive — a responsive student project about five favorite hip-hop artists.">
+            content="FIVE. Music Archive — a responsive interactive music archive.">
 
     <title>FIVE. | Music Archive</title>
 
@@ -30,13 +30,8 @@
             href="css/style.css">
 </head>
 
-
 <body>
 
-
-<!-- ========================================
-     BOOTSTRAP NAVBAR
-======================================== -->
 
 <header>
 
@@ -47,8 +42,7 @@
 
             <a
                     class="navbar-brand site-logo"
-                    href="index.html"
-                    aria-label="FIVE home">
+                    href="index.html">
 
                 FIVE<span>.</span>
 
@@ -74,60 +68,42 @@
                     id="mainNavbar">
 
                 <ul
-                        class="navbar-nav ms-auto
-                               align-items-lg-center
-                               gap-lg-3">
+                        class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
 
                     <li class="nav-item">
-
                         <a
                                 class="nav-link active"
                                 aria-current="page"
                                 href="index.html">
-
                             Home
-
                         </a>
-
                     </li>
 
 
                     <li class="nav-item">
-
                         <a
                                 class="nav-link"
                                 href="newwave.html">
-
                             New Wave
-
                         </a>
-
                     </li>
 
 
                     <li class="nav-item">
-
                         <a
                                 class="nav-link"
                                 href="icons.html">
-
                             Icons
-
                         </a>
-
                     </li>
 
 
                     <li class="nav-item">
-
                         <a
                                 class="nav-link"
                                 href="about.html">
-
                             About
-
                         </a>
-
                     </li>
 
 
@@ -157,24 +133,17 @@
 </header>
 
 
-
 <main>
 
 
-    <!-- ========================================
-         HERO
-         BOOTSTRAP TWO-COLUMN GRID
-    ========================================= -->
+    <!-- HERO -->
 
     <section
             id="hero"
             class="container py-5">
 
         <div
-                class="row
-                       align-items-center
-                       g-5
-                       py-lg-5">
+                class="row align-items-center g-5 py-lg-5">
 
             <div class="col-12 col-lg-6">
 
@@ -184,9 +153,7 @@
 
 
                 <h1
-                        class="responsive-title
-                               fw-bold
-                               mb-4">
+                        class="responsive-title fw-bold mb-4">
 
                     Five artists.<br>
                     Five different worlds.
@@ -195,24 +162,19 @@
 
 
                 <p
-                        class="responsive-copy
-                               lead
-                               mb-4">
+                        class="responsive-copy lead mb-4">
 
                     A personal collection dedicated
                     to five artists whose sound,
-                    style and influence make them
-                    stand out to us.
+                    style and influence stand out to us.
 
                 </p>
 
 
-                <!-- Bootstrap button group -->
-
                 <div
                         class="btn-group flex-wrap"
                         role="group"
-                        aria-label="Explore archive">
+                        aria-label="Archive actions">
 
                     <a
                             href="newwave.html"
@@ -231,6 +193,16 @@
 
                     </a>
 
+
+                    <button
+                            id="open-subscribe"
+                            class="btn btn-outline-success btn-lg"
+                            type="button">
+
+                        Join Archive
+
+                    </button>
+
                 </div>
 
             </div>
@@ -246,9 +218,7 @@
                             alt="Portrait of Yeat">
 
                     <figcaption
-                            class="small
-                                   text-secondary
-                                   mt-2">
+                            class="small text-secondary mt-2">
 
                         01 — YEAT
 
@@ -264,21 +234,14 @@
 
 
 
-    <!-- ========================================
-         FLEXBOX NAVIGATION
-         Assignment 2 Flexbox requirement
-    ========================================= -->
+    <!-- FLEXBOX NAVIGATION -->
 
     <section
-            class="container
-                   py-4
-                   border-top
-                   border-bottom
-                   border-secondary">
+            class="container py-4 border-top border-bottom border-secondary">
 
         <nav
                 class="archive-navigation"
-                aria-label="Archive categories">
+                aria-label="Archive artists">
 
             <a href="newwave.html#yeat">
                 Yeat
@@ -306,13 +269,41 @@
 
 
 
-    <!-- ========================================
-         CSS MEDIA QUERY CARD GROUP
-         Desktop = 3
-         Tablet = 2
-         Mobile = 1
-         NO Bootstrap Grid for the layout
-    ========================================= -->
+    <!-- ASSIGNMENT 4 BACKGROUND COLOR -->
+
+    <section class="container py-5">
+
+        <div class="mood-control">
+
+            <div>
+
+                <p class="eyebrow mb-2">
+                    CHANGE THE MOOD
+                </p>
+
+                <h2 class="section-heading mb-0">
+                    Choose another atmosphere.
+                </h2>
+
+            </div>
+
+
+            <button
+                    id="change-background"
+                    class="btn btn-outline-success"
+                    type="button">
+
+                Change Background
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CSS MEDIA QUERY CARD GROUP -->
 
     <section
             class="mq-section"
@@ -331,14 +322,6 @@
                 Three different sounds
 
             </h2>
-
-
-            <p class="mt-3 mb-0">
-
-                A selection of artists from
-                different parts of the archive.
-
-            </p>
 
         </div>
 
@@ -364,10 +347,9 @@
 
                     <p>
                         Experimental production,
-                        unusual vocals and a futuristic
-                        approach to modern trap.
+                        unusual vocals and futuristic
+                        trap influences.
                     </p>
-
 
                     <a
                             href="newwave.html#yeat"
@@ -380,7 +362,6 @@
                 </div>
 
             </article>
-
 
 
             <article class="mq-card">
@@ -400,11 +381,10 @@
                     </h3>
 
                     <p>
-                        An experimental artist
-                        recognized for distinctive
-                        vocals and visual direction.
+                        Experimental vocals,
+                        minimalist songwriting
+                        and strong visual direction.
                     </p>
-
 
                     <a
                             href="newwave.html#carti"
@@ -417,7 +397,6 @@
                 </div>
 
             </article>
-
 
 
             <article class="mq-card">
@@ -438,10 +417,8 @@
 
                     <p>
                         A mainstream artist combining
-                        elements of hip-hop,
-                        R&B and pop.
+                        hip-hop, R&B and pop.
                     </p>
-
 
                     <a
                             href="icons.html#drake"
@@ -455,23 +432,16 @@
 
             </article>
 
-
         </div>
 
     </section>
 
 
 
-    <!-- ========================================
-         BOOTSTRAP 12-COLUMN GRID
-         THREE COLUMNS
-    ========================================= -->
+    <!-- BOOTSTRAP GRID -->
 
     <section
-            class="container
-                   py-5
-                   px-sm-2
-                   mt-lg-4">
+            class="container py-5 px-sm-2 mt-lg-4">
 
         <div class="mb-5">
 
@@ -492,9 +462,7 @@
             <div class="col-12 col-md-6 col-lg-4">
 
                 <article
-                        class="info-panel
-                               h-100
-                               p-4">
+                        class="info-panel h-100 p-4">
 
                     <span class="archive-number">
                         01
@@ -522,13 +490,10 @@
             </div>
 
 
-
             <div class="col-12 col-md-6 col-lg-4">
 
                 <article
-                        class="info-panel
-                               h-100
-                               p-4">
+                        class="info-panel h-100 p-4">
 
                     <span class="archive-number">
                         02
@@ -555,13 +520,10 @@
             </div>
 
 
-
             <div class="col-12 col-md-6 col-lg-4">
 
                 <article
-                        class="info-panel
-                               h-100
-                               p-4">
+                        class="info-panel h-100 p-4">
 
                     <span class="archive-number">
                         03
@@ -572,8 +534,8 @@
                     </h3>
 
                     <p class="mt-3 mb-4">
-                        Learn more about
-                        the project and our team.
+                        Learn about the project
+                        and our team.
                     </p>
 
                     <a
@@ -588,191 +550,6 @@
 
             </div>
 
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ========================================
-         BOOTSTRAP CARDS
-    ========================================= -->
-
-    <section class="container py-5">
-
-        <div class="mb-5">
-
-            <p class="eyebrow mb-3">
-                SELECTED ARTISTS
-            </p>
-
-            <h2 class="section-heading">
-                Start listening
-            </h2>
-
-        </div>
-
-
-        <div class="card-group site-card-group">
-
-
-            <article class="card site-card">
-
-                <img
-                        src="images/future.jpg"
-                        class="card-img-top"
-                        alt="Future">
-
-                <div class="card-body p-4">
-
-                    <h3 class="card-title">
-                        Future
-                    </h3>
-
-                    <p class="card-text">
-                        Trap and melodic hip-hop
-                        from Atlanta.
-                    </p>
-
-                    <a
-                            href="icons.html#future"
-                            class="btn btn-outline-success">
-
-                        Explore
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-
-            <article class="card site-card">
-
-                <img
-                        src="images/ken.jpg"
-                        class="card-img-top"
-                        alt="Ken Carson">
-
-                <div class="card-body p-4">
-
-                    <h3 class="card-title">
-                        Ken Carson
-                    </h3>
-
-                    <p class="card-text">
-                        High-energy production
-                        and modern rage sound.
-                    </p>
-
-                    <a
-                            href="newwave.html#ken"
-                            class="btn btn-outline-success">
-
-                        Explore
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-
-            <article class="card site-card">
-
-                <img
-                        src="images/drake.jpg"
-                        class="card-img-top"
-                        alt="Drake">
-
-                <div class="card-body p-4">
-
-                    <h3 class="card-title">
-                        Drake
-                    </h3>
-
-                    <p class="card-text">
-                        Hip-hop, R&B
-                        and mainstream sound.
-                    </p>
-
-                    <a
-                            href="icons.html#drake"
-                            class="btn btn-outline-success">
-
-                        Explore
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ========================================
-         TWO-COLUMN BOOTSTRAP SECTION
-    ========================================= -->
-
-    <section
-            class="container
-                   py-5
-                   my-lg-5">
-
-        <div class="row g-5">
-
-            <div class="col-12 col-lg-6">
-
-                <p class="eyebrow mb-3">
-                    WHY THESE FIVE?
-                </p>
-
-                <h2 class="section-heading">
-                    Different eras.<br>
-                    One archive.
-                </h2>
-
-            </div>
-
-
-            <div class="col-12 col-lg-6">
-
-                <p class="lead">
-
-                    Each artist represents
-                    a different approach to modern
-                    hip-hop, production and visual style.
-
-                </p>
-
-
-                <ul class="archive-list mt-4">
-
-                    <li>
-                        Distinctive sound
-                        and production
-                    </li>
-
-                    <li>
-                        Strong visual identity
-                    </li>
-
-                    <li>
-                        Influence on modern rap culture
-                    </li>
-
-                </ul>
-
-            </div>
-
         </div>
 
     </section>
@@ -781,17 +558,10 @@
 </main>
 
 
-
 <footer class="site-footer">
 
     <div
-            class="container
-                   py-4
-                   d-flex
-                   flex-column
-                   flex-md-row
-                   justify-content-between
-                   gap-2">
+            class="container py-4 d-flex flex-column flex-lg-row justify-content-between gap-2">
 
         <span>
             FIVE. Music Archive
@@ -801,20 +571,107 @@
             Created by Burkhan & Islam
         </span>
 
+        <span class="current-date-time">
+        </span>
+
     </div>
 
 </footer>
 
 
 
-<!-- Bootstrap JavaScript -->
+<!-- ASSIGNMENT 4 POPUP -->
+
+<div
+        id="subscription-popup"
+        class="popup-overlay"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="popup-title">
+
+
+    <div class="popup-window">
+
+
+        <button
+                id="close-popup"
+                class="popup-close"
+                type="button"
+                aria-label="Close subscription form">
+
+            ×
+
+        </button>
+
+
+        <p class="eyebrow mb-3">
+            FIVE. MEMBERS
+        </p>
+
+
+        <h2
+                id="popup-title"
+                class="mb-3">
+
+            Join the archive.
+
+        </h2>
+
+
+        <p>
+            Subscribe to receive updates
+            about new artists and archive content.
+        </p>
+
+
+        <form id="subscription-form">
+
+            <label
+                    for="subscription-email"
+                    class="form-label">
+
+                Email
+
+            </label>
+
+
+            <input
+                    type="email"
+                    id="subscription-email"
+                    class="form-control"
+                    placeholder="you@example.com">
+
+
+            <button
+                    type="submit"
+                    class="btn btn-success w-100 mt-3">
+
+                Subscribe
+
+            </button>
+
+
+            <p
+                    id="subscription-message"
+                    class="subscription-message mt-3"
+                    aria-live="polite">
+            </p>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
 <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
 </script>
 
-<!-- Theme -->
 <script src="js/theme.js"></script>
 
-</body>
+<script src="js/assignment4.js"></script>
 
+</body>
 </html>
