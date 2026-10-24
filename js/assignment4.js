@@ -62,6 +62,8 @@ if (archiveForm) {
                 );
 
 
+            /* CLEAR OLD MESSAGES */
+
             nameError.textContent = "";
             emailError.textContent = "";
             passwordError.textContent = "";
@@ -72,30 +74,51 @@ if (archiveForm) {
             let valid = true;
 
 
-            if (name.value.trim() === "") {
+            /* =================================
+               NAME VALIDATION
+            ================================= */
+
+            const nameValue =
+                name.value.trim();
+
+
+            if (nameValue === "") {
 
                 nameError.textContent =
                     "Please enter your name.";
 
                 valid = false;
 
+            } else if (/^\d+$/.test(nameValue)) {
+
+                nameError.textContent =
+                    "Name cannot contain only numbers.";
+
+                valid = false;
+
             }
 
 
+            /* =================================
+   EMAIL VALIDATION
+================================= */
+
+            const emailValue =
+                email.value.trim();
+
+
             const emailPattern =
-                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
 
-            if (email.value.trim() === "") {
+            if (emailValue === "") {
 
                 emailError.textContent =
                     "Please enter your email.";
 
                 valid = false;
 
-            } else if (
-                !emailPattern.test(email.value)
-            ) {
+            } else if (!emailPattern.test(emailValue)) {
 
                 emailError.textContent =
                     "Please enter a valid email address.";
@@ -105,7 +128,18 @@ if (archiveForm) {
             }
 
 
-            if (password.value.length < 8) {
+            /* =================================
+               PASSWORD VALIDATION
+            ================================= */
+
+            if (password.value.startsWith(" ")) {
+
+                passwordError.textContent =
+                    "Password cannot start with a space.";
+
+                valid = false;
+
+            } else if (password.value.length < 8) {
 
                 passwordError.textContent =
                     "Password must contain at least 8 characters.";
@@ -115,7 +149,18 @@ if (archiveForm) {
             }
 
 
-            if (
+            /* =================================
+               CONFIRM PASSWORD
+            ================================= */
+
+            if (confirmPassword.value === "") {
+
+                confirmPasswordError.textContent =
+                    "Please confirm your password.";
+
+                valid = false;
+
+            } else if (
                 confirmPassword.value !==
                 password.value
             ) {
@@ -127,6 +172,10 @@ if (archiveForm) {
 
             }
 
+
+            /* =================================
+               SUCCESS
+            ================================= */
 
             if (valid) {
 
