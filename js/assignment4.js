@@ -1,11 +1,10 @@
 /* =====================================================
-   FIVE. MUSIC ARCHIVE
-   ASSIGNMENT 4 — JAVASCRIPT
+   ASSIGNMENT 4
 ===================================================== */
 
 
 /* =====================================================
-   TASK 1 — FORM VALIDATION
+   FORM VALIDATION
 ===================================================== */
 
 const archiveForm =
@@ -62,8 +61,6 @@ if (archiveForm) {
                 );
 
 
-            /* CLEAR OLD MESSAGES */
-
             nameError.textContent = "";
             emailError.textContent = "";
             passwordError.textContent = "";
@@ -74,9 +71,9 @@ if (archiveForm) {
             let valid = true;
 
 
-            /* =================================
-               NAME VALIDATION
-            ================================= */
+            /* =============================
+               NAME
+            ============================== */
 
             const nameValue =
                 name.value.trim();
@@ -99,9 +96,9 @@ if (archiveForm) {
             }
 
 
-            /* =================================
-   EMAIL VALIDATION
-================================= */
+            /* =============================
+               EMAIL
+            ============================== */
 
             const emailValue =
                 email.value.trim();
@@ -118,7 +115,9 @@ if (archiveForm) {
 
                 valid = false;
 
-            } else if (!emailPattern.test(emailValue)) {
+            } else if (
+                !emailPattern.test(emailValue)
+            ) {
 
                 emailError.textContent =
                     "Please enter a valid email address.";
@@ -128,18 +127,22 @@ if (archiveForm) {
             }
 
 
-            /* =================================
-               PASSWORD VALIDATION
-            ================================= */
+            /* =============================
+               PASSWORD
+            ============================== */
 
-            if (password.value.startsWith(" ")) {
+            if (
+                password.value.startsWith(" ")
+            ) {
 
                 passwordError.textContent =
                     "Password cannot start with a space.";
 
                 valid = false;
 
-            } else if (password.value.length < 8) {
+            } else if (
+                password.value.length < 8
+            ) {
 
                 passwordError.textContent =
                     "Password must contain at least 8 characters.";
@@ -149,11 +152,13 @@ if (archiveForm) {
             }
 
 
-            /* =================================
+            /* =============================
                CONFIRM PASSWORD
-            ================================= */
+            ============================== */
 
-            if (confirmPassword.value === "") {
+            if (
+                confirmPassword.value === ""
+            ) {
 
                 confirmPasswordError.textContent =
                     "Please confirm your password.";
@@ -173,9 +178,9 @@ if (archiveForm) {
             }
 
 
-            /* =================================
+            /* =============================
                SUCCESS
-            ================================= */
+            ============================== */
 
             if (valid) {
 
@@ -194,7 +199,7 @@ if (archiveForm) {
 
 
 /* =====================================================
-   TASK 2 — FAQ ACCORDION
+   FAQ ACCORDION
 ===================================================== */
 
 const faqQuestions =
@@ -213,7 +218,7 @@ faqQuestions.forEach(
                 const answer =
                     question.nextElementSibling;
 
-                const currentlyOpen =
+                const isOpen =
                     question.classList.contains(
                         "active"
                     );
@@ -230,7 +235,7 @@ faqQuestions.forEach(
 
                 question.setAttribute(
                     "aria-expanded",
-                    String(!currentlyOpen)
+                    String(!isOpen)
                 );
 
             }
@@ -242,7 +247,7 @@ faqQuestions.forEach(
 
 
 /* =====================================================
-   TASK 3 — POPUP SUBSCRIPTION FORM
+   POPUP
 ===================================================== */
 
 const openPopupButton =
@@ -322,7 +327,9 @@ if (popup) {
         function (event) {
 
             if (event.target === popup) {
+
                 closePopup();
+
             }
 
         }
@@ -350,7 +357,9 @@ document.addEventListener(
 
 
 
-/* SUBSCRIPTION FORM */
+/* =====================================================
+   SUBSCRIPTION FORM
+===================================================== */
 
 const subscriptionForm =
     document.getElementById(
@@ -378,12 +387,12 @@ if (subscriptionForm) {
                 );
 
 
-            const emailPattern =
-                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const pattern =
+                /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
 
             if (
-                !emailPattern.test(
+                !pattern.test(
                     email.value.trim()
                 )
             ) {
@@ -410,7 +419,8 @@ if (subscriptionForm) {
 
 
 /* =====================================================
-   TASK 4 — CHANGE BACKGROUND COLOR
+   CHANGE BACKGROUND
+   WORKS IN DARK AND LIGHT MODE
 ===================================================== */
 
 const backgroundButton =
@@ -419,7 +429,7 @@ const backgroundButton =
     );
 
 
-const backgroundColors = [
+const darkBackgroundColors = [
 
     "#0b0b0b",
 
@@ -434,7 +444,23 @@ const backgroundColors = [
 ];
 
 
-let backgroundIndex = 0;
+const lightBackgroundColors = [
+
+    "#f4f1e8",
+
+    "#e9f0f2",
+
+    "#edf2e5",
+
+    "#f3e9e5",
+
+    "#eee9f3"
+
+];
+
+
+let darkBackgroundIndex = 0;
+let lightBackgroundIndex = 0;
 
 
 if (backgroundButton) {
@@ -443,27 +469,68 @@ if (backgroundButton) {
         "click",
         function () {
 
-            backgroundIndex++;
+            const lightMode =
+                document.body.classList.contains(
+                    "light-theme"
+                );
 
 
-            if (
-                backgroundIndex >=
-                backgroundColors.length
-            ) {
+            /* =============================
+               LIGHT MODE
+            ============================== */
 
-                backgroundIndex = 0;
+            if (lightMode) {
+
+                lightBackgroundIndex++;
+
+
+                if (
+                    lightBackgroundIndex >=
+                    lightBackgroundColors.length
+                ) {
+
+                    lightBackgroundIndex = 0;
+
+                }
+
+
+                document.body.style.setProperty(
+                    "--bg",
+                    lightBackgroundColors[
+                        lightBackgroundIndex
+                        ]
+                );
 
             }
 
 
-            document.documentElement
-                .style
-                .setProperty(
+            /* =============================
+               DARK MODE
+            ============================== */
+
+            else {
+
+                darkBackgroundIndex++;
+
+
+                if (
+                    darkBackgroundIndex >=
+                    darkBackgroundColors.length
+                ) {
+
+                    darkBackgroundIndex = 0;
+
+                }
+
+
+                document.body.style.setProperty(
                     "--bg",
-                    backgroundColors[
-                        backgroundIndex
+                    darkBackgroundColors[
+                        darkBackgroundIndex
                         ]
                 );
+
+            }
 
         }
     );
@@ -473,19 +540,19 @@ if (backgroundButton) {
 
 
 /* =====================================================
-   TASK 5 — CURRENT DATE AND TIME
+   CURRENT DATE AND TIME
 ===================================================== */
 
 function updateDateTime() {
 
-    const dateTimeElements =
+    const elements =
         document.querySelectorAll(
             ".current-date-time"
         );
 
 
     if (
-        dateTimeElements.length === 0
+        elements.length === 0
     ) {
 
         return;
@@ -516,18 +583,18 @@ function updateDateTime() {
     };
 
 
-    const formattedDate =
+    const formatted =
         now.toLocaleString(
             "en-US",
             options
         );
 
 
-    dateTimeElements.forEach(
+    elements.forEach(
         function (element) {
 
             element.textContent =
-                formattedDate;
+                formatted;
 
         }
     );

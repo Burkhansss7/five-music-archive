@@ -1,9 +1,18 @@
 const themeButton =
-    document.getElementById("theme-toggle");
+    document.getElementById(
+        "theme-toggle"
+    );
+
 
 const savedTheme =
-    localStorage.getItem("theme");
+    localStorage.getItem(
+        "theme"
+    );
 
+
+/* =====================================================
+   LOAD SAVED THEME
+===================================================== */
 
 if (savedTheme === "light") {
 
@@ -14,11 +23,17 @@ if (savedTheme === "light") {
 }
 
 
+
+/* =====================================================
+   UPDATE BUTTON ICON
+===================================================== */
+
 function updateThemeButton() {
 
     if (!themeButton) {
         return;
     }
+
 
     const lightMode =
         document.body.classList.contains(
@@ -28,12 +43,15 @@ function updateThemeButton() {
 
     if (lightMode) {
 
-        themeButton.textContent = "☾";
+        themeButton.textContent =
+            "☾";
+
 
         themeButton.setAttribute(
             "aria-label",
             "Switch to dark mode"
         );
+
 
         themeButton.setAttribute(
             "aria-pressed",
@@ -42,12 +60,15 @@ function updateThemeButton() {
 
     } else {
 
-        themeButton.textContent = "☀";
+        themeButton.textContent =
+            "☀";
+
 
         themeButton.setAttribute(
             "aria-label",
             "Switch to light mode"
         );
+
 
         themeButton.setAttribute(
             "aria-pressed",
@@ -62,14 +83,31 @@ function updateThemeButton() {
 updateThemeButton();
 
 
+
+/* =====================================================
+   CHANGE THEME
+===================================================== */
+
 if (themeButton) {
 
     themeButton.addEventListener(
         "click",
         function () {
 
+
             document.body.classList.toggle(
                 "light-theme"
+            );
+
+
+            /*
+               Reset custom background color
+               when switching between
+               light and dark themes
+            */
+
+            document.body.style.removeProperty(
+                "--bg"
             );
 
 
@@ -81,6 +119,7 @@ if (themeButton) {
 
             localStorage.setItem(
                 "theme",
+
                 lightMode
                     ? "light"
                     : "dark"
