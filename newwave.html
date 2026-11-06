@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -12,7 +13,6 @@
 
     <link
             rel="icon"
-            type="image/png"
             href="images/logo.png">
 
     <link
@@ -22,10 +22,22 @@
     <link
             rel="stylesheet"
             href="css/style.css">
+
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+
+    <script
+            src="js/assignment6.js"
+            defer>
+    </script>
+
 </head>
 
 
 <body>
+
+
+<div id="scroll-progress"></div>
+
 
 
 <header>
@@ -47,10 +59,7 @@
                     class="navbar-toggler"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#mainNavbar"
-                    aria-controls="mainNavbar"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
+                    data-bs-target="#mainNavbar">
 
                 <span class="navbar-toggler-icon"></span>
 
@@ -64,30 +73,19 @@
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
-                            Home
-                        </a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a
-                                class="nav-link active"
-                                aria-current="page"
-                                href="newwave.html">
-                            New Wave
-                        </a>
+                        <a class="nav-link active" href="newwave.html">New Wave</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="icons.html">
-                            Icons
-                        </a>
+                        <a class="nav-link" href="icons.html">Icons</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">
-                            About
-                        </a>
+                        <a class="nav-link" href="about.html">About</a>
                     </li>
 
                     <li class="nav-item">
@@ -95,8 +93,7 @@
                         <button
                                 id="theme-toggle"
                                 class="theme-toggle"
-                                type="button"
-                                aria-label="Switch theme">
+                                type="button">
 
                             ☀
 
@@ -123,7 +120,7 @@
 
         <div class="py-lg-5">
 
-            <p class="eyebrow mb-3">
+            <p class="eyebrow">
                 01 / NEW WAVE
             </p>
 
@@ -134,12 +131,11 @@
 
             </h1>
 
-            <p class="responsive-copy lead col-lg-7">
+            <p class="responsive-copy lead">
 
-                Three artists connected
-                to experimental trap,
-                rage and a newer generation
-                of hip-hop.
+                Experimental production,
+                distorted textures and a new visual
+                language inside modern hip-hop.
 
             </p>
 
@@ -149,31 +145,29 @@
 
 
 
-    <!-- YEAT -->
-
     <section
             id="yeat"
             class="container py-5">
 
         <div class="row align-items-center g-5">
 
-            <div class="col-12 col-lg-6">
+            <div class="col-lg-6">
 
                 <img
                         src="images/yeat.jpg"
-                        class="img-fluid artist-feature-image"
+                        class="artist-feature-image"
                         alt="Yeat">
 
             </div>
 
 
-            <div class="col-12 col-lg-6">
+            <div class="col-lg-6">
 
-                <p class="eyebrow mb-3">
+                <p class="eyebrow">
                     01
                 </p>
 
-                <h2 class="display-2 fw-bold mb-3">
+                <h2 class="display-2 fw-bold">
                     Yeat
                 </h2>
 
@@ -181,11 +175,20 @@
                     United States
                 </p>
 
-                <p class="text-secondary">
+                <p class="artist-description">
 
-                    Experimental production,
-                    unusual vocals and futuristic
-                    trap influences.
+                    Yeat's music combines distorted
+                    production, unconventional vocals,
+                    unusual terminology and futuristic
+                    synth textures.
+
+                </p>
+
+                <p>
+
+                    His work represents one of the most
+                    recognizable directions within
+                    contemporary experimental trap.
 
                 </p>
 
@@ -196,8 +199,6 @@
     </section>
 
 
-
-    <!-- CARTI -->
 
     <section
             id="carti"
@@ -205,23 +206,23 @@
 
         <div class="row align-items-center g-5">
 
-            <div class="col-12 col-lg-6 order-lg-2">
+            <div class="col-lg-6 order-lg-2">
 
                 <img
                         src="images/carti.jpg"
-                        class="img-fluid artist-feature-image"
+                        class="artist-feature-image"
                         alt="Playboi Carti">
 
             </div>
 
 
-            <div class="col-12 col-lg-6 order-lg-1">
+            <div class="col-lg-6 order-lg-1">
 
-                <p class="eyebrow mb-3">
+                <p class="eyebrow">
                     02
                 </p>
 
-                <h2 class="display-2 fw-bold mb-3">
+                <h2 class="display-2 fw-bold">
                     Playboi Carti
                 </h2>
 
@@ -229,11 +230,19 @@
                     Atlanta
                 </p>
 
-                <p class="text-secondary">
+                <p class="artist-description">
 
-                    Experimental vocals,
-                    minimalist songwriting
-                    and strong visual direction.
+                    Carti built an identity around
+                    minimal lyrics, experimental vocals
+                    and a strong visual aesthetic.
+
+                </p>
+
+                <p>
+
+                    His influence can be heard across
+                    a generation of artists exploring
+                    rage and alternative trap.
 
                 </p>
 
@@ -244,8 +253,6 @@
     </section>
 
 
-
-    <!-- KEN -->
 
     <section
             id="ken"
@@ -253,23 +260,23 @@
 
         <div class="row align-items-center g-5">
 
-            <div class="col-12 col-lg-6">
+            <div class="col-lg-6">
 
                 <img
                         src="images/ken.jpg"
-                        class="img-fluid artist-feature-image"
+                        class="artist-feature-image"
                         alt="Ken Carson">
 
             </div>
 
 
-            <div class="col-12 col-lg-6">
+            <div class="col-lg-6">
 
-                <p class="eyebrow mb-3">
+                <p class="eyebrow">
                     03
                 </p>
 
-                <h2 class="display-2 fw-bold mb-3">
+                <h2 class="display-2 fw-bold">
                     Ken Carson
                 </h2>
 
@@ -277,11 +284,19 @@
                     Atlanta
                 </p>
 
-                <p class="text-secondary">
+                <p class="artist-description">
 
-                    Aggressive production,
-                    synth-heavy instrumentals
-                    and energetic performances.
+                    Ken Carson combines aggressive
+                    electronic production with melodic,
+                    energetic performances.
+
+                </p>
+
+                <p>
+
+                    His sound sits directly inside
+                    the newer generation shaped by
+                    rage production and internet culture.
 
                 </p>
 
@@ -293,14 +308,11 @@
 
 
 
-    <!-- ===================================
-         ASSIGNMENT 5
-         IMAGE ATTRIBUTE MANIPULATION
-    ==================================== -->
+    <!-- INTERACTIVE GALLERY -->
 
     <section class="container py-5">
 
-        <p class="eyebrow mb-3">
+        <p class="eyebrow">
             INTERACTIVE GALLERY
         </p>
 
@@ -311,81 +323,53 @@
 
         <div class="interactive-gallery">
 
-            <div class="featured-image-wrapper">
-
-                <img
-                        id="featured-image"
-                        src="images/yeat.jpg"
-                        alt="Yeat"
-                        class="featured-gallery-image">
-
-            </div>
+            <img
+                    id="featured-image"
+                    src="images/yeat.jpg"
+                    class="featured-gallery-image"
+                    alt="Yeat">
 
 
             <div class="gallery-thumbnails">
 
-                <button
-                        class="thumbnail-button active"
-                        type="button">
-
+                <button class="thumbnail-button active" type="button">
                     <img
                             class="archive-thumbnail"
                             src="images/yeat.jpg"
                             data-large="images/yeat.jpg"
                             alt="Yeat">
-
                 </button>
 
-
-                <button
-                        class="thumbnail-button"
-                        type="button">
-
+                <button class="thumbnail-button" type="button">
                     <img
                             class="archive-thumbnail"
                             src="images/carti.jpg"
                             data-large="images/carti.jpg"
                             alt="Playboi Carti">
-
                 </button>
 
-
-                <button
-                        class="thumbnail-button"
-                        type="button">
-
+                <button class="thumbnail-button" type="button">
                     <img
                             class="archive-thumbnail"
                             src="images/future.jpg"
                             data-large="images/future.jpg"
                             alt="Future">
-
                 </button>
 
-
-                <button
-                        class="thumbnail-button"
-                        type="button">
-
+                <button class="thumbnail-button" type="button">
                     <img
                             class="archive-thumbnail"
                             src="images/drake.jpg"
                             data-large="images/drake.jpg"
                             alt="Drake">
-
                 </button>
 
-
-                <button
-                        class="thumbnail-button"
-                        type="button">
-
+                <button class="thumbnail-button" type="button">
                     <img
                             class="archive-thumbnail"
                             src="images/ken.jpg"
                             data-large="images/ken.jpg"
                             alt="Ken Carson">
-
                 </button>
 
             </div>
@@ -405,68 +389,68 @@
 
 
 
-    <!-- CSS GRID GALLERY -->
+    <!-- VISUAL ARCHIVE -->
 
     <section class="container py-5">
 
-        <p class="eyebrow mb-3">
+        <p class="eyebrow">
             VISUAL ARCHIVE
         </p>
 
         <h2 class="section-heading mb-5">
-            Ten images. Five artists.
+            Ten frames from FIVE.
         </h2>
 
 
         <div class="image-gallery">
 
             <figure class="gallery-item">
-                <img src="images/yeat.jpg" alt="Yeat">
+                <img class="lazy-image" src="images/logo.png" data-src="images/yeat.jpg" alt="Yeat">
                 <figcaption>Yeat</figcaption>
             </figure>
 
             <figure class="gallery-item">
-                <img src="images/carti.jpg" alt="Playboi Carti">
+                <img class="lazy-image" src="images/logo.png" data-src="images/carti.jpg" alt="Playboi Carti">
                 <figcaption>Playboi Carti</figcaption>
             </figure>
 
             <figure class="gallery-item">
-                <img src="images/future.jpg" alt="Future">
+                <img class="lazy-image" src="images/logo.png" data-src="images/future.jpg" alt="Future">
                 <figcaption>Future</figcaption>
             </figure>
 
             <figure class="gallery-item">
-                <img src="images/drake.jpg" alt="Drake">
+                <img class="lazy-image" src="images/logo.png" data-src="images/drake.jpg" alt="Drake">
                 <figcaption>Drake</figcaption>
             </figure>
 
             <figure class="gallery-item">
-                <img src="images/ken.jpg" alt="Ken Carson">
+                <img class="lazy-image" src="images/logo.png" data-src="images/ken.jpg" alt="Ken Carson">
                 <figcaption>Ken Carson</figcaption>
             </figure>
 
             <figure class="gallery-item">
-                <img src="images/yeat2.jpg" alt="Alternative Yeat photo">
+                <img class="lazy-image" src="images/logo.png" data-src="images/yeat2.jpg" alt="Yeat">
                 <figcaption>Yeat / II</figcaption>
             </figure>
 
             <figure class="gallery-item">
-                <img src="images/carti2.jpg" alt="Alternative Playboi Carti photo">
+                <img class="lazy-image" src="images/logo.png" data-src="images/carti2.jpg" alt="Carti">
                 <figcaption>Carti / II</figcaption>
             </figure>
 
             <figure class="gallery-item">
-                <img src="images/future2.jpg" alt="Alternative Future photo">
+                <img class="lazy-image" src="images/logo.png" data-src="images/future2.jpg" alt="Future">
                 <figcaption>Future / II</figcaption>
             </figure>
 
             <figure class="gallery-item">
-                <img src="images/drake2.jpg" alt="Alternative Drake photo">
+                <img class="lazy-image" src="images/logo.png" data-src="images/drake2.jpg" alt="Drake">
                 <figcaption>Drake / II</figcaption>
             </figure>
 
             <figure class="gallery-item">
-                <img src="images/ken2.jpg" alt="Alternative Ken Carson photo">
+                <img class="lazy-image" src="images/logo.png" data-src="images/ken2.jpg" alt="Ken Carson">
                 <figcaption>Ken / II</figcaption>
             </figure>
 
@@ -476,108 +460,32 @@
 
 
 
-    <!-- BOOTSTRAP CAROUSEL -->
+    <!-- CTA -->
 
     <section class="container py-5">
 
-        <p class="eyebrow mb-3">
-            ARTIST SPOTLIGHT
-        </p>
+        <div class="archive-cta">
 
-        <h2 class="section-heading mb-5">
-            Browse the archive.
-        </h2>
+            <p class="eyebrow">
+                NEXT COLLECTION
+            </p>
 
+            <h2>
+                From the new wave to the icons.
+            </h2>
 
-        <div
-                id="artistCarousel"
-                class="carousel slide"
-                data-bs-ride="carousel">
+            <p>
+                Explore the artists who helped shape
+                the sound before the new generation.
+            </p>
 
+            <a
+                    href="icons.html"
+                    class="btn btn-success btn-lg">
 
-            <div class="carousel-indicators">
+                Explore Icons
 
-                <button type="button" data-bs-target="#artistCarousel" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#artistCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#artistCarousel" data-bs-slide-to="2"></button>
-                <button type="button" data-bs-target="#artistCarousel" data-bs-slide-to="3"></button>
-                <button type="button" data-bs-target="#artistCarousel" data-bs-slide-to="4"></button>
-                <button type="button" data-bs-target="#artistCarousel" data-bs-slide-to="5"></button>
-                <button type="button" data-bs-target="#artistCarousel" data-bs-slide-to="6"></button>
-                <button type="button" data-bs-target="#artistCarousel" data-bs-slide-to="7"></button>
-                <button type="button" data-bs-target="#artistCarousel" data-bs-slide-to="8"></button>
-                <button type="button" data-bs-target="#artistCarousel" data-bs-slide-to="9"></button>
-
-            </div>
-
-
-            <div class="carousel-inner">
-
-                <div class="carousel-item active">
-                    <img src="images/yeat.jpg" class="d-block w-100 carousel-image" alt="Yeat">
-                </div>
-
-                <div class="carousel-item">
-                    <img src="images/yeat2.jpg" class="d-block w-100 carousel-image" alt="Yeat alternative">
-                </div>
-
-                <div class="carousel-item">
-                    <img src="images/carti.jpg" class="d-block w-100 carousel-image" alt="Playboi Carti">
-                </div>
-
-                <div class="carousel-item">
-                    <img src="images/carti2.jpg" class="d-block w-100 carousel-image" alt="Carti alternative">
-                </div>
-
-                <div class="carousel-item">
-                    <img src="images/future.jpg" class="d-block w-100 carousel-image" alt="Future">
-                </div>
-
-                <div class="carousel-item">
-                    <img src="images/future2.jpg" class="d-block w-100 carousel-image" alt="Future alternative">
-                </div>
-
-                <div class="carousel-item">
-                    <img src="images/drake.jpg" class="d-block w-100 carousel-image" alt="Drake">
-                </div>
-
-                <div class="carousel-item">
-                    <img src="images/drake2.jpg" class="d-block w-100 carousel-image" alt="Drake alternative">
-                </div>
-
-                <div class="carousel-item">
-                    <img src="images/ken.jpg" class="d-block w-100 carousel-image" alt="Ken Carson">
-                </div>
-
-                <div class="carousel-item">
-                    <img src="images/ken2.jpg" class="d-block w-100 carousel-image" alt="Ken alternative">
-                </div>
-
-            </div>
-
-
-            <button
-                    class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#artistCarousel"
-                    data-bs-slide="prev">
-
-                <span class="carousel-control-prev-icon"></span>
-                <span class="visually-hidden">Previous</span>
-
-            </button>
-
-
-            <button
-                    class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#artistCarousel"
-                    data-bs-slide="next">
-
-                <span class="carousel-control-next-icon"></span>
-                <span class="visually-hidden">Next</span>
-
-            </button>
+            </a>
 
         </div>
 
@@ -592,16 +500,9 @@
 
     <div class="container py-4 d-flex flex-column flex-lg-row justify-content-between gap-2">
 
-        <span>
-            FIVE. Music Archive
-        </span>
-
-        <span>
-            Created by Burkhan & Islam
-        </span>
-
-        <span class="current-date-time">
-        </span>
+        <span>FIVE. Music Archive</span>
+        <span>Created by Burkhan & Islam</span>
+        <span class="current-date-time"></span>
 
     </div>
 

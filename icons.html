@@ -23,10 +23,21 @@
             rel="stylesheet"
             href="css/style.css">
 
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+
+    <script
+            src="js/assignment6.js"
+            defer>
+    </script>
+
 </head>
 
 
 <body class="icons-layout">
+
+
+<div id="scroll-progress"></div>
+
 
 
 <header class="grid-header">
@@ -48,10 +59,7 @@
                     class="navbar-toggler"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#mainNavbar"
-                    aria-controls="mainNavbar"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
+                    data-bs-target="#mainNavbar">
 
                 <span class="navbar-toggler-icon"></span>
 
@@ -65,27 +73,19 @@
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
-                            Home
-                        </a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="newwave.html">
-                            New Wave
-                        </a>
+                        <a class="nav-link" href="newwave.html">New Wave</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="icons.html">
-                            Icons
-                        </a>
+                        <a class="nav-link active" href="icons.html">Icons</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">
-                            About
-                        </a>
+                        <a class="nav-link" href="about.html">About</a>
                     </li>
 
                     <li class="nav-item">
@@ -124,9 +124,7 @@
     </h2>
 
 
-    <nav
-            class="sidebar-links"
-            aria-label="Artists">
+    <nav class="sidebar-links">
 
         <a href="#future">
             <span>04</span>
@@ -175,9 +173,19 @@
 
         </h1>
 
+        <p class="responsive-copy mt-4">
+
+            Two artists whose influence extends
+            beyond individual albums and into
+            contemporary music culture.
+
+        </p>
+
     </section>
 
 
+
+    <!-- FUTURE -->
 
     <section
             id="future"
@@ -185,7 +193,7 @@
 
         <div class="row align-items-center g-5">
 
-            <div class="col-12 col-lg-6">
+            <div class="col-lg-6">
 
                 <img
                         src="images/future.jpg"
@@ -195,7 +203,7 @@
             </div>
 
 
-            <div class="col-12 col-lg-6">
+            <div class="col-lg-6">
 
                 <p class="eyebrow">
                     04
@@ -205,10 +213,23 @@
                     Future
                 </h2>
 
-                <p class="text-secondary mt-3">
+                <p class="artist-location">
+                    Atlanta
+                </p>
 
-                    Future represents modern
-                    Atlanta trap and melodic delivery.
+                <p class="artist-description">
+
+                    Future helped define the sound
+                    of modern Atlanta trap through
+                    melodic vocals and atmospheric production.
+
+                </p>
+
+                <p>
+
+                    His influence reaches far beyond
+                    trap, shaping the vocal and production
+                    choices of younger generations.
 
                 </p>
 
@@ -220,13 +241,15 @@
 
 
 
+    <!-- DRAKE -->
+
     <section
             id="drake"
             class="container-fluid py-5">
 
         <div class="row align-items-center g-5">
 
-            <div class="col-12 col-lg-6 order-lg-2">
+            <div class="col-lg-6 order-lg-2">
 
                 <img
                         src="images/drake.jpg"
@@ -236,7 +259,7 @@
             </div>
 
 
-            <div class="col-12 col-lg-6 order-lg-1">
+            <div class="col-lg-6 order-lg-1">
 
                 <p class="eyebrow">
                     05
@@ -246,10 +269,23 @@
                     Drake
                 </h2>
 
-                <p class="text-secondary mt-3">
+                <p class="artist-location">
+                    Toronto
+                </p>
 
-                    Drake combines rap,
-                    R&B and mainstream pop influences.
+                <p class="artist-description">
+
+                    Drake combines rap, R&B,
+                    melody and pop structures
+                    into a globally recognizable sound.
+
+                </p>
+
+                <p>
+
+                    His ability to move between genres
+                    made him one of the defining
+                    mainstream artists of his generation.
 
                 </p>
 
@@ -261,7 +297,7 @@
 
 
 
-    <!-- TABLE -->
+    <!-- COMPARISON -->
 
     <section class="container-fluid py-5">
 
@@ -270,7 +306,7 @@
         </p>
 
         <h2 class="section-heading mb-5">
-            Future vs Drake
+            Two different forms of influence.
         </h2>
 
 
@@ -282,20 +318,19 @@
 
                 <tr>
                     <th>Artist</th>
-                    <th>City</th>
+                    <th>Origin</th>
                     <th>Style</th>
-                    <th>Category</th>
+                    <th>Archive</th>
                 </tr>
 
                 </thead>
-
 
                 <tbody>
 
                 <tr>
                     <td>Future</td>
                     <td>Atlanta</td>
-                    <td>Trap</td>
+                    <td>Trap / Melodic Rap</td>
                     <td>Icons</td>
                 </tr>
 
@@ -315,6 +350,113 @@
     </section>
 
 
+
+    <!-- NOTES -->
+
+    <section class="container-fluid py-5">
+
+        <p class="eyebrow">
+            WHY THEY MATTER
+        </p>
+
+        <h2 class="section-heading mb-5">
+            Influence travels forward.
+        </h2>
+
+
+        <div class="archive-notes-grid">
+
+            <article class="archive-note">
+
+                <span>
+                    01
+                </span>
+
+                <h3>
+                    Longevity
+                </h3>
+
+                <p>
+                    Both artists remained relevant
+                    across multiple periods of modern music.
+                </p>
+
+            </article>
+
+
+            <article class="archive-note">
+
+                <span>
+                    02
+                </span>
+
+                <h3>
+                    Adaptation
+                </h3>
+
+                <p>
+                    Their sound changes while
+                    maintaining a recognizable identity.
+                </p>
+
+            </article>
+
+
+            <article class="archive-note">
+
+                <span>
+                    03
+                </span>
+
+                <h3>
+                    Reach
+                </h3>
+
+                <p>
+                    Their influence can be heard
+                    across genres and younger artists.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CTA -->
+
+    <section class="container-fluid py-5">
+
+        <div class="archive-cta">
+
+            <p class="eyebrow">
+                BACK TO THE NEW WAVE
+            </p>
+
+            <h2>
+                See where the sound went next.
+            </h2>
+
+            <p>
+                Explore Yeat, Playboi Carti
+                and Ken Carson.
+            </p>
+
+            <a
+                    href="newwave.html"
+                    class="btn btn-success btn-lg">
+
+                Explore New Wave
+
+            </a>
+
+        </div>
+
+    </section>
+
+
 </main>
 
 
@@ -323,16 +465,9 @@
 
     <div class="container-fluid py-4 d-flex flex-column flex-lg-row justify-content-between gap-2">
 
-        <span>
-            FIVE. Music Archive
-        </span>
-
-        <span>
-            Created by Burkhan & Islam
-        </span>
-
-        <span class="current-date-time">
-        </span>
+        <span>FIVE. Music Archive</span>
+        <span>Created by Burkhan & Islam</span>
+        <span class="current-date-time"></span>
 
     </div>
 

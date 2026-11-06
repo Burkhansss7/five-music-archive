@@ -23,10 +23,21 @@
             rel="stylesheet"
             href="css/style.css">
 
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+
+    <script
+            src="js/assignment6.js"
+            defer>
+    </script>
+
 </head>
 
 
 <body>
+
+
+<div id="scroll-progress"></div>
+
 
 
 <header>
@@ -48,10 +59,7 @@
                     class="navbar-toggler"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#mainNavbar"
-                    aria-controls="mainNavbar"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
+                    data-bs-target="#mainNavbar">
 
                 <span class="navbar-toggler-icon"></span>
 
@@ -65,27 +73,19 @@
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
-                            Home
-                        </a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="newwave.html">
-                            New Wave
-                        </a>
+                        <a class="nav-link" href="newwave.html">New Wave</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="icons.html">
-                            Icons
-                        </a>
+                        <a class="nav-link" href="icons.html">Icons</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="about.html">
-                            About
-                        </a>
+                        <a class="nav-link active" href="about.html">About</a>
                     </li>
 
                     <li class="nav-item">
@@ -119,25 +119,35 @@
     <section class="container py-5">
 
         <p class="eyebrow">
-            ABOUT THE PROJECT
+            ABOUT THE ARCHIVE
         </p>
 
         <h1 class="responsive-title fw-bold">
 
-            Made by two<br>
-            music listeners.
+            Music remembered<br>
+            through details.
 
         </h1>
+
+        <p class="responsive-copy mt-4">
+
+            FIVE. is a small editorial archive
+            focused on sound, visuals and influence
+            inside modern hip-hop.
+
+        </p>
 
     </section>
 
 
 
+    <!-- IDEA -->
+
     <section class="container py-5">
 
         <div class="row align-items-center g-5">
 
-            <div class="col-12 col-lg-6">
+            <div class="col-lg-6">
 
                 <img
                         src="images/logo.png"
@@ -147,7 +157,7 @@
             </div>
 
 
-            <div class="col-12 col-lg-6">
+            <div class="col-lg-6">
 
                 <p class="eyebrow">
                     THE IDEA
@@ -160,9 +170,17 @@
 
                 <p class="mt-4">
 
-                    FIVE. introduces five artists
-                    from modern hip-hop
-                    in one visual archive.
+                    FIVE. does not try to decide
+                    who is better.
+
+                </p>
+
+                <p>
+
+                    Instead, the archive looks at
+                    five artists who represent
+                    different sounds and different
+                    moments in modern hip-hop.
 
                 </p>
 
@@ -179,15 +197,16 @@
     <section class="container py-5">
 
         <p class="eyebrow">
-            TEAM
+            THE PEOPLE BEHIND FIVE.
         </p>
 
         <h2 class="section-heading mb-5">
-            Who built the website?
+            Built around shared taste.
         </h2>
 
 
         <div class="team-flex">
+
 
             <article class="team-card">
 
@@ -202,11 +221,8 @@
                     </h3>
 
                     <p>
-
-                        Home and New Wave pages.
-                        JavaScript DOM interaction,
-                        rating, filtering and gallery.
-
+                        Front-end structure,
+                        interaction and archive direction.
                     </p>
 
                 </div>
@@ -227,15 +243,14 @@
                     </h3>
 
                     <p>
-
-                        Icons and About pages.
-                        Validation, FAQ and multi-step form.
-
+                        Content structure,
+                        artist pages and interaction.
                     </p>
 
                 </div>
 
             </article>
+
 
         </div>
 
@@ -252,7 +267,7 @@
         </p>
 
         <h2 class="section-heading mb-5">
-            About FIVE.
+            A little more about FIVE.
         </h2>
 
 
@@ -261,10 +276,7 @@
 
             <div class="faq-item">
 
-                <button
-                        class="faq-question"
-                        type="button"
-                        aria-expanded="false">
+                <button class="faq-question" type="button">
 
                     What is FIVE. Music Archive?
 
@@ -275,11 +287,8 @@
                 <div class="faq-answer">
 
                     <p>
-
-                        FIVE. is a student music archive
-                        dedicated to five artists
-                        from modern hip-hop.
-
+                        A visual archive dedicated
+                        to five artists from modern hip-hop.
                     </p>
 
                 </div>
@@ -289,12 +298,9 @@
 
             <div class="faq-item">
 
-                <button
-                        class="faq-question"
-                        type="button"
-                        aria-expanded="false">
+                <button class="faq-question" type="button">
 
-                    Why did we choose these artists?
+                    Why these five artists?
 
                     <span>+</span>
 
@@ -303,11 +309,9 @@
                 <div class="faq-answer">
 
                     <p>
-
                         Each artist represents
-                        a different sound,
-                        style and visual identity.
-
+                        a distinctive sound, visual identity
+                        or form of influence.
                     </p>
 
                 </div>
@@ -317,10 +321,7 @@
 
             <div class="faq-item">
 
-                <button
-                        class="faq-question"
-                        type="button"
-                        aria-expanded="false">
+                <button class="faq-question" type="button">
 
                     Is FIVE. a ranking?
 
@@ -331,7 +332,8 @@
                 <div class="faq-answer">
 
                     <p>
-                        No. FIVE. is a personal archive.
+                        No. The archive is based on interest,
+                        not competition.
                     </p>
 
                 </div>
@@ -341,12 +343,9 @@
 
             <div class="faq-item">
 
-                <button
-                        class="faq-question"
-                        type="button"
-                        aria-expanded="false">
+                <button class="faq-question" type="button">
 
-                    Is the website responsive?
+                    Can the archive grow?
 
                     <span>+</span>
 
@@ -355,16 +354,15 @@
                 <div class="faq-answer">
 
                     <p>
-
-                        Yes. The project uses
-                        Media Queries, Flexbox,
-                        Grid and Bootstrap.
-
+                        Yes. The idea is designed
+                        to grow with new artists,
+                        visuals and stories.
                     </p>
 
                 </div>
 
             </div>
+
 
         </div>
 
@@ -372,17 +370,67 @@
 
 
 
-    <!-- ===================================
-         MULTI-STEP FORM
-         CALLBACK
-    ==================================== -->
+    <!-- COPY -->
+
+    <section class="container py-5">
+
+        <p class="eyebrow">
+            SHARE FIVE.
+        </p>
+
+        <h2 class="section-heading mb-4">
+            Send someone into the archive.
+        </h2>
+
+
+        <div class="copy-box">
+
+            <input
+                    id="copy-text"
+                    class="form-control"
+                    type="text"
+                    readonly
+                    value="https://burkhansss7.github.io/five-music-archive/">
+
+
+            <button
+                    id="copy-button"
+                    class="btn btn-outline-success"
+                    type="button">
+
+                <span id="copy-icon">
+                    ⧉
+                </span>
+
+                <span id="copy-label">
+                    Copy
+                </span>
+
+            </button>
+
+
+            <span
+                    id="copy-tooltip"
+                    class="copy-tooltip">
+
+                Copied to clipboard!
+
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PROFILE -->
 
     <section class="container py-5">
 
         <div class="row g-5">
 
 
-            <div class="col-12 col-lg-5">
+            <div class="col-lg-5">
 
                 <p class="eyebrow">
                     JOIN FIVE.
@@ -392,8 +440,9 @@
                     Create your archive profile.
                 </h2>
 
-                <p class="mt-4">
-                    Complete both steps.
+                <p>
+                    Join the archive and stay
+                    connected to future additions.
                 </p>
 
 
@@ -408,16 +457,13 @@
             </div>
 
 
-            <div class="col-12 col-lg-7">
-
+            <div class="col-lg-7">
 
                 <form
                         id="archive-form"
                         class="site-form p-3 p-sm-4 p-lg-5"
                         novalidate>
 
-
-                    <!-- STEP 1 -->
 
                     <div
                             class="form-step active"
@@ -431,7 +477,7 @@
                         <div class="row g-3">
 
 
-                            <div class="col-12 col-md-6">
+                            <div class="col-md-6">
 
                                 <label
                                         for="name"
@@ -455,7 +501,7 @@
                             </div>
 
 
-                            <div class="col-12 col-md-6">
+                            <div class="col-md-6">
 
                                 <label
                                         for="email"
@@ -478,13 +524,14 @@
 
                             </div>
 
+
                         </div>
 
 
                         <button
                                 id="next-step"
-                                type="button"
-                                class="btn btn-success mt-4">
+                                class="btn btn-success mt-4"
+                                type="button">
 
                             Next
 
@@ -493,8 +540,6 @@
                     </div>
 
 
-
-                    <!-- STEP 2 -->
 
                     <div
                             class="form-step"
@@ -508,7 +553,7 @@
                         <div class="row g-3">
 
 
-                            <div class="col-12 col-md-6">
+                            <div class="col-md-6">
 
                                 <label
                                         for="password"
@@ -532,7 +577,7 @@
                             </div>
 
 
-                            <div class="col-12 col-md-6">
+                            <div class="col-md-6">
 
                                 <label
                                         for="confirm-password"
@@ -555,6 +600,7 @@
 
                             </div>
 
+
                         </div>
 
 
@@ -562,8 +608,8 @@
 
                             <button
                                     id="back-step"
-                                    type="button"
-                                    class="btn btn-outline-success">
+                                    class="btn btn-outline-success"
+                                    type="button">
 
                                 Back
 
@@ -571,8 +617,9 @@
 
 
                             <button
-                                    type="submit"
-                                    class="btn btn-success">
+                                    id="profile-submit"
+                                    class="btn btn-success"
+                                    type="submit">
 
                                 Submit
 
@@ -585,8 +632,7 @@
 
                     <p
                             id="form-success"
-                            class="form-success mt-3"
-                            aria-live="polite">
+                            class="form-success mt-3">
                     </p>
 
 
@@ -607,16 +653,9 @@
 
     <div class="container py-4 d-flex flex-column flex-lg-row justify-content-between gap-2">
 
-        <span>
-            FIVE. Music Archive
-        </span>
-
-        <span>
-            Created by Burkhan & Islam
-        </span>
-
-        <span class="current-date-time">
-        </span>
+        <span>FIVE. Music Archive</span>
+        <span>Created by Burkhan & Islam</span>
+        <span class="current-date-time"></span>
 
     </div>
 
