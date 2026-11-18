@@ -1,21 +1,39 @@
 "use strict";
 
 
-/* =====================================================
-   ASSIGNMENT 5
-   ADVANCED JAVASCRIPT + DOM
-===================================================== */
+/* =========================================================
+   FIVE.
+   ASSIGNMENT 5 CLEANED VERSION
+
+   Features:
+   - Greeting by time
+   - Current time button
+   - UI sound
+   - Rating system
+   - Dynamic artist archive
+   - Category filtering
+   - Interactive gallery
+   - Keyboard navigation
+
+   Old multi-step form was removed because
+   authentication is now handled by auth.js.
+========================================================= */
 
 
-/* =====================================================
-   SOUND EFFECT
-===================================================== */
 
-let audioContext = null;
-let activeOscillator = null;
+/* =========================================================
+   UI SOUND
+========================================================= */
+
+let audioContext =
+    null;
 
 
-function playUiSound(frequency = 520) {
+
+async function playUiSound(
+    frequency = 520
+) {
+
 
     const AudioContextClass =
         window.AudioContext ||
@@ -23,8 +41,11 @@ function playUiSound(frequency = 520) {
 
 
     if (!AudioContextClass) {
+
         return;
+
     }
+
 
 
     if (!audioContext) {
@@ -35,84 +56,77 @@ function playUiSound(frequency = 520) {
     }
 
 
-    if (activeOscillator) {
 
-        try {
-            activeOscillator.stop();
-        } catch (error) {
-            /* already stopped */
-        }
+    if (
+        audioContext.state ===
+        "suspended"
+    ) {
+
+        await audioContext.resume();
 
     }
+
 
 
     const oscillator =
         audioContext.createOscillator();
 
+
     const gain =
         audioContext.createGain();
+
 
 
     oscillator.type =
         "sine";
 
+
     oscillator.frequency.value =
         frequency;
 
 
+
     gain.gain.setValueAtTime(
-        0.035,
+        0.12,
         audioContext.currentTime
     );
 
 
     gain.gain.exponentialRampToValueAtTime(
         0.001,
-        audioContext.currentTime + 0.08
+        audioContext.currentTime + 0.12
     );
 
 
-    oscillator.connect(gain);
+
+    oscillator.connect(
+        gain
+    );
+
 
     gain.connect(
         audioContext.destination
     );
 
 
+
     oscillator.start();
 
+
     oscillator.stop(
-        audioContext.currentTime + 0.08
+        audioContext.currentTime + 0.12
     );
-
-
-    activeOscillator =
-        oscillator;
-
-
-    oscillator.onended =
-        function () {
-
-            if (
-                activeOscillator === oscillator
-            ) {
-
-                activeOscillator = null;
-
-            }
-
-        };
 
 }
 
 
 
-/* =====================================================
-   SWITCH STATEMENT
-   GREETING BASED ON TIME
-===================================================== */
+/* =========================================================
+   GREETING
+========================================================= */
 
 function getGreetingByTime() {
+
 
     const hour =
         new Date().getHours();
@@ -121,19 +135,30 @@ function getGreetingByTime() {
     let period;
 
 
-    if (hour < 12) {
 
-        period = "morning";
+    if (
+        hour >= 5 &&
+        hour < 12
+    ) {
 
-    } else if (hour < 18) {
+        period =
+            "morning";
 
-        period = "afternoon";
+    } else if (
+        hour >= 12 &&
+        hour < 18
+    ) {
+
+        period =
+            "afternoon";
 
     } else {
 
-        period = "evening";
+        period =
+            "evening";
 
     }
+
 
 
     switch (period) {
@@ -142,13 +167,16 @@ function getGreetingByTime() {
 
             return "Good morning. Welcome to FIVE.";
 
+
         case "afternoon":
 
             return "Good afternoon. Welcome to FIVE.";
 
+
         case "evening":
 
             return "Good evening. Welcome to FIVE.";
+
 
         default:
 
@@ -159,77 +187,83 @@ function getGreetingByTime() {
 }
 
 
-const greetingMessage =
-    document.getElementById(
-        "greeting-message"
-    );
+
+/* =========================================================
+   SHOW TIME
+========================================================= */
+
+function initializeTimeButton() {
 
 
-if (greetingMessage) {
-
-    greetingMessage.textContent =
-        getGreetingByTime();
-
-}
+    const greeting =
+        document.getElementById(
+            "greeting-message"
+        );
 
 
+    if (greeting) {
 
-/* =====================================================
-   BUTTON EVENT
-   CURRENT TIME
-===================================================== */
+        greeting.textContent =
+            getGreetingByTime();
 
-const showTimeButton =
-    document.getElementById(
-        "show-time"
-    );
-
-const timeOutput =
-    document.getElementById(
-        "time-output"
-    );
-
-
-function displayCurrentTime() {
-
-    if (!timeOutput) {
-        return;
     }
 
 
-    const currentTime =
-        new Date()
-            .toLocaleTimeString();
+
+    const timeButton =
+        document.getElementById(
+            "show-time"
+        );
 
 
-    timeOutput.textContent =
-        currentTime;
+    const timeOutput =
+        document.getElementById(
+            "time-output"
+        );
 
 
-    timeOutput.classList.remove(
-        "time-flash"
-    );
+
+    if (
+        !timeButton ||
+        !timeOutput
+    ) {
+
+        return;
+
+    }
 
 
-    void timeOutput.offsetWidth;
 
-
-    timeOutput.classList.add(
-        "time-flash"
-    );
-
-}
-
-
-if (showTimeButton) {
-
-    showTimeButton.addEventListener(
+    timeButton.addEventListener(
         "click",
         function () {
 
-            displayCurrentTime();
 
-            playUiSound(620);
+            const now =
+                new Date();
+
+
+            timeOutput.textContent =
+                now.toLocaleTimeString();
+
+
+            timeOutput.classList.remove(
+                "time-flash"
+            );
+
+
+            void timeOutput.offsetWidth;
+
+
+            timeOutput.classList.add(
+                "time-flash"
+            );
+
+
+            playUiSound(
+                600
+            );
+
 
         }
     );
@@ -238,236 +272,317 @@ if (showTimeButton) {
 
 
 
-/* =====================================================
-   STAR RATING
-   querySelectorAll
-   forEach
-   DOM / STYLE
-===================================================== */
+/* =========================================================
+   RATING
+========================================================= */
 
-const ratingStars =
-    document.querySelectorAll(
-        ".rating-star"
-    );
-
-const ratingOutput =
-    document.getElementById(
-        "rating-output"
-    );
-
-const ratingBox =
-    document.getElementById(
-        "rating-box"
-    );
+function initializeRating() {
 
 
-ratingStars.forEach(
-    function (star) {
-
-        star.addEventListener(
-            "click",
-            function () {
-
-                const rating =
-                    Number(
-                        star.dataset.rating
-                    );
-
-
-                ratingStars.forEach(
-                    function (item) {
-
-                        const itemRating =
-                            Number(
-                                item.dataset.rating
-                            );
-
-
-                        if (
-                            itemRating <= rating
-                        ) {
-
-                            item.classList.add(
-                                "selected"
-                            );
-
-                            item.setAttribute(
-                                "aria-pressed",
-                                "true"
-                            );
-
-                        } else {
-
-                            item.classList.remove(
-                                "selected"
-                            );
-
-                            item.setAttribute(
-                                "aria-pressed",
-                                "false"
-                            );
-
-                        }
-
-                    }
-                );
-
-
-                if (ratingOutput) {
-
-                    ratingOutput.textContent =
-                        `Your rating: ${rating}/5`;
-
-                }
-
-
-                if (ratingBox) {
-
-                    ratingBox.classList.remove(
-                        "rating-pulse"
-                    );
-
-
-                    void ratingBox.offsetWidth;
-
-
-                    ratingBox.classList.add(
-                        "rating-pulse"
-                    );
-
-                }
-
-
-                playUiSound(
-                    420 + rating * 60
-                );
-
-            }
+    const stars =
+        document.querySelectorAll(
+            ".rating-star"
         );
 
+
+    const output =
+        document.getElementById(
+            "rating-output"
+        );
+
+
+    const ratingBox =
+        document.getElementById(
+            "rating-box"
+        );
+
+
+
+    if (
+        stars.length === 0 ||
+        !output
+    ) {
+
+        return;
+
     }
-);
 
 
 
-/* =====================================================
-   OBJECTS + METHODS
-   ARRAYS + FILTER + FOREACH
-===================================================== */
+    stars.forEach(
+        function (star) {
+
+
+            star.addEventListener(
+                "click",
+                function () {
+
+
+                    const rating =
+                        Number(
+                            star.dataset.rating
+                        );
+
+
+
+                    stars.forEach(
+                        function (currentStar) {
+
+
+                            const currentRating =
+                                Number(
+                                    currentStar.dataset.rating
+                                );
+
+
+                            currentStar.classList.toggle(
+                                "selected",
+                                currentRating <= rating
+                            );
+
+
+                            currentStar.setAttribute(
+                                "aria-pressed",
+                                currentRating <= rating
+                                    ? "true"
+                                    : "false"
+                            );
+
+
+                        }
+                    );
+
+
+
+                    output.textContent =
+                        `Your rating: ${rating}/5`;
+
+
+
+                    if (ratingBox) {
+
+
+                        ratingBox.classList.remove(
+                            "rating-pulse"
+                        );
+
+
+                        void ratingBox.offsetWidth;
+
+
+                        ratingBox.classList.add(
+                            "rating-pulse"
+                        );
+
+                    }
+
+
+
+                    playUiSound(
+                        420 + rating * 70
+                    );
+
+
+                }
+            );
+
+
+        }
+    );
+
+}
+
+
+
+/* =========================================================
+   ARTIST DATA
+========================================================= */
 
 const artistArchive = {
-
-    title:
-        "FIVE. Music Archive",
 
 
     artists: [
 
         {
-            name: "Yeat",
-            category: "new-wave",
-            style: "Experimental Trap",
-            image: "images/yeat.jpg",
-            link: "newwave.html#yeat"
+
+            name:
+                "Yeat",
+
+            category:
+                "new-wave",
+
+            categoryLabel:
+                "New Wave",
+
+            image:
+                "images/yeat.jpg",
+
+            description:
+                "Experimental production, futuristic synths and unconventional vocal delivery.",
+
+            link:
+                "newwave.html#yeat"
+
         },
 
-        {
-            name: "Playboi Carti",
-            category: "new-wave",
-            style: "Experimental Hip-Hop",
-            image: "images/carti.jpg",
-            link: "newwave.html#carti"
-        },
 
         {
-            name: "Ken Carson",
-            category: "new-wave",
-            style: "Rage",
-            image: "images/ken.jpg",
-            link: "newwave.html#ken"
+
+            name:
+                "Playboi Carti",
+
+            category:
+                "new-wave",
+
+            categoryLabel:
+                "New Wave",
+
+            image:
+                "images/carti.jpg",
+
+            description:
+                "Minimal lyrics, experimental vocals and a strong visual identity.",
+
+            link:
+                "newwave.html#carti"
+
         },
 
-        {
-            name: "Future",
-            category: "icons",
-            style: "Trap",
-            image: "images/future.jpg",
-            link: "icons.html#future"
-        },
 
         {
-            name: "Drake",
-            category: "icons",
-            style: "Hip-Hop / R&B",
-            image: "images/drake.jpg",
-            link: "icons.html#drake"
+
+            name:
+                "Ken Carson",
+
+            category:
+                "new-wave",
+
+            categoryLabel:
+                "New Wave",
+
+            image:
+                "images/ken.jpg",
+
+            description:
+                "Aggressive electronic production and high-energy rage influences.",
+
+            link:
+                "newwave.html#ken"
+
+        },
+
+
+        {
+
+            name:
+                "Future",
+
+            category:
+                "icons",
+
+            categoryLabel:
+                "Icons",
+
+            image:
+                "images/future.jpg",
+
+            description:
+                "Melodic Atlanta trap and one of the defining voices of modern rap.",
+
+            link:
+                "icons.html#future"
+
+        },
+
+
+        {
+
+            name:
+                "Drake",
+
+            category:
+                "icons",
+
+            categoryLabel:
+                "Icons",
+
+            image:
+                "images/drake.jpg",
+
+            description:
+                "A combination of hip-hop, R&B, melody and global mainstream influence.",
+
+            link:
+                "icons.html#drake"
+
         }
 
     ],
 
 
-    getArtists:
-        function (category) {
 
-            if (category === "all") {
-
-                return this.artists;
-
-            }
+    getArtists(
+        category
+    ) {
 
 
-            return this.artists.filter(
-                function (artist) {
+        if (
+            category === "all"
+        ) {
 
-                    return (
-                        artist.category ===
-                        category
-                    );
-
-                }
-            );
-
-        },
-
-
-    count:
-        function () {
-
-            return this.artists.length;
+            return this.artists;
 
         }
+
+
+        return this.artists.filter(
+            function (artist) {
+
+                return (
+                    artist.category ===
+                    category
+                );
+
+            }
+        );
+
+    },
+
+
+
+    count(
+        category = "all"
+    ) {
+
+        return this.getArtists(
+            category
+        ).length;
+
+    }
+
 
 };
 
 
 
-const artistList =
-    document.getElementById(
-        "artist-list"
-    );
+/* =========================================================
+   CREATE ARTIST CARD
+========================================================= */
 
-const artistCount =
-    document.getElementById(
-        "artist-count"
-    );
-
-const filterButtons =
-    document.querySelectorAll(
-        ".artist-filter-btn"
-    );
+function createArtistCard(
+    artist
+) {
 
 
-function createArtistCard(artist) {
-
-    const article =
+    const card =
         document.createElement(
             "article"
         );
 
 
-    article.classList.add(
-        "dynamic-artist-card"
-    );
+    card.className =
+        "dynamic-artist-card";
+
 
 
     const image =
@@ -479,8 +594,10 @@ function createArtistCard(artist) {
     image.src =
         artist.image;
 
+
     image.alt =
         artist.name;
+
 
 
     const content =
@@ -489,9 +606,24 @@ function createArtistCard(artist) {
         );
 
 
-    content.classList.add(
-        "dynamic-artist-content"
-    );
+    content.className =
+        "dynamic-artist-content";
+
+
+
+    const category =
+        document.createElement(
+            "p"
+        );
+
+
+    category.className =
+        "eyebrow";
+
+
+    category.textContent =
+        artist.categoryLabel;
+
 
 
     const title =
@@ -504,14 +636,16 @@ function createArtistCard(artist) {
         artist.name;
 
 
-    const style =
+
+    const description =
         document.createElement(
             "p"
         );
 
 
-    style.textContent =
-        artist.style;
+    description.textContent =
+        artist.description;
+
 
 
     const link =
@@ -523,60 +657,99 @@ function createArtistCard(artist) {
     link.href =
         artist.link;
 
-    link.textContent =
-        "Explore";
 
     link.className =
         "btn btn-outline-success btn-sm";
+
+
+    link.textContent =
+        "Explore";
+
+
+
+    content.appendChild(
+        category
+    );
 
 
     content.appendChild(
         title
     );
 
+
     content.appendChild(
-        style
+        description
     );
+
 
     content.appendChild(
         link
     );
 
 
-    article.appendChild(
+
+    card.appendChild(
         image
     );
 
-    article.appendChild(
+
+    card.appendChild(
         content
     );
 
 
-    return article;
+
+    return card;
 
 }
 
 
 
-function renderArtists(category) {
+/* =========================================================
+   RENDER ARTISTS
+========================================================= */
+
+function renderArtists(
+    category = "all"
+) {
+
+
+    const artistList =
+        document.getElementById(
+            "artist-list"
+        );
+
+
+    const artistCount =
+        document.getElementById(
+            "artist-count"
+        );
+
+
 
     if (!artistList) {
+
         return;
+
     }
+
 
 
     artistList.innerHTML =
         "";
 
 
-    const selectedArtists =
+
+    const artists =
         artistArchive.getArtists(
             category
         );
 
 
-    selectedArtists.forEach(
+
+    artists.forEach(
         function (artist) {
+
 
             const card =
                 createArtistCard(
@@ -588,134 +761,322 @@ function renderArtists(category) {
                 card
             );
 
+
         }
     );
+
 
 
     if (artistCount) {
 
+
+        const label =
+            artists.length === 1
+                ? "artist"
+                : "artists";
+
+
         artistCount.textContent =
-            `${selectedArtists.length} of ${artistArchive.count()} artists shown`;
+            `${artists.length} ${label} in this collection.`;
 
     }
 
 }
 
 
-if (artistList) {
 
-    renderArtists(
-        "all"
-    );
+/* =========================================================
+   ARTIST FILTER
+========================================================= */
 
-}
-
-
-filterButtons.forEach(
-    function (button) {
-
-        button.addEventListener(
-            "click",
-            function () {
-
-                const category =
-                    button.dataset.category;
+function initializeArtistFilters() {
 
 
-                filterButtons.forEach(
-                    function (item) {
-
-                        item.classList.remove(
-                            "active"
-                        );
-
-                    }
-                );
-
-
-                button.classList.add(
-                    "active"
-                );
-
-
-                renderArtists(
-                    category
-                );
-
-
-                playUiSound(560);
-
-            }
+    const buttons =
+        document.querySelectorAll(
+            ".artist-filter-btn"
         );
 
+
+
+    if (
+        buttons.length === 0
+    ) {
+
+        return;
+
     }
-);
 
 
 
-/* =====================================================
-   IMAGE GALLERY
-   MANIPULATING SRC ATTRIBUTE
-===================================================== */
-
-const featuredImage =
-    document.getElementById(
-        "featured-image"
-    );
-
-const galleryCaption =
-    document.getElementById(
-        "gallery-caption"
-    );
-
-const thumbnails =
-    document.querySelectorAll(
-        ".archive-thumbnail"
-    );
+    buttons.forEach(
+        function (button) {
 
 
-thumbnails.forEach(
-    function (thumbnail) {
-
-        thumbnail.addEventListener(
-            "click",
-            function () {
-
-                if (!featuredImage) {
-                    return;
-                }
+            button.addEventListener(
+                "click",
+                function () {
 
 
-                featuredImage.classList.remove(
-                    "image-swap"
-                );
+                    buttons.forEach(
+                        function (otherButton) {
 
+                            otherButton.classList.remove(
+                                "active"
+                            );
 
-                void featuredImage.offsetWidth;
-
-
-                featuredImage.src =
-                    thumbnail.dataset.large;
-
-                featuredImage.alt =
-                    thumbnail.alt;
-
-
-                featuredImage.classList.add(
-                    "image-swap"
-                );
-
-
-                const buttons =
-                    document.querySelectorAll(
-                        ".thumbnail-button"
+                        }
                     );
 
 
-                buttons.forEach(
-                    function (button) {
+                    button.classList.add(
+                        "active"
+                    );
 
-                        button.classList.remove(
+
+
+                    const category =
+                        button.dataset.category;
+
+
+                    renderArtists(
+                        category
+                    );
+
+
+                    playUiSound(
+                        480
+                    );
+
+
+                }
+            );
+
+
+        }
+    );
+
+}
+
+
+
+/* =========================================================
+   INTERACTIVE GALLERY
+========================================================= */
+
+function initializeGallery() {
+
+
+    const featuredImage =
+        document.getElementById(
+            "featured-image"
+        );
+
+
+    const thumbnails =
+        document.querySelectorAll(
+            ".archive-thumbnail"
+        );
+
+
+    const caption =
+        document.getElementById(
+            "gallery-caption"
+        );
+
+
+
+    if (
+        !featuredImage ||
+        thumbnails.length === 0
+    ) {
+
+        return;
+
+    }
+
+
+
+    thumbnails.forEach(
+        function (thumbnail) {
+
+
+            thumbnail.addEventListener(
+                "click",
+                function () {
+
+
+                    const largeImage =
+                        thumbnail.dataset.large;
+
+
+                    const alt =
+                        thumbnail.alt;
+
+
+
+                    if (largeImage) {
+
+                        featuredImage.src =
+                            largeImage;
+
+                    }
+
+
+                    featuredImage.alt =
+                        alt;
+
+
+
+                    featuredImage.classList.remove(
+                        "image-swap"
+                    );
+
+
+                    void featuredImage.offsetWidth;
+
+
+                    featuredImage.classList.add(
+                        "image-swap"
+                    );
+
+
+
+                    document
+                        .querySelectorAll(
+                            ".thumbnail-button"
+                        )
+                        .forEach(
+                            function (button) {
+
+                                button.classList.remove(
+                                    "active"
+                                );
+
+                            }
+                        );
+
+
+
+                    const parentButton =
+                        thumbnail.closest(
+                            ".thumbnail-button"
+                        );
+
+
+                    if (parentButton) {
+
+                        parentButton.classList.add(
+                            "active"
+                        );
+
+                    }
+
+
+
+                    if (caption) {
+
+                        caption.textContent =
+                            `Selected artist: ${alt}`;
+
+                    }
+
+
+
+                    playUiSound(
+                        560
+                    );
+
+
+                }
+            );
+
+
+        }
+    );
+
+}
+
+
+
+/* =========================================================
+   KEYBOARD NAVIGATION
+========================================================= */
+
+function initializeKeyboardNavigation() {
+
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+
+            if (
+                event.key !== "ArrowLeft" &&
+                event.key !== "ArrowRight"
+            ) {
+
+                return;
+
+            }
+
+
+
+            const activeElement =
+                document.activeElement;
+
+
+
+            if (
+                activeElement &&
+                (
+                    activeElement.tagName === "INPUT" ||
+                    activeElement.tagName === "TEXTAREA" ||
+                    activeElement.tagName === "SELECT"
+                )
+            ) {
+
+                return;
+
+            }
+
+
+
+            const navigationLinks =
+                Array.from(
+                    document.querySelectorAll(
+                        ".site-navbar .nav-link"
+                    )
+                ).filter(
+                    function (link) {
+
+                        return (
+                            link.href &&
+                            !link.classList.contains(
+                                "auth-nav-logout"
+                            )
+                        );
+
+                    }
+                );
+
+
+
+            if (
+                navigationLinks.length === 0
+            ) {
+
+                return;
+
+            }
+
+
+
+            let currentIndex =
+                navigationLinks.findIndex(
+                    function (link) {
+
+                        return link.classList.contains(
                             "active"
                         );
 
@@ -723,287 +1084,86 @@ thumbnails.forEach(
                 );
 
 
-                thumbnail
-                    .closest(
-                        ".thumbnail-button"
-                    )
-                    .classList.add(
-                    "active"
-                );
 
+            if (currentIndex === -1) {
 
-                if (galleryCaption) {
-
-                    galleryCaption.textContent =
-                        `Selected artist: ${thumbnail.alt}`;
-
-                }
-
-
-                playUiSound(650);
+                currentIndex =
+                    0;
 
             }
-        );
-
-    }
-);
 
 
 
-/* =====================================================
-   KEYBOARD EVENT HANDLING
-   LEFT / RIGHT NAVIGATION
-===================================================== */
+            if (
+                event.key ===
+                "ArrowRight"
+            ) {
 
-const navLinks =
-    Array.from(
-        document.querySelectorAll(
-            ".nav-link"
-        )
+                currentIndex =
+                    (
+                        currentIndex + 1
+                    ) %
+                    navigationLinks.length;
+
+            } else {
+
+                currentIndex =
+                    (
+                        currentIndex - 1 +
+                        navigationLinks.length
+                    ) %
+                    navigationLinks.length;
+
+            }
+
+
+
+            window.location.href =
+                navigationLinks[
+                    currentIndex
+                    ].href;
+
+
+        }
     );
 
+}
+
+
+
+/* =========================================================
+   INITIALIZATION
+========================================================= */
 
 document.addEventListener(
-    "keydown",
-    function (event) {
-
-        if (
-            event.key !== "ArrowRight" &&
-            event.key !== "ArrowLeft"
-        ) {
-
-            return;
-
-        }
+    "DOMContentLoaded",
+    function () {
 
 
-        const activeTag =
-            document.activeElement
-                .tagName;
+        initializeTimeButton();
 
 
-        if (
-            activeTag === "INPUT" ||
-            activeTag === "TEXTAREA" ||
-            activeTag === "SELECT"
-        ) {
-
-            return;
-
-        }
+        initializeRating();
 
 
-        if (
-            navLinks.length === 0
-        ) {
+        /*
+           Render dynamic artist cards
+           before search/filter interactions.
+        */
 
-            return;
-
-        }
-
-
-        event.preventDefault();
+        renderArtists(
+            "all"
+        );
 
 
-        const currentIndex =
-            navLinks.indexOf(
-                document.activeElement
-            );
+        initializeArtistFilters();
 
 
-        let nextIndex;
+        initializeGallery();
 
 
-        if (
-            event.key ===
-            "ArrowRight"
-        ) {
+        initializeKeyboardNavigation();
 
-            if (currentIndex === -1) {
-
-                nextIndex = 0;
-
-            } else {
-
-                nextIndex =
-                    (currentIndex + 1) %
-                    navLinks.length;
-
-            }
-
-        } else {
-
-            if (currentIndex === -1) {
-
-                nextIndex =
-                    navLinks.length - 1;
-
-            } else {
-
-                nextIndex =
-                    (
-                        currentIndex -
-                        1 +
-                        navLinks.length
-                    ) %
-                    navLinks.length;
-
-            }
-
-        }
-
-
-        navLinks[
-            nextIndex
-            ].focus();
 
     }
 );
-
-
-
-/* =====================================================
-   CALLBACK
-   MULTI-STEP FORM
-===================================================== */
-
-const formSteps =
-    Array.from(
-        document.querySelectorAll(
-            ".form-step"
-        )
-    );
-
-const nextStepButton =
-    document.getElementById(
-        "next-step"
-    );
-
-const backStepButton =
-    document.getElementById(
-        "back-step"
-    );
-
-const formStepText =
-    document.getElementById(
-        "form-step-text"
-    );
-
-
-let currentFormStep =
-    0;
-
-
-function updateStepLabel(stepIndex) {
-
-    if (!formStepText) {
-        return;
-    }
-
-
-    formStepText.textContent =
-        `Step ${stepIndex + 1} of ${formSteps.length}`;
-
-}
-
-
-function showFormStep(
-    stepIndex,
-    callback
-) {
-
-    if (
-        formSteps.length === 0
-    ) {
-
-        return;
-
-    }
-
-
-    formSteps.forEach(
-        function (step) {
-
-            step.classList.remove(
-                "active"
-            );
-
-        }
-    );
-
-
-    formSteps[
-        stepIndex
-        ].classList.add(
-        "active"
-    );
-
-
-    currentFormStep =
-        stepIndex;
-
-
-    if (
-        typeof callback ===
-        "function"
-    ) {
-
-        callback(
-            stepIndex
-        );
-
-    }
-
-}
-
-
-if (
-    formSteps.length > 0
-) {
-
-    showFormStep(
-        0,
-        updateStepLabel
-    );
-
-}
-
-
-if (nextStepButton) {
-
-    nextStepButton.addEventListener(
-        "click",
-        function () {
-
-            showFormStep(
-                1,
-                updateStepLabel
-            );
-
-
-            playUiSound(600);
-
-        }
-    );
-
-}
-
-
-if (backStepButton) {
-
-    backStepButton.addEventListener(
-        "click",
-        function () {
-
-            showFormStep(
-                0,
-                updateStepLabel
-            );
-
-
-            playUiSound(480);
-
-        }
-    );
-
-}

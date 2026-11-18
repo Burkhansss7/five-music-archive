@@ -2710,4 +2710,1487 @@ body.light-theme .copy-tooltip {
                 flex-start;
     }
 
+}/* =========================================================
+   FINAL PROJECT — AUTHENTICATION
+========================================================= */
+
+.auth-page {
+    min-height:
+            calc(
+                    100vh - 150px
+            );
+
+    display:
+            flex;
+
+    align-items:
+            center;
+}
+
+
+.auth-shell {
+    display:
+            grid;
+
+    grid-template-columns:
+            1fr 1fr;
+
+    gap:
+            clamp(
+                    2rem,
+                    7vw,
+                    7rem
+            );
+
+    align-items:
+            center;
+
+    min-height:
+            700px;
+}
+
+
+/* =========================================================
+   AUTH LEFT SIDE
+========================================================= */
+
+.auth-copy {
+    max-width:
+            600px;
+}
+
+
+.auth-copy h1 {
+    margin:
+            1rem 0 2rem;
+
+    font-size:
+            clamp(
+                    3.5rem,
+                    7vw,
+                    7rem
+            );
+
+    line-height:
+            0.9;
+
+    letter-spacing:
+            -0.075em;
+}
+
+
+.auth-description {
+    max-width:
+            520px;
+
+    font-size:
+            1.15rem;
+}
+
+
+.auth-feature-list {
+    margin-top:
+            4rem;
+
+    border-top:
+            1px solid var(--border);
+}
+
+
+.auth-feature {
+    display:
+            grid;
+
+    grid-template-columns:
+            60px 1fr;
+
+    gap:
+            1rem;
+
+    padding:
+            1.25rem 0;
+
+    border-bottom:
+            1px solid var(--border);
+}
+
+
+.auth-feature span {
+    color:
+            var(--accent);
+
+    font-weight:
+            800;
+}
+
+
+.auth-feature p {
+    margin: 0;
+
+    color:
+            var(--text);
+}
+
+
+.auth-quote {
+    margin-top:
+            4rem;
+
+    padding:
+            2rem;
+
+    border-left:
+            3px solid var(--accent);
+
+    background:
+            var(--surface);
+}
+
+
+.auth-quote span {
+    color:
+            var(--accent);
+
+    font-size:
+            1.5rem;
+
+    font-weight:
+            800;
+}
+
+
+.auth-quote p {
+    margin:
+            1rem 0 0;
+
+    color:
+            var(--text);
+
+    font-size:
+            1.1rem;
+}
+
+
+
+/* =========================================================
+   AUTH FORM
+========================================================= */
+
+.auth-form-card {
+    padding:
+            clamp(
+                    2rem,
+                    5vw,
+                    4rem
+            );
+
+    background:
+            var(--surface);
+
+    border:
+            1px solid var(--border);
+}
+
+
+.auth-form-card h2 {
+    margin:
+            0.7rem 0;
+
+    font-size:
+            clamp(
+                    2.5rem,
+                    5vw,
+                    4rem
+            );
+
+    letter-spacing:
+            -0.055em;
+}
+
+
+.auth-field {
+    margin-bottom:
+            1.3rem;
+}
+
+
+.auth-field .form-control,
+.auth-field .form-select {
+    min-height:
+            55px;
+}
+
+
+.auth-select {
+    border-radius:
+            0;
+
+    background-color:
+            var(--bg);
+
+    color:
+            var(--text);
+
+    border:
+            1px solid var(--border);
+}
+
+
+.auth-select:focus {
+    border-color:
+            var(--accent);
+
+    box-shadow:
+            0 0 0
+            0.2rem
+            rgba(
+                    185,
+                    255,
+                    72,
+                    0.15
+            );
+}
+
+
+.auth-error {
+    min-height:
+            20px;
+
+    margin:
+            0.35rem 0 0;
+
+    color:
+            #ff6262;
+
+    font-size:
+            0.82rem;
+}
+
+
+.auth-general-error {
+    min-height:
+            25px;
+
+    margin:
+            0 0 1rem;
+
+    padding:
+            0;
+
+    color:
+            #ff6262;
+
+    font-weight:
+            600;
+}
+
+
+.auth-success {
+    min-height:
+            25px;
+
+    margin:
+            1rem 0 0;
+
+    color:
+            var(--accent);
+
+    font-weight:
+            700;
+}
+
+
+.password-rules {
+    margin-top:
+            0.45rem;
+
+    color:
+            var(--muted);
+
+    font-size:
+            0.78rem;
+}
+
+
+.auth-alt {
+    margin:
+            2rem 0 0;
+
+    padding-top:
+            1.5rem;
+
+    border-top:
+            1px solid var(--border);
+}
+
+
+.auth-alt a {
+    color:
+            var(--accent);
+
+    font-weight:
+            700;
+}
+
+
+.auth-alt a:hover {
+    text-decoration:
+            underline;
+}
+
+
+
+/* =========================================================
+   AUTH NAVIGATION
+========================================================= */
+
+.auth-signup-nav {
+    margin-left:
+            0.2rem;
+
+    padding:
+            0.4rem 0.9rem !important;
+}
+
+
+.auth-nav-logout {
+    border: 0;
+
+    background:
+            transparent;
+}
+
+
+.auth-nav-logout:hover {
+    color:
+            #ff6b6b !important;
+}
+
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-hero {
+    display:
+            flex;
+
+    align-items:
+            center;
+
+    gap:
+            2rem;
+
+    min-height:
+            350px;
+
+    padding:
+            clamp(
+                    2rem,
+                    5vw,
+                    5rem
+            );
+
+    background:
+            var(--surface);
+
+    border:
+            1px solid var(--border);
+}
+
+
+.profile-avatar {
+    width:
+            clamp(
+                    100px,
+                    14vw,
+                    160px
+            );
+
+    height:
+            clamp(
+                    100px,
+                    14vw,
+                    160px
+            );
+
+    flex-shrink:
+            0;
+
+    display:
+            flex;
+
+    align-items:
+            center;
+
+    justify-content:
+            center;
+
+    background:
+            var(--accent);
+
+    color:
+            #0b0b0b;
+
+    font-size:
+            clamp(
+                    3rem,
+                    7vw,
+                    6rem
+            );
+
+    font-weight:
+            800;
+
+    border-radius:
+            50%;
+}
+
+
+.profile-name {
+    margin:
+            0.5rem 0;
+
+    font-size:
+            clamp(
+                    3rem,
+                    7vw,
+                    6rem
+            );
+
+    line-height:
+            0.95;
+
+    letter-spacing:
+            -0.07em;
+}
+
+
+.profile-subtitle {
+    margin:
+            0;
+
+    font-size:
+            1.1rem;
+}
+
+
+.profile-grid {
+    display:
+            grid;
+
+    grid-template-columns:
+            repeat(
+                    2,
+                    1fr
+            );
+
+    gap:
+            1rem;
+}
+
+
+.profile-detail-card {
+    min-height:
+            250px;
+
+    display:
+            flex;
+
+    flex-direction:
+            column;
+
+    justify-content:
+            space-between;
+
+    padding:
+            2rem;
+
+    background:
+            var(--surface);
+
+    border:
+            1px solid var(--border);
+
+    transition:
+            transform 0.25s ease,
+            border-color 0.25s ease;
+}
+
+
+.profile-detail-card:hover {
+    transform:
+            translateY(-5px);
+
+    border-color:
+            var(--accent);
+}
+
+
+.profile-detail-number {
+    color:
+            var(--accent);
+
+    font-size:
+            0.75rem;
+
+    font-weight:
+            800;
+}
+
+
+.profile-detail-card p {
+    margin:
+            auto 0 0.5rem;
+
+    color:
+            var(--muted);
+
+    font-size:
+            0.72rem;
+
+    font-weight:
+            700;
+
+    letter-spacing:
+            0.15em;
+}
+
+
+.profile-detail-card h3 {
+    margin: 0;
+
+    overflow-wrap:
+            anywhere;
+
+    font-size:
+            clamp(
+                    1.4rem,
+                    3vw,
+                    2.2rem
+            );
+
+    letter-spacing:
+            -0.04em;
+}
+
+
+.profile-archive-panel {
+    display:
+            flex;
+
+    align-items:
+            center;
+
+    justify-content:
+            space-between;
+
+    gap:
+            3rem;
+
+    padding:
+            clamp(
+                    2rem,
+                    5vw,
+                    5rem
+            );
+
+    background:
+            var(--surface);
+
+    border:
+            1px solid var(--border);
+}
+
+
+.profile-archive-panel h2 {
+    max-width:
+            650px;
+
+    font-size:
+            clamp(
+                    2.5rem,
+                    5vw,
+                    5rem
+            );
+
+    line-height:
+            0.95;
+
+    letter-spacing:
+            -0.06em;
+}
+
+
+.profile-archive-panel p {
+    max-width:
+            600px;
+}
+
+
+.profile-actions {
+    min-width:
+            210px;
+
+    display:
+            flex;
+
+    flex-direction:
+            column;
+
+    gap:
+            0.7rem;
+}
+
+
+
+/* =========================================================
+   LIGHT MODE AUTH
+========================================================= */
+
+body.light-theme .auth-form-card,
+body.light-theme .auth-quote,
+body.light-theme .profile-hero,
+body.light-theme .profile-detail-card,
+body.light-theme .profile-archive-panel {
+    background:
+            #ffffff;
+}
+
+
+body.light-theme .auth-select {
+    background:
+            #ffffff;
+
+    color:
+            #151515;
+
+    border-color:
+            #aaa499;
+}
+
+
+body.light-theme .profile-avatar {
+    background:
+            #5f7d00;
+
+    color:
+            #ffffff;
+}
+
+
+
+/* =========================================================
+   AUTH RESPONSIVE
+========================================================= */
+
+@media
+(max-width: 992px) {
+
+    .auth-shell {
+        grid-template-columns:
+                1fr;
+
+        min-height:
+                auto;
+    }
+
+
+    .auth-copy {
+        max-width:
+                750px;
+    }
+
+
+    .auth-copy h1 {
+        font-size:
+                4.5rem;
+    }
+
+
+    .profile-archive-panel {
+        flex-direction:
+                column;
+
+        align-items:
+                flex-start;
+    }
+
+
+    .profile-actions {
+        width:
+                100%;
+
+        min-width:
+                0;
+
+        flex-direction:
+                row;
+
+        flex-wrap:
+                wrap;
+    }
+
+}
+
+
+@media
+(max-width: 768px) {
+
+    .profile-grid {
+        grid-template-columns:
+                1fr;
+    }
+
+
+    .profile-hero {
+        align-items:
+                flex-start;
+
+        flex-direction:
+                column;
+    }
+
+}
+
+
+@media
+(max-width: 576px) {
+
+    .auth-copy h1 {
+        font-size:
+                3rem;
+    }
+
+
+    .auth-form-card {
+        padding:
+                1.5rem;
+    }
+
+
+    .profile-name {
+        font-size:
+                3rem;
+    }
+
+
+    .profile-actions {
+        flex-direction:
+                column;
+    }
+
+
+    .profile-actions .btn {
+        width:
+                100%;
+    }
+
+}/* =========================================================
+   FINAL PROJECT — MUSIC API
+========================================================= */
+
+.music-api-header {
+    display:
+            grid;
+
+    grid-template-columns:
+            1fr 1fr;
+
+    gap:
+            3rem;
+
+    align-items:
+            end;
+
+    margin-bottom:
+            3rem;
+}
+
+
+.music-api-header > p {
+    max-width:
+            480px;
+
+    margin:
+            0 0 0 auto;
+}
+
+
+
+/* =========================================================
+   API SEARCH
+========================================================= */
+
+.music-api-search {
+    max-width:
+            900px;
+}
+
+
+.music-api-input-wrapper {
+    display:
+            grid;
+
+    grid-template-columns:
+            1fr auto;
+
+    gap:
+            0.75rem;
+}
+
+
+.music-api-input-wrapper
+.form-control {
+    min-height:
+            60px;
+
+    padding:
+            0 1.2rem;
+
+    font-size:
+            1rem;
+}
+
+
+.music-api-input-wrapper
+.btn {
+    min-width:
+            180px;
+}
+
+
+.music-api-error {
+    min-height:
+            24px;
+
+    margin:
+            0.5rem 0 0;
+
+    color:
+            #ff6262;
+
+    font-size:
+            0.85rem;
+
+    font-weight:
+            600;
+}
+
+
+
+/* =========================================================
+   QUICK SEARCH
+========================================================= */
+
+.music-quick-search {
+    display:
+            flex;
+
+    align-items:
+            center;
+
+    flex-wrap:
+            wrap;
+
+    gap:
+            0.6rem;
+
+    margin:
+            1.5rem 0 3rem;
+}
+
+
+.music-quick-search > span {
+    margin-right:
+            0.5rem;
+
+    color:
+            var(--muted);
+
+    font-size:
+            0.68rem;
+
+    font-weight:
+            800;
+
+    letter-spacing:
+            0.15em;
+}
+
+
+.music-quick-btn {
+    padding:
+            0.45rem 0.85rem;
+
+    border:
+            1px solid var(--border);
+
+    background:
+            transparent;
+
+    color:
+            var(--text);
+
+    font-size:
+            0.82rem;
+
+    font-weight:
+            700;
+
+    cursor:
+            pointer;
+
+    transition:
+            color 0.2s ease,
+            background 0.2s ease,
+            border-color 0.2s ease,
+            transform 0.2s ease;
+}
+
+
+.music-quick-btn:hover {
+    background:
+            var(--accent);
+
+    color:
+            #0b0b0b;
+
+    border-color:
+            var(--accent);
+
+    transform:
+            translateY(-2px);
+}
+
+
+
+/* =========================================================
+   API STATUS
+========================================================= */
+
+.music-api-status {
+    min-height:
+            28px;
+
+    margin-bottom:
+            1.5rem;
+
+    color:
+            var(--muted);
+
+    font-size:
+            0.9rem;
+}
+
+
+.api-loading {
+    display:
+            inline-flex;
+
+    align-items:
+            center;
+
+    gap:
+            0.7rem;
+
+    color:
+            var(--accent);
+
+    font-weight:
+            700;
+}
+
+
+.api-loading-dot {
+    width:
+            9px;
+
+    height:
+            9px;
+
+    background:
+            var(--accent);
+
+    border-radius:
+            50%;
+
+    animation:
+            apiLoadingPulse
+            0.8s ease-in-out
+            infinite alternate;
+}
+
+
+@keyframes apiLoadingPulse {
+
+    from {
+
+        opacity:
+                0.3;
+
+        transform:
+                scale(0.8);
+
+    }
+
+    to {
+
+        opacity:
+                1;
+
+        transform:
+                scale(1.25);
+
+    }
+
+}
+
+
+
+/* =========================================================
+   API RESULT GRID
+========================================================= */
+
+.music-api-grid {
+    display:
+            grid;
+
+    grid-template-columns:
+            repeat(
+                    4,
+                    1fr
+            );
+
+    gap:
+            1rem;
+}
+
+
+
+/* =========================================================
+   TRACK CARD
+========================================================= */
+
+.music-api-card {
+    overflow:
+            hidden;
+
+    background:
+            var(--surface);
+
+    border:
+            1px solid var(--border);
+
+    animation:
+            musicCardEntrance
+            0.45s ease;
+
+    transition:
+            transform 0.25s ease,
+            border-color 0.25s ease,
+            box-shadow 0.25s ease;
+}
+
+
+.music-api-card:hover {
+    transform:
+            translateY(-6px);
+
+    border-color:
+            var(--accent);
+
+    box-shadow:
+            0 18px 45px
+            rgba(
+                    0,
+                    0,
+                    0,
+                    0.2
+            );
+}
+
+
+@keyframes musicCardEntrance {
+
+    from {
+
+        opacity:
+                0;
+
+        transform:
+                translateY(15px);
+
+    }
+
+    to {
+
+        opacity:
+                1;
+
+        transform:
+                translateY(0);
+
+    }
+
+}
+
+
+
+/* =========================================================
+   ARTWORK
+========================================================= */
+
+.music-api-artwork {
+    position:
+            relative;
+
+    aspect-ratio:
+            1 / 1;
+
+    overflow:
+            hidden;
+
+    background:
+            var(--surface-light);
+}
+
+
+.music-api-artwork img {
+    width:
+            100%;
+
+    height:
+            100%;
+
+    object-fit:
+            cover;
+
+    transition:
+            transform 0.5s ease;
+}
+
+
+.music-api-card:hover
+.music-api-artwork img {
+    transform:
+            scale(1.04);
+}
+
+
+.music-api-genre {
+    position:
+            absolute;
+
+    left:
+            1rem;
+
+    bottom:
+            1rem;
+
+    padding:
+            0.35rem 0.55rem;
+
+    background:
+            rgba(
+                    0,
+                    0,
+                    0,
+                    0.75
+            );
+
+    color:
+            #ffffff;
+
+    font-size:
+            0.65rem;
+
+    font-weight:
+            700;
+
+    letter-spacing:
+            0.08em;
+
+    backdrop-filter:
+            blur(8px);
+}
+
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.music-api-card-content {
+    padding:
+            1.4rem;
+}
+
+
+.music-api-artist {
+    margin:
+            0 0 0.5rem;
+
+    color:
+            var(--accent);
+
+    font-size:
+            0.72rem;
+
+    font-weight:
+            800;
+
+    letter-spacing:
+            0.08em;
+
+    text-transform:
+            uppercase;
+}
+
+
+.music-api-card-content h3 {
+    min-height:
+            58px;
+
+    margin:
+            0;
+
+    font-size:
+            1.3rem;
+
+    line-height:
+            1.1;
+
+    letter-spacing:
+            -0.035em;
+}
+
+
+.music-api-meta {
+    display:
+            flex;
+
+    justify-content:
+            space-between;
+
+    gap:
+            1rem;
+
+    margin-top:
+            1.5rem;
+
+    padding-top:
+            1rem;
+
+    border-top:
+            1px solid var(--border);
+
+    color:
+            var(--muted);
+
+    font-size:
+            0.75rem;
+}
+
+
+.music-api-meta span:first-child {
+    max-width:
+            75%;
+
+    overflow:
+            hidden;
+
+    text-overflow:
+            ellipsis;
+
+    white-space:
+            nowrap;
+}
+
+
+.music-api-link {
+    display:
+            flex;
+
+    align-items:
+            center;
+
+    justify-content:
+            space-between;
+
+    gap:
+            1rem;
+
+    margin-top:
+            1.2rem;
+
+    color:
+            var(--text);
+
+    font-size:
+            0.82rem;
+
+    font-weight:
+            700;
+
+    transition:
+            color 0.2s ease;
+}
+
+
+.music-api-link:hover {
+    color:
+            var(--accent);
+}
+
+
+.music-api-link span {
+    font-size:
+            1.2rem;
+
+    transition:
+            transform 0.2s ease;
+}
+
+
+.music-api-link:hover span {
+    transform:
+            translate(
+                    3px,
+                    -3px
+            );
+}
+
+
+
+/* =========================================================
+   API CREDIT
+========================================================= */
+
+.music-api-credit {
+    margin-top:
+            1.5rem;
+
+    color:
+            var(--muted);
+
+    font-size:
+            0.72rem;
+}
+
+
+
+/* =========================================================
+   LIGHT MODE
+========================================================= */
+
+body.light-theme
+.music-api-card {
+    background:
+            #ffffff;
+}
+
+
+body.light-theme
+.music-quick-btn {
+    color:
+            #151515;
+
+    border-color:
+            #aaa499;
+}
+
+
+body.light-theme
+.music-quick-btn:hover {
+    background:
+            #5f7d00;
+
+    border-color:
+            #5f7d00;
+
+    color:
+            #ffffff;
+}
+
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media
+(max-width: 992px) {
+
+    .music-api-grid {
+        grid-template-columns:
+                repeat(
+                        2,
+                        1fr
+                );
+    }
+
+
+    .music-api-header {
+        grid-template-columns:
+                1fr;
+    }
+
+
+    .music-api-header > p {
+        margin-left:
+                0;
+    }
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media
+(max-width: 576px) {
+
+    .music-api-input-wrapper {
+        grid-template-columns:
+                1fr;
+    }
+
+
+    .music-api-input-wrapper
+    .btn {
+        width:
+                100%;
+    }
+
+
+    .music-api-grid {
+        grid-template-columns:
+                1fr;
+    }
+
+
+    .music-quick-search {
+        align-items:
+                flex-start;
+    }
+
+
+    .music-quick-search > span {
+        width:
+                100%;
+
+        margin-bottom:
+                0.4rem;
+    }
+
+
+    .music-api-card-content h3 {
+        min-height:
+                0;
+    }
+
 }

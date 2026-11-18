@@ -1,611 +1,228 @@
-/* =====================================================
-   ASSIGNMENT 4
-===================================================== */
+"use strict";
 
 
-/* =====================================================
-   FORM VALIDATION
-===================================================== */
+/* =========================================================
+   FIVE.
+   ASSIGNMENT 4 CLEANED VERSION
 
-const archiveForm =
-    document.getElementById("archive-form");
+   Current features:
+   - FAQ accordion
+   - Background changer
+   - Current date and time
 
-
-if (archiveForm) {
-
-    archiveForm.addEventListener(
-        "submit",
-        function (event) {
-
-            event.preventDefault();
+   Old subscription popup and old profile form
+   were removed because the final project now uses
+   Sign Up / Log In / Profile authentication.
+========================================================= */
 
 
-            const name =
-                document.getElementById("name");
 
-            const email =
-                document.getElementById("email");
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
-            const password =
-                document.getElementById("password");
 
-            const confirmPassword =
-                document.getElementById(
-                    "confirm-password"
+        /* =================================================
+           FAQ ACCORDION
+        ================================================= */
+
+        const faqQuestions =
+            document.querySelectorAll(
+                ".faq-question"
+            );
+
+
+        faqQuestions.forEach(
+            function (question) {
+
+
+                question.addEventListener(
+                    "click",
+                    function () {
+
+
+                        const answer =
+                            question.nextElementSibling;
+
+
+                        question.classList.toggle(
+                            "active"
+                        );
+
+
+                        if (answer) {
+
+                            answer.classList.toggle(
+                                "open"
+                            );
+
+                        }
+
+
+                    }
                 );
 
-
-            const nameError =
-                document.getElementById(
-                    "name-error"
-                );
-
-            const emailError =
-                document.getElementById(
-                    "email-error"
-                );
-
-            const passwordError =
-                document.getElementById(
-                    "password-error"
-                );
-
-            const confirmPasswordError =
-                document.getElementById(
-                    "confirm-password-error"
-                );
-
-            const formSuccess =
-                document.getElementById(
-                    "form-success"
-                );
-
-
-            nameError.textContent = "";
-            emailError.textContent = "";
-            passwordError.textContent = "";
-            confirmPasswordError.textContent = "";
-            formSuccess.textContent = "";
-
-
-            let valid = true;
-
-
-            /* =============================
-               NAME
-            ============================== */
-
-            const nameValue =
-                name.value.trim();
-
-
-            if (nameValue === "") {
-
-                nameError.textContent =
-                    "Please enter your name.";
-
-                valid = false;
-
-            } else if (/^\d+$/.test(nameValue)) {
-
-                nameError.textContent =
-                    "Name cannot contain only numbers.";
-
-                valid = false;
-
-            }
-
-
-            /* =============================
-               EMAIL
-            ============================== */
-
-            const emailValue =
-                email.value.trim();
-
-
-            const emailPattern =
-                /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-
-
-            if (emailValue === "") {
-
-                emailError.textContent =
-                    "Please enter your email.";
-
-                valid = false;
-
-            } else if (
-                !emailPattern.test(emailValue)
-            ) {
-
-                emailError.textContent =
-                    "Please enter a valid email address.";
-
-                valid = false;
-
-            }
-
-
-            /* =============================
-               PASSWORD
-            ============================== */
-
-            if (
-                password.value.startsWith(" ")
-            ) {
-
-                passwordError.textContent =
-                    "Password cannot start with a space.";
-
-                valid = false;
-
-            } else if (
-                password.value.length < 8
-            ) {
-
-                passwordError.textContent =
-                    "Password must contain at least 8 characters.";
-
-                valid = false;
-
-            }
-
-
-            /* =============================
-               CONFIRM PASSWORD
-            ============================== */
-
-            if (
-                confirmPassword.value === ""
-            ) {
-
-                confirmPasswordError.textContent =
-                    "Please confirm your password.";
-
-                valid = false;
-
-            } else if (
-                confirmPassword.value !==
-                password.value
-            ) {
-
-                confirmPasswordError.textContent =
-                    "Passwords do not match.";
-
-                valid = false;
-
-            }
-
-
-            /* =============================
-               SUCCESS
-            ============================== */
-
-            if (valid) {
-
-                formSuccess.textContent =
-                    "Success! Your profile was created.";
-
-                archiveForm.reset();
-
-            }
-
-        }
-    );
-
-}
-
-
-
-/* =====================================================
-   FAQ ACCORDION
-===================================================== */
-
-const faqQuestions =
-    document.querySelectorAll(
-        ".faq-question"
-    );
-
-
-faqQuestions.forEach(
-    function (question) {
-
-        question.addEventListener(
-            "click",
-            function () {
-
-                const answer =
-                    question.nextElementSibling;
-
-                const isOpen =
-                    question.classList.contains(
-                        "active"
-                    );
-
-
-                question.classList.toggle(
-                    "active"
-                );
-
-                answer.classList.toggle(
-                    "open"
-                );
-
-
-                question.setAttribute(
-                    "aria-expanded",
-                    String(!isOpen)
-                );
 
             }
         );
 
-    }
-);
+
+
+        /* =================================================
+           BACKGROUND CHANGER
+        ================================================= */
+
+        const backgroundButton =
+            document.getElementById(
+                "change-background"
+            );
+
+
+        const darkBackgrounds = [
+
+            "#0b0b0b",
+            "#101820",
+            "#18110d",
+            "#0d1812",
+            "#16121f"
+
+        ];
+
+
+        const lightBackgrounds = [
+
+            "#f4f1e8",
+            "#e9f0f2",
+            "#edf2e5",
+            "#f3e9e5",
+            "#eee9f3"
+
+        ];
 
 
 
-/* =====================================================
-   POPUP
-===================================================== */
-
-const openPopupButton =
-    document.getElementById(
-        "open-subscribe"
-    );
-
-const popup =
-    document.getElementById(
-        "subscription-popup"
-    );
-
-const closePopupButton =
-    document.getElementById(
-        "close-popup"
-    );
+        if (backgroundButton) {
 
 
-function openPopup() {
-
-    if (!popup) {
-        return;
-    }
-
-    popup.classList.add(
-        "show"
-    );
-
-    document.body.classList.add(
-        "popup-open"
-    );
-
-}
+            backgroundButton.addEventListener(
+                "click",
+                function () {
 
 
-function closePopup() {
-
-    if (!popup) {
-        return;
-    }
-
-    popup.classList.remove(
-        "show"
-    );
-
-    document.body.classList.remove(
-        "popup-open"
-    );
-
-}
+                    const isLightTheme =
+                        document.body.classList.contains(
+                            "light-theme"
+                        );
 
 
-if (openPopupButton) {
-
-    openPopupButton.addEventListener(
-        "click",
-        openPopup
-    );
-
-}
+                    const colors =
+                        isLightTheme
+                            ? lightBackgrounds
+                            : darkBackgrounds;
 
 
-if (closePopupButton) {
-
-    closePopupButton.addEventListener(
-        "click",
-        closePopup
-    );
-
-}
+                    const randomIndex =
+                        Math.floor(
+                            Math.random() *
+                            colors.length
+                        );
 
 
-if (popup) {
-
-    popup.addEventListener(
-        "click",
-        function (event) {
-
-            if (event.target === popup) {
-
-                closePopup();
-
-            }
-
-        }
-    );
-
-}
+                    const selectedColor =
+                        colors[
+                            randomIndex
+                            ];
 
 
-document.addEventListener(
-    "keydown",
-    function (event) {
+                    document.body.style.setProperty(
+                        "--bg",
+                        selectedColor
+                    );
 
-        if (
-            event.key === "Escape" &&
-            popup &&
-            popup.classList.contains("show")
-        ) {
 
-            closePopup();
+                }
+            );
+
 
         }
 
-    }
-);
+
+
+        /* =================================================
+           CURRENT DATE AND TIME
+        ================================================= */
+
+        const dateTimeElements =
+            document.querySelectorAll(
+                ".current-date-time"
+            );
 
 
 
-/* =====================================================
-   SUBSCRIPTION FORM
-===================================================== */
-
-const subscriptionForm =
-    document.getElementById(
-        "subscription-form"
-    );
-
-
-if (subscriptionForm) {
-
-    subscriptionForm.addEventListener(
-        "submit",
-        function (event) {
-
-            event.preventDefault();
-
-
-            const email =
-                document.getElementById(
-                    "subscription-email"
-                );
-
-            const message =
-                document.getElementById(
-                    "subscription-message"
-                );
-
-
-            const pattern =
-                /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+        function updateDateTime() {
 
 
             if (
-                !pattern.test(
-                    email.value.trim()
-                )
+                dateTimeElements.length === 0
             ) {
-
-                message.textContent =
-                    "Please enter a valid email.";
 
                 return;
 
             }
 
 
-            message.textContent =
-                "Welcome to the FIVE. archive!";
+            const now =
+                new Date();
 
 
-            subscriptionForm.reset();
+            const formattedDateTime =
+                now.toLocaleString(
+                    "en-US",
+                    {
 
-        }
-    );
+                        year:
+                            "numeric",
 
-}
+                        month:
+                            "short",
 
+                        day:
+                            "numeric",
 
+                        hour:
+                            "2-digit",
 
-/* =====================================================
-   CHANGE BACKGROUND
-   WORKS IN DARK AND LIGHT MODE
-===================================================== */
+                        minute:
+                            "2-digit",
 
-const backgroundButton =
-    document.getElementById(
-        "change-background"
-    );
+                        second:
+                            "2-digit"
 
-
-const darkBackgroundColors = [
-
-    "#0b0b0b",
-
-    "#101820",
-
-    "#18110d",
-
-    "#0d1812",
-
-    "#16121f"
-
-];
-
-
-const lightBackgroundColors = [
-
-    "#f4f1e8",
-
-    "#e9f0f2",
-
-    "#edf2e5",
-
-    "#f3e9e5",
-
-    "#eee9f3"
-
-];
-
-
-let darkBackgroundIndex = 0;
-let lightBackgroundIndex = 0;
-
-
-if (backgroundButton) {
-
-    backgroundButton.addEventListener(
-        "click",
-        function () {
-
-            const lightMode =
-                document.body.classList.contains(
-                    "light-theme"
+                    }
                 );
 
 
-            /* =============================
-               LIGHT MODE
-            ============================== */
+            dateTimeElements.forEach(
+                function (element) {
 
-            if (lightMode) {
-
-                lightBackgroundIndex++;
-
-
-                if (
-                    lightBackgroundIndex >=
-                    lightBackgroundColors.length
-                ) {
-
-                    lightBackgroundIndex = 0;
+                    element.textContent =
+                        formattedDateTime;
 
                 }
+            );
 
-
-                document.body.style.setProperty(
-                    "--bg",
-                    lightBackgroundColors[
-                        lightBackgroundIndex
-                        ]
-                );
-
-            }
-
-
-            /* =============================
-               DARK MODE
-            ============================== */
-
-            else {
-
-                darkBackgroundIndex++;
-
-
-                if (
-                    darkBackgroundIndex >=
-                    darkBackgroundColors.length
-                ) {
-
-                    darkBackgroundIndex = 0;
-
-                }
-
-
-                document.body.style.setProperty(
-                    "--bg",
-                    darkBackgroundColors[
-                        darkBackgroundIndex
-                        ]
-                );
-
-            }
 
         }
-    );
-
-}
 
 
+        updateDateTime();
 
-/* =====================================================
-   CURRENT DATE AND TIME
-===================================================== */
 
-function updateDateTime() {
-
-    const elements =
-        document.querySelectorAll(
-            ".current-date-time"
+        setInterval(
+            updateDateTime,
+            1000
         );
 
-
-    if (
-        elements.length === 0
-    ) {
-
-        return;
 
     }
-
-
-    const now =
-        new Date();
-
-
-    const options = {
-
-        year: "numeric",
-
-        month: "long",
-
-        day: "numeric",
-
-        hour: "numeric",
-
-        minute: "2-digit",
-
-        second: "2-digit",
-
-        hour12: true
-
-    };
-
-
-    const formatted =
-        now.toLocaleString(
-            "en-US",
-            options
-        );
-
-
-    elements.forEach(
-        function (element) {
-
-            element.textContent =
-                formatted;
-
-        }
-    );
-
-}
-
-
-updateDateTime();
-
-
-setInterval(
-    updateDateTime,
-    1000
 );

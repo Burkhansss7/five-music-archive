@@ -92,6 +92,7 @@
 
                     </li>
 
+
                     <li class="nav-item">
 
                         <a
@@ -103,6 +104,7 @@
                         </a>
 
                     </li>
+
 
                     <li class="nav-item">
 
@@ -116,6 +118,7 @@
 
                     </li>
 
+
                     <li class="nav-item">
 
                         <a
@@ -127,6 +130,7 @@
                         </a>
 
                     </li>
+
 
                     <li class="nav-item">
 
@@ -212,14 +216,13 @@
                     </a>
 
 
-                    <button
-                            id="open-subscribe"
-                            class="btn btn-outline-success btn-lg"
-                            type="button">
+                    <a
+                            href="signup.html"
+                            class="btn btn-outline-success btn-lg">
 
                         Join Archive
 
-                    </button>
+                    </a>
 
                 </div>
 
@@ -306,7 +309,7 @@
 
 
 
-    <!-- MOOD -->
+    <!-- CHANGE MOOD -->
 
     <section class="container py-5">
 
@@ -469,6 +472,7 @@
 
             </button>
 
+
             <button
                     class="artist-filter-btn"
                     data-category="new-wave"
@@ -477,6 +481,7 @@
                 New Wave
 
             </button>
+
 
             <button
                     class="artist-filter-btn"
@@ -494,6 +499,171 @@
                 id="artist-list"
                 class="dynamic-artist-grid">
         </div>
+
+    </section>
+
+
+
+    <!-- LIVE MUSIC API -->
+
+    <section
+            id="music-api-section"
+            class="container py-5">
+
+        <div class="music-api-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    LIVE MUSIC DATA
+                </p>
+
+                <h2 class="section-heading">
+                    Search the music catalog.
+                </h2>
+
+            </div>
+
+
+            <p>
+
+                Explore real music data from the
+                iTunes Search API.
+
+            </p>
+
+        </div>
+
+
+
+        <form
+                id="music-api-form"
+                class="music-api-search"
+                novalidate>
+
+
+            <div class="music-api-input-wrapper">
+
+                <label
+                        for="music-api-input"
+                        class="visually-hidden">
+
+                    Artist name
+
+                </label>
+
+
+                <input
+                        id="music-api-input"
+                        class="form-control"
+                        type="text"
+                        placeholder="Search Yeat, Drake, Future...">
+
+
+                <button
+                        id="music-api-button"
+                        class="btn btn-success"
+                        type="submit">
+
+                    Search Catalog
+
+                </button>
+
+            </div>
+
+
+            <p
+                    id="music-api-error"
+                    class="music-api-error">
+            </p>
+
+        </form>
+
+
+
+        <div class="music-quick-search">
+
+            <span>
+                QUICK SEARCH
+            </span>
+
+
+            <button
+                    class="music-quick-btn"
+                    data-artist="Yeat"
+                    type="button">
+
+                Yeat
+
+            </button>
+
+
+            <button
+                    class="music-quick-btn"
+                    data-artist="Playboi Carti"
+                    type="button">
+
+                Playboi Carti
+
+            </button>
+
+
+            <button
+                    class="music-quick-btn"
+                    data-artist="Ken Carson"
+                    type="button">
+
+                Ken Carson
+
+            </button>
+
+
+            <button
+                    class="music-quick-btn"
+                    data-artist="Future"
+                    type="button">
+
+                Future
+
+            </button>
+
+
+            <button
+                    class="music-quick-btn"
+                    data-artist="Drake"
+                    type="button">
+
+                Drake
+
+            </button>
+
+        </div>
+
+
+
+        <div
+                id="music-api-status"
+                class="music-api-status">
+
+            Search the catalog to discover music.
+
+        </div>
+
+
+
+        <div
+                id="music-api-results"
+                class="music-api-grid">
+        </div>
+
+
+
+        <p class="music-api-credit">
+
+            Music data and artwork provided by
+            the iTunes Search API.
+
+        </p>
 
     </section>
 
@@ -640,7 +810,6 @@
 
             </div>
 
-
         </div>
 
     </section>
@@ -746,7 +915,6 @@
 
             </a>
 
-
         </div>
 
     </section>
@@ -847,7 +1015,6 @@
 
             </article>
 
-
         </div>
 
     </section>
@@ -904,6 +1071,7 @@
             </article>
 
 
+
             <article class="mq-card">
 
                 <img
@@ -936,6 +1104,7 @@
                 </div>
 
             </article>
+
 
 
             <article class="mq-card">
@@ -978,27 +1147,27 @@
 
 
 
-    <!-- FINAL CTA -->
+    <!-- MEMBERSHIP -->
 
     <section class="container py-5">
 
         <div class="archive-cta">
 
             <p class="eyebrow">
-                KEEP EXPLORING
+                FIVE. MEMBERS
             </p>
 
 
             <h2>
-                The archive is never really finished.
+                Make the archive personal.
             </h2>
 
 
             <p>
 
-                Explore the artists,
-                switch between collections
-                and build your own view of FIVE.
+                Create your account,
+                choose your favorite collection
+                and access your personal profile.
 
             </p>
 
@@ -1006,19 +1175,19 @@
             <div class="archive-cta-buttons">
 
                 <a
-                        href="newwave.html"
+                        href="signup.html"
                         class="btn btn-success btn-lg">
 
-                    Explore New Wave
+                    Create Account
 
                 </a>
 
 
                 <a
-                        href="icons.html"
+                        href="login.html"
                         class="btn btn-outline-success btn-lg">
 
-                    Explore Icons
+                    Log In
 
                 </a>
 
@@ -1045,85 +1214,11 @@
             Created by Burkhan & Islam
         </span>
 
-        <span class="current-date-time">
-        </span>
+        <span class="current-date-time"></span>
 
     </div>
 
 </footer>
-
-
-
-<!-- SUBSCRIBE POPUP -->
-
-<div
-        id="subscription-popup"
-        class="popup-overlay">
-
-    <div class="popup-window">
-
-        <button
-                id="close-popup"
-                class="popup-close"
-                type="button">
-
-            ×
-
-        </button>
-
-
-        <p class="eyebrow">
-            FIVE. MEMBERS
-        </p>
-
-
-        <h2>
-            Join the archive.
-        </h2>
-
-
-        <p>
-            Subscribe to receive archive updates.
-        </p>
-
-
-        <form id="subscription-form">
-
-            <label
-                    for="subscription-email"
-                    class="form-label">
-
-                Email
-
-            </label>
-
-
-            <input
-                    id="subscription-email"
-                    class="form-control"
-                    type="email"
-                    placeholder="you@example.com">
-
-
-            <button
-                    class="btn btn-success w-100 mt-3"
-                    type="submit">
-
-                Subscribe
-
-            </button>
-
-
-            <p
-                    id="subscription-message"
-                    class="subscription-message mt-3">
-            </p>
-
-        </form>
-
-    </div>
-
-</div>
 
 
 
@@ -1132,6 +1227,8 @@
 <script src="js/theme.js"></script>
 <script src="js/assignment4.js"></script>
 <script src="js/assignment5.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/music-api.js"></script>
 
 </body>
 
